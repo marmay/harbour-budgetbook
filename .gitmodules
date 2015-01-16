@@ -1,0 +1,3 @@
+[submodule "qml/QChart"]
+	path = qml/QChart
+	url = https://github.com/marmay/qchart.js.git

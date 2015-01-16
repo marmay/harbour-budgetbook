@@ -1,0 +1,38 @@
+# Rename this file as budgetbook.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+
+# * date Author's Name <author's email> version-release
+# - Summary of changes
+
+* Fri Jan 30 2015 Markus Mayr <markus.mayr@outlook.com> 0.3.0-1
+- Initial version released under an open source license.
+
+* Tue Jan 13 2015 Markus Mayr <markus.mayr@outlook.com> 0.2.1-1
+- Renamed to harbour-budgetbook.
+- Excluded .git directory from rpm package.
+- Changed .desktop file.
+
+* Sun Jan 11 2015 Markus Mayr <markus.mayr@outlook.com> 0.2.0-1
+- First candidate submitted to harbour.
+- Internationalized data input and formatting of currencies.
+- First page updates properly after entering new bills.
+- Adding shops or categories is more consistent now.
+- As is selecting shops or categories or shop types.
+- Fixed several translations and strings.
+- App icon properly scaled now.
+
+* Sat Jan 10 2015 Markus Mayr <markus.mayr@outlook.com> 0.1.2-1
+- Fixed crash when minimizing and restoring the app.
+- Updated app icon.
+
+* Wed Jan 07 2015 Markus Mayr <markus.mayr@outlook.com> 0.1.1-1
+- Added a simple visualization of expenses.
+- Removed "Clean database" option.
+- Fixed formatting of floating point numbers.
+
+* Tue Jan 06 2015 Markus Mayr <markus.mayr@outlook.com> 0.1.0-1
+- Initial version; supports basic input of invoices.
