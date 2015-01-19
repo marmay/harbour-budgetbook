@@ -16,6 +16,7 @@
  */
 
 .pragma library
+.import QtQuick 2.0 as QtQuick
 .import QtQuick.LocalStorage 2.0 as DB
 
 var databaseHandler = null;
@@ -27,11 +28,10 @@ function openDatabase() {
     if (databaseHandler === null)
     {
         databaseHandler = DB.LocalStorage.openDatabaseSync(
-                            "harbour-budgetbook", "0.1",
+                            "harbour-budgetbook", "",
                             "Your expenses.", 1000000);
-
-        //clearDatabase();
-        initializeDatabase(false);
+        upgradeDatabase();
+        initializeDatabase();
     }
     return databaseHandler;
 }
@@ -44,15 +44,46 @@ function clearDatabase()
         tx.executeSql("DROP TABLE IF EXISTS tags");
         tx.executeSql("DROP TABLE IF EXISTS shop_types");
         tx.executeSql("DROP TABLE IF EXISTS shops");
-        tx.executeSql("DROP TABLE IF EXISTS invoices");
-        tx.executeSql("DROP TABLE IF EXISTS invoice_items");
-        tx.executeSql("DROP TABLE IF EXISTS invoice_item_tags");
+        tx.executeSql("DROP TABLE IF EXISTS bills");
+        tx.executeSql("DROP TABLE IF EXISTS bill_items");
+        tx.executeSql("DROP TABLE IF EXISTS bill_item_tags");
     });
 
     initializeDatabase();
 }
 
-function initializeDatabase(withDemoData)
+function initializeDatabaseCurrencySupport(tx)
+{
+    tx.executeSql(
+        "CREATE TABLE IF NOT EXISTS currencies (" +
+        "    id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        "    name TEXT NOT NULL, " +
+        "    locale TEXT NOT NULL, " +
+        "    enabled INTEGER)");
+
+    if (tx.executeSql("SELECT id FROM currencies WHERE enabled == 2").rows.length !== 1)
+    {
+        var defaultLocale = Qt.locale();
+        if (defaultLocale.name === "C") {
+            defaultLocale = Qt.locale("fi_FI");
+        }
+        var name = defaultLocale.currencySymbol(QtQuick.Locale.CurrencyDisplayName);
+        tx.executeSql(
+            "INSERT INTO currencies (name, locale, enabled) " +
+            "VALUES (?, ?, ?)", [name, defaultLocale, 2]);
+    }
+
+    tx.executeSql(
+        "CREATE TABLE IF NOT EXISTS currency_rates (" +
+        "   id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+        "   from_date DATE NOT NULL, " +
+        "   to_date DATE NOT NULL, " +
+        "   from_currency INTEGER NOT NULL, " +
+        "   to_currency INTEGER NOT NULL, " +
+        "   rate DOUBLE NOT NULL)");
+}
+
+function initializeDatabase()
 {
     var db = openDatabase();
     db.transaction(function(tx) {
@@ -130,24 +161,70 @@ function initializeDatabase(withDemoData)
         tx.executeSql("\
             CREATE TABLE IF NOT EXISTS invoice_items ( \
                 id INTEGER PRIMARY KEY AUTOINCREMENT, \
-                invoice INTEGER NOT NULL,
+                bill INTEGER NOT NULL,
                 category INTEGER NOT NULL,
                 remark TEXT,
-                price DOUBLE NOT NULL
+                price DOUBLE NOT NULL,
+                currency INTEGER NOT NULL,
+                pri_price DOUBLE NOT NULL
             )");
 
         tx.executeSql("\
             CREATE TABLE IF NOT EXISTS invoice_item_tags ( \
                 id INTEGER PRIMARY KEY AUTOINCREMENT, \
-                invoice_item INTEGER NOT NULL, \
+                bill_item INTEGER NOT NULL, \
                 tag INTEGER NOT NULL
             )");
 
-        if (withDemoData) {
-            var invoiceId = tx.executeSql("INSERT INTO invoices (at, shop) VALUES (?, ?)", ["2015-01-15 12:00:00", otherShopId]).insertId;
-            tx.executeSql("INSERT INTO invoice_items (invoice, category, price) VALUES (?, ?, ?)", [invoiceId, otherCategoryId, 5.0]);
-        }
+        initializeDatabaseCurrencySupport(tx);
     });
+}
+
+/*
+ * Handles updates of old databases.
+ */
+function upgradeDatabase()
+{
+    var db = openDatabase();
+
+    if (db.version !== "0.2")
+    {
+        db.changeVersion(db.version, "0.2", function (tx) {
+            if (db.version === "0.1") {
+                /*
+                 * Fixes bug in date format of old versions of harbour-budgetbook.
+                 */
+                var rs = tx.executeSql("SELECT id, at FROM invoices");
+                for (var i = 0; i < rs.rows.length; ++i) {
+                    var date_time = rs.rows[i].at.split(" ");
+                    var date = date_time[0].split("-");
+                    var time = date_time[1].split(":");
+                    var d = new Date(date[0], date[1], date[2], time[0], time[1], 0, 0);
+                    tx.executeSql("UPDATE invoices SET at = ? WHERE id = ?",
+                                  [d.getTime() / 1000, rs.rows[i].id]);
+                }
+
+                /*
+                 * Enables support for multiple currencies.
+                 */
+                initializeDatabaseCurrencySupport(tx);
+                tx.executeSql("ALTER TABLE invoice_items ADD COLUMN (currency INTEGER)");
+                tx.executeSql("ALTER TABLE invoice_items ADD COLUMN (pri_price DOUBLE)");
+                rs = tx.executeSql("SELECT id FROM currencies WHERE enabled = 2;");
+                if (rs.rows.length !== 1) {
+                    throw { message: "Unexpected number of primary currencies!" };
+                }
+                var primaryCurrencyId = rs.rows[0].id;
+                tx.executeSql("UPDATE invoice_items SET currency = ?", primaryCurrencyId);
+                tx.executeSql("UPDATE invoice_items SET pri_price = price");
+
+                /*
+                 * Upgrade complete.
+                 */
+                db.version = "0.2";
+            }
+        });
+    }
 }
 
 /*
