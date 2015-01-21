@@ -37,7 +37,9 @@ OTHER_FILES += \
     qml/elements/ShopTypeSelector.qml \
     qml/Utility.js \
     qml/pages/AddBill.qml \
-    qml/elements/Selector.qml
+    qml/elements/Selector.qml \
+    qml/pages/Statistics.qml \
+    qml/pages/BillBrowser.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

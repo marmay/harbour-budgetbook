@@ -24,9 +24,16 @@ import "../elements"
 Page {
     id: page
 
-    QtObject {
-        id: d
-        property double total : Database.getTotal();
+    onStatusChanged: {
+        if (status === PageStatus.Activating)
+        {
+            stat.update();
+        }
+        if (status === PageStatus.Active)
+        {
+            pageStack.pushAttached(Qt.resolvedUrl("Statistics.qml"));
+        }
+
     }
 
     SilicaFlickable {
@@ -35,13 +42,7 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Add Bill")
-                onClicked: {
-                    var invoicePage = pageStack.push(Qt.resolvedUrl("AddBill.qml"));
-                    invoicePage.accepted.connect(function () {
-                        d.total = Database.getTotal();
-                        stat.update();
-                    });
-                }
+                onClicked: pageStack.push(Qt.resolvedUrl("AddBill.qml"))
             }
         }
 
