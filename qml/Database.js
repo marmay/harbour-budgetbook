@@ -23,6 +23,7 @@ var databaseHandler = null;
 var shops = null;
 var shopTypes = null;
 var categories = null;
+var tags = null;
 
 function openDatabase() {
     if (databaseHandler === null)
@@ -369,6 +370,53 @@ function getCategoryByName(category)
 }
 
 /*
+ * Tag operations.
+ */
+function getTags()
+{
+    if (tags === null) {
+        tags = [];
+        var db = openDatabase();
+        db.readTransaction(function(tx) {
+            var rs = tx.executeSql("SELECT id, name FROM tags ORDER BY name");
+            for (var i = 0; i < rs.rows.length; ++i) {
+                tags.push(rs.rows.item(i));
+            }
+        });
+    }
+    return tags;
+}
+
+function addTag(name)
+{
+    var db = openDatabase();
+    db.transaction(function (tx) {
+        var tagId = -1;
+        var rs = tx.executeSql("SELECT id FROM tags WHERE name = ?", name);
+        if (rs.rows.length > 0) {
+            throw { message: qsTr("A tag with the given name already exists!") };
+        }
+        rs = tx.executeSql("INSERT INTO tags (name) VALUES (?)", name);
+    });
+
+    tags = null;
+}
+
+function getTagByName(name)
+{
+    var db = openDatabase();
+    var result = null;
+    db.readTransaction(function (tx) {
+        var rs = tx.executeSql("SELECT id, name FROM tags WHERE name = ?", name);
+        if (rs.rows.length !== 1) {
+            throw { message: qsTr("Tag with the given name does not exist or tag name is not unique!") };
+        }
+        result = { id: rs.rows.item(0).id, name: rs.rows.item(0).name };
+    });
+    return result;
+}
+
+/*
  * Adds a new invoice.
  */
 function addBill(shop, date, items)
@@ -380,7 +428,10 @@ function addBill(shop, date, items)
                         date.getMilliseconds();
         var invoiceId = tx.executeSql("INSERT INTO invoices (at, shop) VALUES (?, ?)", [dateStr, shop.id]).insertId;
         for (var i = 0; i < items.length; ++i) {
-            tx.executeSql("INSERT INTO invoice_items (invoice, category, price) VALUES (?, ?, ?)", [invoiceId, items[i].category.id, items[i].price]);
+            var itemId = tx.executeSql("INSERT INTO invoice_items (invoice, category, price) VALUES (?, ?, ?)", [invoiceId, items[i].category.id, items[i].price]).insertId;
+            for (var j = 0; j < items.length; ++j) {
+                tx.executeSql("INSERT INTO invoice_item_tags (invoice_item, tag) VALUES (?, ?)", [itemId, items[i].tags[j].id]);
+            }
         }
     });
 }

@@ -36,7 +36,11 @@ Dialog {
         var items = [];
         var numberItems = objects.count;
         for (var i = 0; i < numberItems; ++i) {
-            items.push(objects.get(i));
+            items.push({ category: objects.get(i).category,
+                         price: objects.get(i).price, tags: []});
+            for (var j = 0; j < objects.get(i).tags.count; ++j) {
+                items[i].tags.push(objects.get(i).tags.get(j));
+            }
         }
         Database.addBill(d.shop, d.date, items);
     }
@@ -104,9 +108,19 @@ Dialog {
                     height: l.height
 
                     Label {
+                        function tagsToString(list) {
+                            if (list.count === 0) return "";
+                            var str = " (" + list.get(0).name;
+                            for (var i = 1; i < list.count; ++i) {
+                                str += ", " + list.get(i).name;
+                            }
+                            str += ")";
+                            return str;
+                        }
+
                         id: l
                         width: 0.55 * parent.width
-                        text: category.name
+                        text: category.name + tagsToString(tags)
                         font.pixelSize: Theme.fontSizeSmall
                     }
 
@@ -163,7 +177,9 @@ Dialog {
                     anchors.verticalCenter: parent.verticalCenter
                     icon.source: "image://theme/icon-m-add"
                     onClicked: {
-                        objects.append({ category: categorySelector.value, price: Utility.stringToFloat(price.text) });
+                        objects.append({ category: categorySelector.value, price: Utility.stringToFloat(price.text),
+                                            tags: tagSelector.selectedTags });
+                        tagSelector.clear();
                         price.text = "";
                         d.total = 0.;
                         for (var i = 0; i < objects.count; ++i) {
@@ -171,6 +187,13 @@ Dialog {
                         }
                     }
                 }
+            }
+
+            TagSelector {
+                id: tagSelector
+                width: parent.width
+                height: 60
+                _pageStack: pageStack
             }
 
             Item {

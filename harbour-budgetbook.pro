@@ -15,7 +15,8 @@ TARGET = harbour-budgetbook
 CONFIG += sailfishapp
 
 SOURCES += \
-    src/harbour-budgetbook.cpp
+    src/harbour-budgetbook.cpp \
+    src/model/billmodel.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -39,10 +40,15 @@ OTHER_FILES += \
     qml/pages/AddBill.qml \
     qml/elements/Selector.qml \
     qml/pages/Statistics.qml \
-    qml/pages/BillBrowser.qml
+    qml/pages/BillBrowser.qml \
+    qml/elements/TagSelector.qml \
+    qml/pages/AddTag.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 TRANSLATIONS += translations/harbour-budgetbook-de.ts
+
+HEADERS += \
+    src/model/billmodel.h
 
