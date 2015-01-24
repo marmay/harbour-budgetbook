@@ -43,7 +43,8 @@ Selector {
             Column {
                 id: column
 
-                width: page.width
+                x: Theme.paddingLarge
+                width: page.width - 2 * Theme.paddingLarge
                 spacing: Theme.paddingLarge
                 PageHeader {
                     title: qsTr("New Shop")
@@ -52,16 +53,18 @@ Selector {
                 TextField {
                     id: name
                     anchors.horizontalCenter: parent.horizontalCenter
-                    width: parent.width - 2 * Theme.paddingLarge
+                    width: parent.width
                     placeholderText: qsTr("Shop name")
                 }
 
                 ShopTypeSelector {
                     id: shopTypeSelector
+                    width: parent.width
                 }
 
                 CategorySelector {
                     id: categorySelector
+                    width: parent.width
                 }
             }
         }

@@ -38,10 +38,10 @@ Item {
         Dialog {
             id: _innerDialog
             property var current
-            property alias model : _repeater.model
+            property alias model : listView.model
             property var buildModel
             property var modelDataToLabel
-            property alias title : _header.title
+            property string title
             property string addText
             property Component addDialog
 
@@ -49,90 +49,63 @@ Item {
 
             property Item _currentItem
 
-            SilicaFlickable {
-                id: flickable
+            SilicaListView {
+                id: listView
                 anchors.fill: parent
-                contentHeight: _column.height
 
-                Column {
-                    id: _column
-                    width: parent.width
-                    spacing: Theme.paddingLarge
-
-                    PullDownMenu {
-                        visible: addText !== null && addDialog !== null
-                        MenuItem {
-                            text: addText
-                            onClicked: {
-                                var page = pageStack.push(addDialog);
-                                page.added.connect(function (item) {
-                                    current = item;
-                                    model = buildModel();
-                                });
-                            }
-                        }
-                    }
-
-                    PageHeader {
-                        id: _header
-                    }
-
-                    Repeater {
-                        id: _repeater
-                        delegate: Component {
-                            Label {
-                                id: _entry
-                                width: _column.width
-                                text: modelDataToLabel(modelData);
-                                Component.onCompleted: {
-                                    state = modelDataToLabel(modelData) === modelDataToLabel(current) ? "selected" : "not_selected"
-                                    if (state === "selected") {
-                                        _currentItem = _entry;
-                                        current = modelData;
-                                    }
-                                }
-
-                                MouseArea {
-                                    anchors.fill: parent
-                                    onClicked: {
-                                        if (parent.state !== "selected") {
-                                            if (_currentItem) {
-                                                _currentItem.state = "not_selected";
-                                            }
-                                            _currentItem = _entry;
-                                            _entry.state = "selected";
-                                        }
-                                        _innerDialog.accept();
-                                    }
-                                }
-
-                                states: [
-                                    State {
-                                        name: "selected"
-                                        PropertyChanges {
-                                            target: _innerDialog
-                                            current: modelData
-                                        }
-                                        PropertyChanges {
-                                            target: _entry
-                                            color: Theme.highlightColor
-                                        }
-                                    },
-                                    State {
-                                        name: "not_selected"
-                                        PropertyChanges {
-                                            target: _entry
-                                            color: Theme.primaryColor
-                                        }
-                                    }
-                                ]
-                            }
+                PullDownMenu {
+                    visible: addText !== null && addDialog !== null
+                    MenuItem {
+                        text: addText
+                        onClicked: {
+                            var page = pageStack.push(addDialog);
+                            page.added.connect(function (item) {
+                                current = item;
+                                model = buildModel();
+                            });
                         }
                     }
                 }
 
-                VerticalScrollDecorator {
-                    flickable: flickable
+                header: PageHeader {
+                    id: _header
+                    title: _innerDialog.title
+                }
+                delegate: BackgroundItem {
+                    property var value : modelDataToLabel(modelData)
+
+                    id: item
+                    width: listView.width
+                    height: _entry.height + Theme.paddingLarge
+                    onClicked: {
+                        if (_currentItem !== item) {
+                            _currentItem.highlighted = false;
+                            _currentItem = item;
+                            current = value;
+                            item.highlighted = true;
+                        }
+                        _innerDialog.accept();
+                    }
+                    Component.onCompleted: {
+                        if (modelDataToLabel(modelData) === modelDataToLabel(current))
+                        {
+                            highlighted = true;
+                            _currentItem = item;
+                            current = modelData;
+                        }
+                    }
+
+                    Label {
+                        id: _entry
+                        anchors.verticalCenter: parent.verticalCenter
+                        text: modelDataToLabel(modelData);
+                        x: Theme.paddingLarge
+                        width: parent.width - 2 * Theme.paddingLarge
+                        truncationMode: TruncationMode.Fade
+                        color: item.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    }
+
+                    VerticalScrollDecorator {}
                 }
             }
         }
