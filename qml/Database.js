@@ -290,6 +290,20 @@ function getShopTypes()
     return shopTypes;
 }
 
+function addShopType(name)
+{
+    var db = openDatabase();
+    db.transaction(function(tx) {
+        var rs = tx.executeSql("SELECT id FROM shop_types WHERE name = ?", name);
+        if (rs.rows.length > 0) {
+            throw { message: qsTr("An item with the given name already exists!") };
+        }
+        rs = tx.executeSql("INSERT INTO shop_types (name) VALUES (?)", [name]);
+    });
+
+    shopTypes = null;
+}
+
 function getShopTypeByName(shopType)
 {
     var db = openDatabase();
@@ -429,7 +443,7 @@ function addBill(shop, date, items)
         var invoiceId = tx.executeSql("INSERT INTO invoices (at, shop) VALUES (?, ?)", [dateStr, shop.id]).insertId;
         for (var i = 0; i < items.length; ++i) {
             var itemId = tx.executeSql("INSERT INTO invoice_items (invoice, category, price) VALUES (?, ?, ?)", [invoiceId, items[i].category.id, items[i].price]).insertId;
-            for (var j = 0; j < items.length; ++j) {
+            for (var j = 0; j < items[i].tags.length; ++j) {
                 tx.executeSql("INSERT INTO invoice_item_tags (invoice_item, tag) VALUES (?, ?)", [itemId, items[i].tags[j].id]);
             }
         }

@@ -25,4 +25,38 @@ Selector {
     modelDataToLabel: function (shopType) { return shopType.name; }
 
     selectHeader: qsTr("Select Shop Type");
+
+    addText: qsTr("Add Shop Type");
+    addDialog: Component {
+        Dialog {
+            id: page
+
+            signal added(var shopType)
+
+            onAccepted: {
+                if (name.text !== "") {
+                    Database.addShopType(name.text);
+                    added(Database.getShopTypeByName(name.text));
+                }
+            }
+
+            Column {
+                id: column
+
+                x: Theme.paddingLarge
+                width: page.width - 2 * Theme.paddingLarge
+                spacing: Theme.paddingLarge
+                PageHeader {
+                    title: qsTr("New Shop Type")
+                }
+
+                TextField {
+                    id: name
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    width: parent.width
+                    placeholderText: qsTr("Shop Type name")
+                }
+            }
+        }
+    }
 }
