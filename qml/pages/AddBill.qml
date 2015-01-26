@@ -52,7 +52,8 @@ Dialog {
         Column {
             id: column
 
-            width: page.width
+            x: Theme.paddingLarge
+            width: parent.width - 2 * Theme.paddingLarge
             spacing: Theme.paddingLarge
 
             PageHeader {
@@ -163,14 +164,6 @@ Dialog {
                     width: 0.25 * parent.width
                     placeholderText: qsTr("Price")
                     inputMethodHints: Qt.ImhFormattedNumbersOnly | Qt.ImhNoPredictiveText
-                    /*
-                    validator: DoubleValidator {
-                        bottom: 0
-                        decimals: 2
-                        notation: DoubleValidator.StandardNotation
-                        locale: Qt.locale().name
-                    }
-                    */
                 }
 
                 IconButton {

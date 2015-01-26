@@ -81,7 +81,7 @@ Item {
                         if (_currentItem !== item) {
                             _currentItem.highlighted = false;
                             _currentItem = item;
-                            current = value;
+                            current = modelData;
                             item.highlighted = true;
                         }
                         _innerDialog.accept();
@@ -111,32 +111,40 @@ Item {
         }
     }
 
-    Row {
-        id: _row
+    Item {
         width: parent.width
-        spacing: Theme.paddingLarge
+        height: _row.height
 
-        Label {
-            id: _label
+        Row {
+            id: _row
+            width: parent.width
+            anchors.verticalCenter: parent.verticalCenter
+            spacing: Theme.paddingLarge
+
+            Label {
+                id: _label
+            }
+
+            Label {
+                id: _valueLabel
+                text: modelDataToLabel(value)
+                color: Theme.highlightColor
+                truncationMode: TruncationMode.Fade
+                width: parent.width - _label.width - Theme.paddingLarge
+            }
         }
 
-        Label {
-            id: _valueLabel
-            text: modelDataToLabel(value)
-            color: Theme.highlightColor
-
-            MouseArea {
-                anchors.fill: parent
-                onClicked: {
-                    var page = pageStack.push(_dialog, { modelDataToLabel: modelDataToLabel,
-                                                            addText: item.addText, addDialog: item.addDialog,
-                                                            current: value, title: selectHeader, buildModel: buildModel });
-                    page.accepted.connect(function() {
-                        if (page.current !== null) {
-                            item.value = page.current;
-                        }
-                    } );
-                }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                var page = pageStack.push(_dialog, { modelDataToLabel: modelDataToLabel,
+                                                        addText: item.addText, addDialog: item.addDialog,
+                                                        current: value, title: selectHeader, buildModel: buildModel });
+                page.accepted.connect(function() {
+                    if (page.current !== null) {
+                        item.value = page.current;
+                    }
+                } );
             }
         }
     }
