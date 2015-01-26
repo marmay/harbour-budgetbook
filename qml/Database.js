@@ -237,7 +237,7 @@ function getShops()
         shops = [];
         var db = openDatabase();
         db.readTransaction(function(tx) {
-            var rs = tx.executeSql("SELECT id, name FROM shops ORDER BY name");
+            var rs = tx.executeSql("SELECT id, name FROM shops ORDER BY name COLLATE NOCASE");
             for (var i = 0; i < rs.rows.length; ++i) {
                 shops.push({ id: rs.rows.item(i).id, name: rs.rows.item(i).name });
             }
@@ -281,7 +281,7 @@ function getShopTypes()
         shopTypes = [];
         var db = openDatabase();
         db.readTransaction(function(tx) {
-            var rs = tx.executeSql("SELECT id, name FROM shop_types ORDER BY name");
+            var rs = tx.executeSql("SELECT id, name FROM shop_types ORDER BY name COLLATE NOCASE");
             for (var i = 0; i < rs.rows.length; ++i) {
                 shopTypes.push({ id: rs.rows.item(i).id, name: rs.rows.item(i).name });
             }
@@ -328,7 +328,7 @@ function getCategories()
         categories = [];
         var db = openDatabase();
         db.readTransaction(function(tx) {
-            var rs = tx.executeSql("SELECT id, name FROM categories ORDER BY name");
+            var rs = tx.executeSql("SELECT id, name FROM categories ORDER BY name COLLATE NOCASE");
             for (var i = 0; i < rs.rows.length; ++i) {
                 categories.push({ id: rs.rows.item(i).id, name: rs.rows.item(i).name });
             }
@@ -392,7 +392,7 @@ function getTags()
         tags = [];
         var db = openDatabase();
         db.readTransaction(function(tx) {
-            var rs = tx.executeSql("SELECT id, name FROM tags ORDER BY name");
+            var rs = tx.executeSql("SELECT id, name FROM tags ORDER BY name COLLATE NOCASE");
             for (var i = 0; i < rs.rows.length; ++i) {
                 tags.push(rs.rows.item(i));
             }
