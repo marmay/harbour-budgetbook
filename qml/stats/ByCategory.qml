@@ -21,7 +21,7 @@ import "../QChart"
 import "../Database.js" as Database
 import "../Utility.js" as Utility
 
-Item {
+Column {
     property date from : "2015-01-01"
     property date to : "2015-01-31"
 
@@ -63,59 +63,56 @@ Item {
         totalLabel.total = Database.getTotal();
     }
 
-    Column {
-        anchors.fill: parent
+    spacing: Theme.paddingLarge
+
+    Item {
+        width: parent.width
+        height: width
+
+        Chart {
+            id: chart
+            anchors.fill: parent
+            chartType: Charts.ChartType.DOUGHNUT
+            chartData: []
+        }
+
+        Label {
+            id: totalLabel
+            property double total : 0.
+            anchors.centerIn: parent
+            text: Utility.floatToCurrencyString(total)
+            font.pixelSize: Theme.fontSizeLarge
+        }
+    }
+
+    ListModel {
+        id: legendModel
+    }
+
+    Flow {
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width - 2 * Theme.paddingLarge
         spacing: Theme.paddingLarge
 
-        Item {
-            width: parent.width
-            height: width
+        Repeater {
+            model: legendModel
+            delegate: Row {
+                height: Theme.fontSizeSmall
+                spacing: Theme.paddingSmall
 
-            Chart {
-                id: chart
-                anchors.fill: parent
-                chartType: Charts.ChartType.DOUGHNUT
-                chartData: []
-            }
+                Rectangle {
+                    width: Theme.fontSizeSmall
+                    height: width
+                    color: itemColor
+                    border.width: 1
+                    border.color: "#ffffff"
+                    anchors.verticalCenter: parent.verticalCenter
+                }
 
-            Label {
-                id: totalLabel
-                property double total : 0.
-                anchors.centerIn: parent
-                text: Utility.floatToCurrencyString(total)
-                font.pixelSize: Theme.fontSizeLarge
-            }
-        }
-
-        ListModel {
-            id: legendModel
-        }
-
-        Flow {
-            anchors.horizontalCenter: parent.horizontalCenter
-            width: parent.width - 2 * Theme.paddingLarge
-            spacing: Theme.paddingLarge
-
-            Repeater {
-                model: legendModel
-                delegate: Row {
-                    height: Theme.fontSizeSmall
-                    spacing: Theme.paddingSmall
-
-                    Rectangle {
-                        width: Theme.fontSizeSmall
-                        height: width
-                        color: itemColor
-                        border.width: 1
-                        border.color: "#ffffff"
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
-
-                    Label {
-                        text: label + " (" + Utility.floatToCurrencyString(value) + ")"
-                        font.pixelSize: Theme.fontSizeSmall
-                        anchors.verticalCenter: parent.verticalCenter
-                    }
+                Label {
+                    text: label + " (" + Utility.floatToCurrencyString(value) + ")"
+                    font.pixelSize: Theme.fontSizeSmall
+                    anchors.verticalCenter: parent.verticalCenter
                 }
             }
         }

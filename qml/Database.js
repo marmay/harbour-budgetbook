@@ -58,30 +58,29 @@ function initializeDatabaseCurrencySupport(tx)
     tx.executeSql(
         "CREATE TABLE IF NOT EXISTS currencies (" +
         "    id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-        "    name TEXT NOT NULL, " +
-        "    locale TEXT NOT NULL, " +
-        "    enabled INTEGER)");
+        "    symbol TEXT UNIQUE NOT NULL, " +
+        "    to_primary DOUBLE, " +
+        "    is_primary INTEGER)");
 
-    if (tx.executeSql("SELECT id FROM currencies WHERE enabled == 2").rows.length !== 1)
+    if (tx.executeSql("SELECT id FROM currencies WHERE is_primary = 1").rows.length !== 1)
     {
         var defaultLocale = Qt.locale();
         if (defaultLocale.name === "C") {
             defaultLocale = Qt.locale("fi_FI");
         }
-        var name = defaultLocale.currencySymbol(QtQuick.Locale.CurrencyDisplayName);
-        tx.executeSql(
-            "INSERT INTO currencies (name, locale, enabled) " +
-            "VALUES (?, ?, ?)", [name, defaultLocale, 2]);
+        var symbol = defaultLocale.currencySymbol(QtQuick.Locale.CurrencySymbol);
+        var rs = tx.executeSql("SELECT id FROM currencies WHERE symbol = ?", symbol);
+        if (rs.rows.length === 1)
+        {
+            tx.executeSql("UPDATE currencies SET is_primary = 1 WHERE id = ?", rs.rows.item(0).id);
+            tx.executeSql("UPDATE currencies SET to_primary = 1", rs.rows.item(0).id);
+        }
+        else
+        {
+            tx.executeSql("INSERT INTO currencies (symbol, to_primary, is_primary) VALUES (?, ?, ?)",
+                          [symbol, 1, 1]);
+        }
     }
-
-    tx.executeSql(
-        "CREATE TABLE IF NOT EXISTS currency_rates (" +
-        "   id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-        "   from_date DATE NOT NULL, " +
-        "   to_date DATE NOT NULL, " +
-        "   from_currency INTEGER NOT NULL, " +
-        "   to_currency INTEGER NOT NULL, " +
-        "   rate DOUBLE NOT NULL)");
 }
 
 function initializeDatabase()
@@ -209,9 +208,9 @@ function upgradeDatabase()
                  * Enables support for multiple currencies.
                  */
                 initializeDatabaseCurrencySupport(tx);
-                tx.executeSql("ALTER TABLE invoice_items ADD COLUMN (currency INTEGER)");
-                tx.executeSql("ALTER TABLE invoice_items ADD COLUMN (pri_price DOUBLE)");
-                rs = tx.executeSql("SELECT id FROM currencies WHERE enabled = 2;");
+                tx.executeSql("ALTER TABLE invoice_items ADD COLUMN currency INTEGER");
+                tx.executeSql("ALTER TABLE invoice_items ADD COLUMN pri_price DOUBLE");
+                rs = tx.executeSql("SELECT id FROM currencies WHERE is_primary = 1;");
                 if (rs.rows.length !== 1) {
                     throw { message: "Unexpected number of primary currencies!" };
                 }
@@ -465,3 +464,44 @@ function getTotal()
     });
     return totalCosts;
 }
+
+/*
+ * Returns the primary currency.
+ */
+function getPrimaryCurrency()
+{
+    var db = openDatabase();
+    var currency = null;
+    db.readTransaction(function (tx) {
+        var rs = tx.executeSql("SELECT id, symbol, to_primary, is_primary FROM currencies WHERE is_primary = 1");
+        if (rs.rows.length === 1) {
+            currency = {
+                id: rs.rows.item(0).id,
+                symbol: rs.rows.item(0).symbol,
+                to_primary: rs.rows.item(0).to_primary,
+                is_primary: rs.rows.item(0).is_primary
+            };
+        }
+    });
+    return currency;
+}
+
+/*
+ * Exports whole database to CSV (without tags).
+ */
+/*
+function toCsv()
+{
+    var db = openDatabase();
+    var rs;
+    var contents = "date,shop";
+    var categories = getCategories();
+    for (var i = 0; i < categories.length; ++i) {
+        contents += "," + categories[i];
+    }
+    contents += "\n";
+
+    db.readTransaction(function (tx) {
+    });
+}
+*/

@@ -18,57 +18,45 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Database.js" as Database
-import "../stats"
-import "../elements"
 
 Page {
-    id: page
-
-    onStatusChanged: {
-        if (status === PageStatus.Activating)
-        {
-            stat.update();
-        }
-        if (status === PageStatus.Active)
-        {
-            pageStack.pushAttached(Qt.resolvedUrl("Statistics.qml"));
-        }
-    }
-
     SilicaFlickable {
-        anchors.fill: parent
-
-        PullDownMenu {
-            MenuItem {
-                text: qsTr("Add Bill")
-                onClicked: pageStack.push(Qt.resolvedUrl("AddBill.qml"))
-            }
-        }
-
-        PushUpMenu {
-            MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"));
-            }
-        }
-
+        x: Theme.paddingLarge
+        width: parent.width - 2 * Theme.paddingLarge
+        height: parent.height
         contentHeight: column.height
 
         Column {
             id: column
+            width: parent.width
 
-            width: page.width
-            spacing: Theme.paddingLarge
             PageHeader {
-                title: qsTr("BudgetBook")
+                title: qsTr("Settings")
             }
 
-            ByCategory {
-                id: stat
-                width: column.width
+            Item {
+                width: parent.width
+                height: row.height
+
+                Row {
+                    id: row
+                    spacing: Theme.paddingLarge
+
+                    Label {
+                        text: qsTr("Primary currency")
+                    }
+
+                    Label {
+                        color: Theme.highlightColor
+                        text: Database.getPrimaryCurrency().symbol
+                    }
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    //onClicked: pageStack.push(Qt.resolvedUrl("CurrencySettings.qml"))
+                }
             }
         }
     }
 }
-
-

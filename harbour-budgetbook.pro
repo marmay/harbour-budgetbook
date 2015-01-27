@@ -42,7 +42,8 @@ OTHER_FILES += \
     qml/pages/Statistics.qml \
     qml/pages/BillBrowser.qml \
     qml/elements/TagSelector.qml \
-    qml/pages/AddTag.qml
+    qml/pages/AddTag.qml \
+    qml/pages/Settings.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
