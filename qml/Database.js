@@ -24,6 +24,7 @@ var shops = null;
 var shopTypes = null;
 var categories = null;
 var tags = null;
+var currencies = null;
 
 function openDatabase() {
     if (databaseHandler === null)
@@ -441,7 +442,8 @@ function addBill(shop, date, items)
                         date.getMilliseconds();
         var invoiceId = tx.executeSql("INSERT INTO invoices (at, shop) VALUES (?, ?)", [dateStr, shop.id]).insertId;
         for (var i = 0; i < items.length; ++i) {
-            var itemId = tx.executeSql("INSERT INTO invoice_items (invoice, category, price) VALUES (?, ?, ?)", [invoiceId, items[i].category.id, items[i].price]).insertId;
+            var itemId = tx.executeSql("INSERT INTO invoice_items (invoice, category, price, currency, pri_price) VALUES (?, ?, ?, ?, ?)",
+                                       [invoiceId, items[i].category.id, items[i].price, getPrimaryCurrency().id, items[i].price]).insertId;
             for (var j = 0; j < items[i].tags.length; ++j) {
                 tx.executeSql("INSERT INTO invoice_item_tags (invoice_item, tag) VALUES (?, ?)", [itemId, items[i].tags[j].id]);
             }
@@ -457,7 +459,7 @@ function getTotal()
     var db = openDatabase();
     var totalCosts = 0.;
     db.readTransaction(function (tx) {
-        var rs = tx.executeSql("SELECT SUM(price) AS costs FROM invoice_items");
+        var rs = tx.executeSql("SELECT SUM(pri_price) AS costs FROM invoice_items");
         if (rs.rows.length === 1 && rs.rows.item(0).price !== null) {
             totalCosts = rs.rows.item(0).costs;
         }
@@ -487,21 +489,66 @@ function getPrimaryCurrency()
 }
 
 /*
- * Exports whole database to CSV (without tags).
+ * Returns a list of currencies.
  */
+function getCurrencies()
+{
+    if (currencies === null) {
+        currencies = [];
+        var db = openDatabase();
+        db.readTransaction(function(tx) {
+            var rs = tx.executeSql("SELECT id, symbol, is_primary, to_primary FROM currencies");
+            for (var i = 0; i < rs.rows.length; ++i) {
+                currencies.push(rs.rows.item(i));
+            }
+        });
+    }
+    return currencies;
+}
+
 /*
-function toCsv()
+ * Returns a single currency by symbol.
+ */
+function getCurrencyBySymbol(symbol)
 {
     var db = openDatabase();
-    var rs;
-    var contents = "date,shop";
-    var categories = getCategories();
-    for (var i = 0; i < categories.length; ++i) {
-        contents += "," + categories[i];
-    }
-    contents += "\n";
-
+    var currency = null;
     db.readTransaction(function (tx) {
+        var rs = tx.executeSql("SELECT id, symbol, is_primary, to_primary FROM currencies WHERE symbol = ?", symbol);
+        if (rs.rows.length !== 1) {
+            throw { message: qsTr("Currency with the given symbol does not exist!") };
+        }
+        currency = rs.rows.item(0);
     });
+    return currency;
 }
-*/
+
+/*
+ * Returns a single currency by symbol.
+ */
+function getCurrencyById(id)
+{
+    var db = openDatabase();
+    var currency = null;
+    db.readTransaction(function (tx) {
+        var rs = tx.executeSql("SELECT id, symbol, is_primary, to_primary FROM currencies WHERE id = ?", id);
+        if (rs.rows.length !== 1) {
+            throw { message: qsTr("Currency with the given id does not exist!") };
+        }
+        currency = rs.rows.item(0);
+    });
+    return currency;
+}
+
+/*
+ * Adds a currency.
+ */
+function addCurrency(symbol)
+{
+    var db = openDatabase();
+    db.transaction(function (tx) {
+        tx.executeSql("INSERT INTO currencies (symbol, is_primary, to_primary) VALUES (?, ?, ?)",
+                      [symbol, 0, 0]);
+    });
+    currencies = null;
+}

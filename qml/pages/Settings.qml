@@ -20,6 +20,14 @@ import Sailfish.Silica 1.0
 import "../Database.js" as Database
 
 Page {
+
+    onStatusChanged: {
+        if (status === PageStatus.Activating)
+        {
+            primaryCurrency.text = Database.getPrimaryCurrency().symbol;
+        }
+    }
+
     SilicaFlickable {
         x: Theme.paddingLarge
         width: parent.width - 2 * Theme.paddingLarge
@@ -47,6 +55,7 @@ Page {
                     }
 
                     Label {
+                        id: primaryCurrency
                         color: Theme.highlightColor
                         text: Database.getPrimaryCurrency().symbol
                     }
@@ -54,7 +63,7 @@ Page {
 
                 MouseArea {
                     anchors.fill: parent
-                    //onClicked: pageStack.push(Qt.resolvedUrl("CurrencySettings.qml"))
+                    onClicked: pageStack.push(Qt.resolvedUrl("CurrencySettings.qml"))
                 }
             }
         }

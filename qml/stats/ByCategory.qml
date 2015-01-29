@@ -38,7 +38,7 @@ Column {
         db.readTransaction(function (tx) {
             /*
             var rs = tx.executeSql(
-                        "SELECT categories.name AS name, SUM(invoice_items.price) AS price \
+                        "SELECT categories.name AS name, SUM(invoice_items.pri_price) AS price \
                          FROM invoices INNER JOIN invoice_items ON invoices.id = invoice_items.invoice \
                               INNER JOIN categories ON invoice_items.category = categories.id \
                          WHERE invoices.at >= ? AND invoices.at <= ? \
@@ -46,7 +46,7 @@ Column {
                         [from + " 00:00:00", to + " 23:59:59"]);
                         */
             var rs = tx.executeSql(
-                        "SELECT categories.name AS name, SUM(invoice_items.price) AS price \
+                        "SELECT categories.name AS name, SUM(invoice_items.pri_price) AS price \
                          FROM invoice_items INNER JOIN categories ON invoice_items.category = categories.id \
                          GROUP BY categories.id ORDER BY price DESC");
 

@@ -50,7 +50,8 @@ Page {
                     'SELECT invoices.id AS id, invoices.at AS date, ' +
                     'shops.name AS shop, ' +
                     'GROUP_CONCAT(categories.name) AS categories, ' +
-                    'SUM(invoice_items.price) AS price ' +
+                    'SUM(invoice_items.price) AS price, ' +
+                    'invoice_items.currency AS currency ' +
                     'FROM invoices INNER JOIN shops ON invoices.shop = shops.id ' +
                     'INNER JOIN invoice_items ON invoices.id = invoice_items.invoice ' +
                     'INNER JOIN categories ON invoice_items.category = categories.id ' +
@@ -59,7 +60,7 @@ Page {
                     var item = rs.rows.item(i);
                     model.append({
                         id: item.id, date: new Date(1000 * item.date).toLocaleDateString(Qt.locale(), Locale.ShortFormat),
-                        shop: item.shop, categories: item.categories, price: item.price
+                        shop: item.shop, categories: item.categories, price: item.price, currency: item.currency
                     });
                 }
             });
@@ -138,7 +139,7 @@ Page {
                     Label {
                         width: 0.3 * parent.width
                         anchors.verticalCenter: parent.verticalCenter
-                        text: Utility.floatToCurrencyString(price)
+                        text: Utility.floatToCurrencyStringWithCurrency(price, currency)
                         color: bItem.highlighted ? Theme.highlightColor : Theme.primaryColor
                     }
                 }
