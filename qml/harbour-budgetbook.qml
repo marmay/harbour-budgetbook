@@ -22,9 +22,8 @@ import "Database.js" as DB
 
 ApplicationWindow
 {
+    id: app
     Component.onCompleted: { DB.openDatabase() }
     initialPage: Component { FirstPage {} }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 }
-
-

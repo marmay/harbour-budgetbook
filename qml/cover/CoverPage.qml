@@ -24,6 +24,19 @@ CoverBackground {
         anchors.centerIn: parent
         text: qsTr("BudgetBook")
     }
+
+    CoverActionList {
+        enabled: true
+        CoverAction {
+            iconSource: "image://theme/icon-cover-new"
+            onTriggered: {
+                if (!app.applicationActive) {
+                    pageStack.push(Qt.resolvedUrl("../pages/AddBill.qml"))
+                    app.activate();
+                }
+            }
+        }
+    }
 }
 
 
