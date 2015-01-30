@@ -31,6 +31,7 @@ Dialog {
             tx.executeSql("UPDATE currencies SET is_primary = ?", 0);
             tx.executeSql("UPDATE currencies SET is_primary = ? WHERE id = ?", [1, selector.value.id]);
             tx.executeSql("UPDATE currencies SET to_primary = ? WHERE id = ?", [1, selector.value.id]);
+            tx.executeSql("UPDATE invoice_items SET pri_price = price WHERE currency = ?", selector.value.id);
             for (var i = 0; i < exchangeRateValues.length; ++i) {
                 if (exchangeRateValues[i]) {
                     tx.executeSql("UPDATE currencies SET to_primary = ? WHERE id = ?",
