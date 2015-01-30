@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="de_AT">
+<TS version="2.1" language="de_AT">
 <context>
     <name>AddBill</name>
     <message>
@@ -20,22 +20,22 @@
     <name>AddCategory</name>
     <message>
         <source>New Category</source>
-        <translation>Kategorie hinzufügen</translation>
+        <translation type="vanished">Kategorie hinzufügen</translation>
     </message>
     <message>
         <source>Category name</source>
-        <translation>Kategoriename</translation>
+        <translation type="vanished">Kategoriename</translation>
     </message>
 </context>
 <context>
     <name>AddShop</name>
     <message>
         <source>New Shop</source>
-        <translation>Neues Geschäft</translation>
+        <translation type="vanished">Neues Geschäft</translation>
     </message>
     <message>
         <source>Shop name</source>
-        <translation>Geschäftname</translation>
+        <translation type="vanished">Geschäftname</translation>
     </message>
 </context>
 <context>
@@ -83,7 +83,7 @@
     </message>
     <message>
         <source>Add new category ...</source>
-        <translation>Kategorie hinzufügen ...</translation>
+        <translation type="vanished">Kategorie hinzufügen ...</translation>
     </message>
     <message>
         <source>Select Category</source>
@@ -106,7 +106,7 @@
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
-        <translation>Mein Cover</translation>
+        <translation type="vanished">Mein Cover</translation>
     </message>
     <message>
         <source>BudgetBook</source>
@@ -167,7 +167,7 @@
     </message>
     <message>
         <source>A shop with the given name already exists!</source>
-        <translation>Ein Geschäft mit dem angegebenen Namen existiert bereits!</translation>
+        <translation type="vanished">Ein Geschäft mit dem angegebenen Namen existiert bereits!</translation>
     </message>
     <message>
         <source>Shop with the given name does not exist or name is not unique!</source>
@@ -206,35 +206,35 @@
     <name>FirstPage</name>
     <message>
         <source>Show Page 2</source>
-        <translation>Zur Seite 2</translation>
+        <translation type="vanished">Zur Seite 2</translation>
     </message>
     <message>
         <source>UI Template</source>
-        <translation>UI-Vorlage</translation>
+        <translation type="vanished">UI-Vorlage</translation>
     </message>
     <message>
         <source>Hello Sailors</source>
-        <translation>Hallo Matrosen</translation>
+        <translation type="vanished">Hallo Matrosen</translation>
     </message>
     <message>
         <source>New Invoice</source>
-        <translation>Neue Rechung</translation>
+        <translation type="vanished">Neue Rechung</translation>
     </message>
     <message>
         <source>Accounting</source>
-        <translation>Haushaltsbuch</translation>
+        <translation type="vanished">Haushaltsbuch</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>Gesamt:</translation>
+        <translation type="vanished">Gesamt:</translation>
     </message>
     <message>
         <source>Not implemented yet.</source>
-        <translation>Noch nicht implementiert.</translation>
+        <translation type="vanished">Noch nicht implementiert.</translation>
     </message>
     <message>
         <source>Clear database</source>
-        <translation>Datenbank bereinigen</translation>
+        <translation type="vanished">Datenbank bereinigen</translation>
     </message>
     <message>
         <source>BudgetBook</source>
@@ -257,7 +257,7 @@
     <name>NewCategory</name>
     <message>
         <source>New Category</source>
-        <translation>Kategorie hinzufügen</translation>
+        <translation type="vanished">Kategorie hinzufügen</translation>
     </message>
     <message>
         <source>Shop name</source>
@@ -265,64 +265,64 @@
     </message>
     <message>
         <source>Category name</source>
-        <translation>Kategoriename</translation>
+        <translation type="vanished">Kategoriename</translation>
     </message>
 </context>
 <context>
     <name>NewInvoice</name>
     <message>
         <source>New Invoice</source>
-        <translation>Neue Rechnung</translation>
+        <translation type="vanished">Neue Rechnung</translation>
     </message>
     <message>
         <source>Shop</source>
-        <translation>Geschäft</translation>
+        <translation type="vanished">Geschäft</translation>
     </message>
     <message>
         <source>Add new shop ...</source>
-        <translation>Neues Geschäft hinzufügen ...</translation>
+        <translation type="vanished">Neues Geschäft hinzufügen ...</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>Gesamt:</translation>
+        <translation type="vanished">Gesamt:</translation>
     </message>
     <message>
         <source>Item</source>
-        <translation>Kaufobjekt</translation>
+        <translation type="vanished">Kaufobjekt</translation>
     </message>
     <message>
         <source>Price</source>
-        <translation>Preis</translation>
+        <translation type="vanished">Preis</translation>
     </message>
 </context>
 <context>
     <name>NewShop</name>
     <message>
         <source>New Shop</source>
-        <translation>Neues Geschäft</translation>
+        <translation type="vanished">Neues Geschäft</translation>
     </message>
     <message>
         <source>Shop name</source>
-        <translation>Geschäftname</translation>
+        <translation type="vanished">Geschäftname</translation>
     </message>
     <message>
         <source>Shop type</source>
-        <translation>Geschäfttyp</translation>
+        <translation type="vanished">Geschäfttyp</translation>
     </message>
     <message>
         <source>Default category</source>
-        <translation>Standardkategorie</translation>
+        <translation type="vanished">Standardkategorie</translation>
     </message>
 </context>
 <context>
     <name>SecondPage</name>
     <message>
         <source>Nested Page</source>
-        <translation>Unterseite</translation>
+        <translation type="vanished">Unterseite</translation>
     </message>
     <message>
         <source>Item</source>
-        <translation>Element</translation>
+        <translation type="vanished">Element</translation>
     </message>
 </context>
 <context>
@@ -344,7 +344,7 @@
     </message>
     <message>
         <source>Add new shop ...</source>
-        <translation>Neues Geschäft hinzufügen ...</translation>
+        <translation type="vanished">Neues Geschäft hinzufügen ...</translation>
     </message>
     <message>
         <source>Add Shop</source>
@@ -367,7 +367,7 @@
     <name>ShopTypeSelector</name>
     <message>
         <source>Shop type</source>
-        <translation>Geschäfttyp</translation>
+        <translation type="vanished">Geschäfttyp</translation>
     </message>
     <message>
         <source>Shop Type</source>

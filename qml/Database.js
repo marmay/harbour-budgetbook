@@ -162,7 +162,7 @@ function initializeDatabase()
         tx.executeSql("\
             CREATE TABLE IF NOT EXISTS invoice_items ( \
                 id INTEGER PRIMARY KEY AUTOINCREMENT, \
-                bill INTEGER NOT NULL,
+                invoice INTEGER NOT NULL,
                 category INTEGER NOT NULL,
                 remark TEXT,
                 price DOUBLE NOT NULL,
@@ -173,7 +173,7 @@ function initializeDatabase()
         tx.executeSql("\
             CREATE TABLE IF NOT EXISTS invoice_item_tags ( \
                 id INTEGER PRIMARY KEY AUTOINCREMENT, \
-                bill_item INTEGER NOT NULL, \
+                invoice_item INTEGER NOT NULL, \
                 tag INTEGER NOT NULL
             )");
 
