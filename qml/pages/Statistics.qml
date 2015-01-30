@@ -40,6 +40,24 @@ Page {
                 text: qsTr("Browse Bills")
                 onClicked: pageStack.push(Qt.resolvedUrl("BillBrowser.qml"))
             }
+
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("January statistics")
+                onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
+                                          { title: qsTr("January statistics"),
+                                             from: new Date("2015-01-01"),
+                                               to: new Date("2015-02-01") });
+            }
+
+            Button {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Overall statistics")
+                onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
+                                          { title: qsTr("Overall statistics"),
+                                             from: new Date("2015-01-01"),
+                                               to: new Date("2015-04-01") });
+            }
         }
     }
 }

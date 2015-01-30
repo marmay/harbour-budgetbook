@@ -45,7 +45,8 @@ OTHER_FILES += \
     qml/pages/AddTag.qml \
     qml/pages/Settings.qml \
     qml/pages/CurrencySettings.qml \
-    qml/elements/CurrencySelector.qml
+    qml/elements/CurrencySelector.qml \
+    qml/pages/ByCategory.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

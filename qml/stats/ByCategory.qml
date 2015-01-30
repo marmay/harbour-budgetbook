@@ -36,19 +36,13 @@ Column {
         var data = [];
         legendModel.clear();
         db.readTransaction(function (tx) {
-            /*
             var rs = tx.executeSql(
                         "SELECT categories.name AS name, SUM(invoice_items.pri_price) AS price \
                          FROM invoices INNER JOIN invoice_items ON invoices.id = invoice_items.invoice \
                               INNER JOIN categories ON invoice_items.category = categories.id \
                          WHERE invoices.at >= ? AND invoices.at <= ? \
                          GROUP BY categories.id ORDER BY price DESC",
-                        [from + " 00:00:00", to + " 23:59:59"]);
-                        */
-            var rs = tx.executeSql(
-                        "SELECT categories.name AS name, SUM(invoice_items.pri_price) AS price \
-                         FROM invoice_items INNER JOIN categories ON invoice_items.category = categories.id \
-                         GROUP BY categories.id ORDER BY price DESC");
+                        [from.getTime() / 1000, to.getTime() / 1000]);
 
             for (var i = 0; i < rs.rows.length; ++i) {
                 data.push( { label: rs.rows.item(i).name, value: rs.rows.item(i).price,
@@ -60,7 +54,20 @@ Column {
         chart.chart = null;
         chart.requestPaint();
 
-        totalLabel.total = Database.getTotal();
+        db.readTransaction(function (tx) {
+            var rs = tx.executeSql(
+                        "SELECT SUM(invoice_items.pri_price) AS price " +
+                        "FROM invoices INNER JOIN invoice_items ON invoices.id = invoice_items.invoice " +
+                        "WHERE invoices.at >= ? AND invoices.at <= ?",
+                        [from.getTime() / 1000, to.getTime() / 1000]);
+            if (rs.rows.length === 1 && rs.rows.item(0).price) {
+                totalLabel.total = rs.rows.item(0).price;
+                totalLabel.text = Utility.floatToCurrencyString(totalLabel.total);
+            }
+            else {
+                totalLabel.text = qsTr("Please add more bills!");
+            }
+        });
     }
 
     spacing: Theme.paddingLarge

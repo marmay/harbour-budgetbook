@@ -17,40 +17,17 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import "../Database.js" as Database
 import "../stats"
-import "../elements"
 
 Page {
     id: page
 
-    onStatusChanged: {
-        if (status === PageStatus.Activating)
-        {
-            stat.update();
-        }
-        if (status === PageStatus.Active)
-        {
-            pageStack.pushAttached(Qt.resolvedUrl("Statistics.qml"));
-        }
-    }
+    property alias from : stat.from
+    property alias to: stat.to
+    property alias title: label.text
 
     SilicaFlickable {
         anchors.fill: parent
-
-        PullDownMenu {
-            MenuItem {
-                text: qsTr("Add Bill")
-                onClicked: pageStack.push(Qt.resolvedUrl("AddBill.qml"))
-            }
-        }
-
-        PushUpMenu {
-            MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"));
-            }
-        }
 
         contentHeight: column.height
 
@@ -60,22 +37,18 @@ Page {
             width: page.width
             spacing: Theme.paddingLarge
             PageHeader {
-                title: qsTr("BudgetBook")
+                title: qsTr("Statistics")
             }
 
             Label {
-                text: qsTr("February statistics")
+                id: label
                 font.pixelSize: Theme.fontSizeSmall
             }
 
             ByCategory {
                 id: stat
                 width: column.width
-                from: new Date("2015-02-01")
-                to: new Date("2015-03-01")
             }
         }
     }
 }
-
-
