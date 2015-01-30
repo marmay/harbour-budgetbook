@@ -437,10 +437,7 @@ function addBill(shop, date, items)
 {
     var db = openDatabase();
     db.transaction(function (tx) {
-        var dateStr = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate() + " " +
-                        date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "." +
-                        date.getMilliseconds();
-        var invoiceId = tx.executeSql("INSERT INTO invoices (at, shop) VALUES (?, ?)", [dateStr, shop.id]).insertId;
+        var invoiceId = tx.executeSql("INSERT INTO invoices (at, shop) VALUES (?, ?)", [date.getTime() / 1000, shop.id]).insertId;
         for (var i = 0; i < items.length; ++i) {
             var itemId = tx.executeSql("INSERT INTO invoice_items (invoice, category, price, currency, pri_price) VALUES (?, ?, ?, ?, ?)",
                                        [invoiceId, items[i].category.id, items[i].price, getPrimaryCurrency().id, items[i].price]).insertId;
