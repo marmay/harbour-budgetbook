@@ -65,6 +65,17 @@
     </message>
 </context>
 <context>
+    <name>ByCategory</name>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistiken</translation>
+    </message>
+    <message>
+        <source>Please add more bills!</source>
+        <translation>Bitte mehr Rechnungen hinzufügen!</translation>
+    </message>
+</context>
+<context>
     <name>CategorySelector</name>
     <message>
         <source>Category</source>
@@ -237,6 +248,10 @@
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
+    <message>
+        <source>February statistics</source>
+        <translation>Februar-Statistiken</translation>
+    </message>
 </context>
 <context>
     <name>NewCategory</name>
@@ -384,6 +399,14 @@
     <message>
         <source>Browse Bills</source>
         <translation>Rechnungen durchsehen</translation>
+    </message>
+    <message>
+        <source>January statistics</source>
+        <translation>Jänner-Statistiken</translation>
+    </message>
+    <message>
+        <source>Overall statistics</source>
+        <translation>Gesamtstatistik</translation>
     </message>
 </context>
 <context>

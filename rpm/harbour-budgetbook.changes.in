@@ -10,6 +10,14 @@
 
 * Fri Jan 30 2015 Markus Mayr <markus.mayr@outlook.com> 0.3.0-1
 - Initial version released under an open source license.
+- Added bill browser to view and delete added bills.
+- Added tags that can be attached to individual items of bills.
+- Added custom shop types.
+- Added possibility to change the main currency.
+- Added smart cover action to add bills.
+- Added more statistics: current month, previous month, overall
+- Improved Look&Feel
+- Fixed sorting for lower case names in many places.
 
 * Tue Jan 13 2015 Markus Mayr <markus.mayr@outlook.com> 0.2.1-1
 - Renamed to harbour-budgetbook.

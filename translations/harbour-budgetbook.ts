@@ -43,6 +43,17 @@
     </message>
 </context>
 <context>
+    <name>ByCategory</name>
+    <message>
+        <source>Statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please add more bills!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CategorySelector</name>
     <message>
         <source>Category</source>
@@ -171,6 +182,10 @@
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>February statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -237,6 +252,14 @@
     </message>
     <message>
         <source>Browse Bills</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>January statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Overall statistics</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
