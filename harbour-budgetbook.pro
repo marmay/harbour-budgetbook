@@ -51,7 +51,9 @@ OTHER_FILES += \
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/harbour-budgetbook-de.ts
+TRANSLATIONS += \
+    translations/harbour-budgetbook-de.ts \
+    translations/harbour-budgetbook-zh_CN.ts
 
 HEADERS += \
     src/model/billmodel.h

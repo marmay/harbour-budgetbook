@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Fri Feb 13 2015 Markus Mayr <markus.mayr@outlook.com> 0.3.1-1
+- Added Chinese (China) translations, thanks to Tyler Temp.
+
 * Fri Jan 30 2015 Markus Mayr <markus.mayr@outlook.com> 0.3.0-1
 - Initial version released under an open source license.
 - Added bill browser to view and delete added bills.
