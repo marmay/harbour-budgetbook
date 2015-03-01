@@ -15,8 +15,7 @@ TARGET = harbour-budgetbook
 CONFIG += sailfishapp
 
 SOURCES += \
-    src/harbour-budgetbook.cpp \
-    src/model/billmodel.cpp
+    src/harbour-budgetbook.cpp
 
 OTHER_FILES += \
     qml/cover/CoverPage.qml \
@@ -54,7 +53,3 @@ CONFIG += sailfishapp_i18n
 TRANSLATIONS += \
     translations/harbour-budgetbook-de.ts \
     translations/harbour-budgetbook-zh_CN.ts
-
-HEADERS += \
-    src/model/billmodel.h
-

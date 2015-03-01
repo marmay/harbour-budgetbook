@@ -8,6 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Mar 01 2015 Markus Mayr <markus.mayr@outlook.com> 0.3.2-1
+- Fixed that statistics were only available for January and February 2015
+
 * Fri Feb 13 2015 Markus Mayr <markus.mayr@outlook.com> 0.3.1-1
 - Added Chinese (China) translations, thanks to Tyler Temp.
 

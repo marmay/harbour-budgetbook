@@ -31,3 +31,46 @@ function floatToCurrencyStringWithCurrency(f, cur) {
     var locale = Qt.locale();
     return Number(f).toLocaleCurrencyString(locale, " " + Database.getCurrencyById(cur).symbol);
 }
+
+/*
+ * Returns the date that corresponds to the first day of the given month.
+ * off specifies the offset from the current month, so
+ * firstOfMonth( 0 ) returns the first of the current month,
+ * firstOfMonth( 1 ) the first of the next month,
+ * firstOfMonth( -1 ) the first of the last month and so on.
+ *
+ * Date is returned as Javascript Date object.
+ */
+function firstOfMonth(off) {
+    var tmp = new Date();
+    var year = tmp.getFullYear();
+    var month = tmp.getMonth();
+
+    while( off <= -12 )
+    {
+        year -= 1;
+        off += 12;
+    }
+
+    while( off >= 12 )
+    {
+        year += 1;
+        off -= 12;
+    }
+
+    if( off < 0 && - off > month )
+    {
+        year -= 1;
+        off += 12;
+    }
+
+    if( off > 0 && off + month >= 12 )
+    {
+        year += 1;
+        off -= 12;
+    }
+
+    month += off;
+
+    return new Date(year, month, 1, 0, 0, 0, 0);
+}

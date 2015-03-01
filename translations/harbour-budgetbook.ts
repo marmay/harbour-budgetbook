@@ -183,7 +183,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>February statistics</source>
+        <source>Current month statistics</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -255,11 +255,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>January statistics</source>
+        <source>Overall statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Overall statistics</source>
+        <source>Previous month statistics</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

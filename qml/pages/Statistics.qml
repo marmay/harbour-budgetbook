@@ -18,6 +18,8 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
+import "../Utility.js" as Utility
+
 Page {
     id: page
 
@@ -43,11 +45,11 @@ Page {
 
             Button {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("January statistics")
+                text: qsTr("Previous month statistics")
                 onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
-                                          { title: qsTr("January statistics"),
-                                             from: new Date("2015-01-01"),
-                                               to: new Date("2015-02-01") });
+                                          { title: qsTr("Previous month statistics"),
+                                             from: Utility.firstOfMonth( -1 ),
+                                               to: Utility.firstOfMonth( 0 ) });
             }
 
             Button {
@@ -56,7 +58,7 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
                                           { title: qsTr("Overall statistics"),
                                              from: new Date("2015-01-01"),
-                                               to: new Date("2015-04-01") });
+                                               to: new Date("2099-01-01") });
             }
         }
     }

@@ -184,7 +184,11 @@
     </message>
     <message>
         <source>February statistics</source>
-        <translation>二月统计数据</translation>
+        <translation type="vanished">二月统计数据</translation>
+    </message>
+    <message>
+        <source>Current month statistics</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -256,11 +260,15 @@
     </message>
     <message>
         <source>January statistics</source>
-        <translation>一月统计数据</translation>
+        <translation type="vanished">一月统计数据</translation>
     </message>
     <message>
         <source>Overall statistics</source>
         <translation>所有统计数据</translation>
+    </message>
+    <message>
+        <source>Previous month statistics</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

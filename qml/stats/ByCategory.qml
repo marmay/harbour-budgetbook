@@ -22,8 +22,8 @@ import "../Database.js" as Database
 import "../Utility.js" as Utility
 
 Column {
-    property date from : "2015-01-01"
-    property date to : "2015-01-31"
+    property date from : Utility.firstOfMonth(-1)
+    property date to : Utility.firstOfMonth(0)
 
     onFromChanged: update()
     onToChanged: update()
@@ -40,7 +40,7 @@ Column {
                         "SELECT categories.name AS name, SUM(invoice_items.pri_price) AS price \
                          FROM invoices INNER JOIN invoice_items ON invoices.id = invoice_items.invoice \
                               INNER JOIN categories ON invoice_items.category = categories.id \
-                         WHERE invoices.at >= ? AND invoices.at <= ? \
+                         WHERE invoices.at >= ? AND invoices.at < ? \
                          GROUP BY categories.id ORDER BY price DESC",
                         [from.getTime() / 1000, to.getTime() / 1000]);
 

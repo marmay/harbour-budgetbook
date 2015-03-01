@@ -72,7 +72,7 @@
     </message>
     <message>
         <source>Please add more bills!</source>
-        <translation>Bitte mehr Rechnungen hinzufügen!</translation>
+        <translation>Mehr Rechnungen hinzufügen!</translation>
     </message>
 </context>
 <context>
@@ -250,7 +250,11 @@
     </message>
     <message>
         <source>February statistics</source>
-        <translation>Februar-Statistiken</translation>
+        <translation type="vanished">Februar-Statistiken</translation>
+    </message>
+    <message>
+        <source>Current month statistics</source>
+        <translation>Statistik für aktuelles Monat</translation>
     </message>
 </context>
 <context>
@@ -402,11 +406,15 @@
     </message>
     <message>
         <source>January statistics</source>
-        <translation>Jänner-Statistiken</translation>
+        <translation type="vanished">Jänner-Statistiken</translation>
     </message>
     <message>
         <source>Overall statistics</source>
         <translation>Gesamtstatistik</translation>
+    </message>
+    <message>
+        <source>Previous month statistics</source>
+        <translation>Statistik für vorheriges Monat</translation>
     </message>
 </context>
 <context>

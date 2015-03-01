@@ -18,6 +18,7 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import "../Database.js" as Database
+import "../Utility.js" as Utility
 import "../stats"
 import "../elements"
 
@@ -64,15 +65,15 @@ Page {
             }
 
             Label {
-                text: qsTr("February statistics")
+                text: qsTr("Current month statistics")
                 font.pixelSize: Theme.fontSizeSmall
             }
 
             ByCategory {
                 id: stat
                 width: column.width
-                from: new Date("2015-02-01")
-                to: new Date("2015-03-01")
+                from: Utility.firstOfMonth(0)
+                to: Utility.firstOfMonth(1)
             }
         }
     }
