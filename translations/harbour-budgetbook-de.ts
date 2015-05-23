@@ -406,7 +406,7 @@
     </message>
     <message>
         <source>January statistics</source>
-        <translation type="vanished">Jänner-Statistiken</translation>
+        <translation type="vanished">Statistiken für Januar</translation>
     </message>
     <message>
         <source>Overall statistics</source>
@@ -414,7 +414,7 @@
     </message>
     <message>
         <source>Previous month statistics</source>
-        <translation>Statistik für vorheriges Monat</translation>
+        <translation>Statistiken für den vorherigen Monat</translation>
     </message>
 </context>
 <context>
