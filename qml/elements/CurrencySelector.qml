@@ -24,7 +24,7 @@ Selector {
     buildModel: Database.getCurrencies;
     modelDataToLabel: function (currency) { return currency.symbol; }
 
-    selectHeader: qsTr("Select Currencyy");
+    selectHeader: qsTr("Select Currency");
 
     addText: qsTr("Add Currency");
     addDialog: Component {
