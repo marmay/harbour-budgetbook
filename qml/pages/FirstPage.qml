@@ -57,8 +57,8 @@ Page {
 
         Column {
             id: column
-
-            width: page.width
+            x: Theme.paddingLarge
+            width: page.width - Theme.paddingLarge*2
             spacing: Theme.paddingLarge
             PageHeader {
                 title: qsTr("BudgetBook")
