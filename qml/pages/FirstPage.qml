@@ -30,16 +30,20 @@ Page {
         {
             stat.update();
         }
-        if (status === PageStatus.Active)
-        {
-            pageStack.pushAttached(Qt.resolvedUrl("Statistics.qml"));
-        }
     }
 
     SilicaFlickable {
         anchors.fill: parent
 
         PullDownMenu {
+            MenuItem {
+                text: qsTr("Settings")
+                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"));
+            }
+            MenuItem {
+                text: qsTr("Browse Bills")
+                onClicked: pageStack.push(Qt.resolvedUrl("BillBrowser.qml"))
+            }
             MenuItem {
                 text: qsTr("Add Bill")
                 onClicked: pageStack.push(Qt.resolvedUrl("AddBill.qml"))
@@ -48,8 +52,18 @@ Page {
 
         PushUpMenu {
             MenuItem {
-                text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"));
+                text:qsTr("Previous month statistics")
+                onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
+                                          { title: qsTr("Previous month statistics"),
+                                              from: Utility.firstOfMonth( -1 ),
+                                              to: Utility.firstOfMonth( 0 ) })
+            }
+            MenuItem {
+                text: qsTr("Overall statistics")
+                onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
+                                          { title: qsTr("Overall statistics"),
+                                              from: new Date("2015-01-01"),
+                                              to: new Date("2099-01-01") });
             }
         }
 
