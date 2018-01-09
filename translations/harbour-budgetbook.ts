@@ -90,10 +90,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Select Currencyy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Add Currency</source>
         <translation type="unfinished"></translation>
     </message>
@@ -103,6 +99,10 @@
     </message>
     <message>
         <source>Currency symbol</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Currency</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

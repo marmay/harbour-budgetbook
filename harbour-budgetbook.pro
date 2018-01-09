@@ -52,5 +52,5 @@ OTHER_FILES += \
 CONFIG += sailfishapp_i18n
 TRANSLATIONS += \
     translations/fi_FI.ts \
-    translations/harbour-budgetbook-de.ts \
-    translations/harbour-budgetbook-zh_CN.ts
+    translations/de_AT.ts \
+    translations/zh_CN.ts
