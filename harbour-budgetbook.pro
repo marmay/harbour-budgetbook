@@ -38,7 +38,6 @@ OTHER_FILES += \
     qml/Utility.js \
     qml/pages/AddBill.qml \
     qml/elements/Selector.qml \
-    qml/pages/Statistics.qml \
     qml/pages/BillBrowser.qml \
     qml/elements/TagSelector.qml \
     qml/pages/AddTag.qml \

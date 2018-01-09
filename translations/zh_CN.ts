@@ -103,7 +103,7 @@
     </message>
     <message>
         <source>Select Currency</source>
-        <translation type="unfinished"></translation>
+        <translation>选择货币</translation>
     </message>
 </context>
 <context>
@@ -186,6 +186,18 @@
         <source>Current month statistics</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Overall statistics</source>
+        <translation>所有统计数据</translation>
+    </message>
+    <message>
+        <source>Browse Bills</source>
+        <translation>浏览账单</translation>
+    </message>
+    <message>
+        <source>Previous month statistics</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
@@ -242,25 +254,6 @@
     <message>
         <source>Shop Type name</source>
         <translation>商店类型名称</translation>
-    </message>
-</context>
-<context>
-    <name>Statistics</name>
-    <message>
-        <source>Statistics</source>
-        <translation>统计</translation>
-    </message>
-    <message>
-        <source>Browse Bills</source>
-        <translation>浏览账单</translation>
-    </message>
-    <message>
-        <source>Overall statistics</source>
-        <translation>所有统计数据</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

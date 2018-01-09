@@ -185,8 +185,20 @@
     </message>
     <message>
         <source>Current month statistics</source>
-        <translatorcomment>Shortened to &quot;current month&quot;</translatorcomment>
-        <translation>Tämä kuukausi</translation>
+        <translatorcomment>Shortened to &quot;ongoing month&quot;</translatorcomment>
+        <translation>Kuluva kuukausi</translation>
+    </message>
+    <message>
+        <source>Overall statistics</source>
+        <translation>Yleistilastot</translation>
+    </message>
+    <message>
+        <source>Browse Bills</source>
+        <translation>Selaa kuitteja</translation>
+    </message>
+    <message>
+        <source>Previous month statistics</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -244,26 +256,6 @@
     <message>
         <source>Shop Type name</source>
         <translation>Kaupan tyypin nimi</translation>
-    </message>
-</context>
-<context>
-    <name>Statistics</name>
-    <message>
-        <source>Statistics</source>
-        <translation>Statistiikka</translation>
-    </message>
-    <message>
-        <source>Browse Bills</source>
-        <translation>Selaa kuitteja</translation>
-    </message>
-    <message>
-        <source>Overall statistics</source>
-        <translation>Yleistilastot</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translatorcomment>Shortened to &quot;previous month&quot;</translatorcomment>
-        <translation>Edellinen kuukausi</translation>
     </message>
 </context>
 <context>
