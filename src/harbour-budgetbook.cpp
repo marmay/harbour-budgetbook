@@ -33,6 +33,11 @@
 #endif
 
 #include <sailfishapp.h>
+#include <QGuiApplication>
+#include <QLocale>
+#include <QtCore/QTranslator>
+#include <QQmlApplicationEngine>
+#include <QQuickView>
 
 
 int main(int argc, char *argv[])
@@ -46,6 +51,17 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
-    return SailfishApp::main(argc, argv);
+    QGuiApplication *app = SailfishApp::application(argc, argv);
+    QQuickView *view = SailfishApp::createView();
+
+    QTranslator translator;
+    if(translator.load((QLocale::system().name() != "C")?(QLocale::system().name()):("en_GB"), "/usr/share/harbour-budgetbook/translations/"))
+    {
+        QGuiApplication::installTranslator(&translator);
+    }
+    view->engine()->addImportPath("/usr/share/harbour-budgetbook/qml");
+    view->setSource(SailfishApp::pathTo("qml/harbour-budgetbook.qml"));
+    view->showFullScreen();
+    return app->exec();;
 }
 
