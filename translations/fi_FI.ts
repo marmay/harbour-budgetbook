@@ -185,8 +185,8 @@
     </message>
     <message>
         <source>Current month statistics</source>
-        <translatorcomment>Shortened to &quot;ongoing month&quot;</translatorcomment>
-        <translation>Kuluva kuukausi</translation>
+        <translatorcomment>Shortened to &quot;this month&quot;</translatorcomment>
+        <translation>Tämä kuukausi</translation>
     </message>
     <message>
         <source>Overall statistics</source>
@@ -198,7 +198,7 @@
     </message>
     <message>
         <source>Previous month statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Edellinen kuukausi</translation>
     </message>
 </context>
 <context>
