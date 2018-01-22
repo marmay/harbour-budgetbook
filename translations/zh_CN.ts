@@ -90,10 +90,6 @@
         <translation>货币</translation>
     </message>
     <message>
-        <source>Select Currencyy</source>
-        <translation>选择货币</translation>
-    </message>
-    <message>
         <source>Add Currency</source>
         <translation>添加货币</translation>
     </message>
@@ -104,6 +100,10 @@
     <message>
         <source>Currency symbol</source>
         <translation>货币符号</translation>
+    </message>
+    <message>
+        <source>Select Currency</source>
+        <translation>选择货币</translation>
     </message>
 </context>
 <context>
@@ -183,11 +183,19 @@
         <translation>设置</translation>
     </message>
     <message>
-        <source>February statistics</source>
-        <translation type="vanished">二月统计数据</translation>
+        <source>Current month statistics</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Current month statistics</source>
+        <source>Overall statistics</source>
+        <translation>所有统计数据</translation>
+    </message>
+    <message>
+        <source>Browse Bills</source>
+        <translation>浏览账单</translation>
+    </message>
+    <message>
+        <source>Previous month statistics</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -246,29 +254,6 @@
     <message>
         <source>Shop Type name</source>
         <translation>商店类型名称</translation>
-    </message>
-</context>
-<context>
-    <name>Statistics</name>
-    <message>
-        <source>Statistics</source>
-        <translation>统计</translation>
-    </message>
-    <message>
-        <source>Browse Bills</source>
-        <translation>浏览账单</translation>
-    </message>
-    <message>
-        <source>January statistics</source>
-        <translation type="vanished">一月统计数据</translation>
-    </message>
-    <message>
-        <source>Overall statistics</source>
-        <translation>所有统计数据</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

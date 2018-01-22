@@ -52,6 +52,7 @@ Column {
         });
         chart.chartData = data;
         chart.chart = null;
+        chart.chartAnimated = false;
         chart.requestPaint();
 
         db.readTransaction(function (tx) {

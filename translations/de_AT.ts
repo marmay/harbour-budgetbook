@@ -17,28 +17,6 @@
     </message>
 </context>
 <context>
-    <name>AddCategory</name>
-    <message>
-        <source>New Category</source>
-        <translation type="vanished">Kategorie hinzufügen</translation>
-    </message>
-    <message>
-        <source>Category name</source>
-        <translation type="vanished">Kategoriename</translation>
-    </message>
-</context>
-<context>
-    <name>AddShop</name>
-    <message>
-        <source>New Shop</source>
-        <translation type="vanished">Neues Geschäft</translation>
-    </message>
-    <message>
-        <source>Shop name</source>
-        <translation type="vanished">Geschäftname</translation>
-    </message>
-</context>
-<context>
     <name>AddTag</name>
     <message>
         <source>New Tag</source>
@@ -82,10 +60,6 @@
         <translation>Kategorie</translation>
     </message>
     <message>
-        <source>Add new category ...</source>
-        <translation type="vanished">Kategorie hinzufügen ...</translation>
-    </message>
-    <message>
         <source>Select Category</source>
         <translation>Kategorie auswählen</translation>
     </message>
@@ -105,10 +79,6 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
-        <translation type="vanished">Mein Cover</translation>
-    </message>
-    <message>
         <source>BudgetBook</source>
         <translation>Haushaltsbuch</translation>
     </message>
@@ -118,10 +88,6 @@
     <message>
         <source>Currency</source>
         <translation>Währung</translation>
-    </message>
-    <message>
-        <source>Select Currencyy</source>
-        <translation>Wähle Währung</translation>
     </message>
     <message>
         <source>Add Currency</source>
@@ -134,6 +100,10 @@
     <message>
         <source>Currency symbol</source>
         <translation>Währungssymbol</translation>
+    </message>
+    <message>
+        <source>Select Currency</source>
+        <translation>Wähle Währung</translation>
     </message>
 </context>
 <context>
@@ -164,10 +134,6 @@
     <message>
         <source>Other</source>
         <translation>Sonstige</translation>
-    </message>
-    <message>
-        <source>A shop with the given name already exists!</source>
-        <translation type="vanished">Ein Geschäft mit dem angegebenen Namen existiert bereits!</translation>
     </message>
     <message>
         <source>Shop with the given name does not exist or name is not unique!</source>
@@ -205,38 +171,6 @@
 <context>
     <name>FirstPage</name>
     <message>
-        <source>Show Page 2</source>
-        <translation type="vanished">Zur Seite 2</translation>
-    </message>
-    <message>
-        <source>UI Template</source>
-        <translation type="vanished">UI-Vorlage</translation>
-    </message>
-    <message>
-        <source>Hello Sailors</source>
-        <translation type="vanished">Hallo Matrosen</translation>
-    </message>
-    <message>
-        <source>New Invoice</source>
-        <translation type="vanished">Neue Rechung</translation>
-    </message>
-    <message>
-        <source>Accounting</source>
-        <translation type="vanished">Haushaltsbuch</translation>
-    </message>
-    <message>
-        <source>Total:</source>
-        <translation type="vanished">Gesamt:</translation>
-    </message>
-    <message>
-        <source>Not implemented yet.</source>
-        <translation type="vanished">Noch nicht implementiert.</translation>
-    </message>
-    <message>
-        <source>Clear database</source>
-        <translation type="vanished">Datenbank bereinigen</translation>
-    </message>
-    <message>
         <source>BudgetBook</source>
         <translation>Haushaltsbuch</translation>
     </message>
@@ -249,84 +183,20 @@
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <source>February statistics</source>
-        <translation type="vanished">Februar-Statistiken</translation>
-    </message>
-    <message>
         <source>Current month statistics</source>
         <translation>Statistik für aktuelles Monat</translation>
     </message>
-</context>
-<context>
-    <name>NewCategory</name>
     <message>
-        <source>New Category</source>
-        <translation type="vanished">Kategorie hinzufügen</translation>
+        <source>Overall statistics</source>
+        <translation>Gesamtstatistik</translation>
     </message>
     <message>
-        <source>Shop name</source>
-        <translation type="obsolete">Geschäftname</translation>
+        <source>Browse Bills</source>
+        <translation>Rechungen durchsehen</translation>
     </message>
     <message>
-        <source>Category name</source>
-        <translation type="vanished">Kategoriename</translation>
-    </message>
-</context>
-<context>
-    <name>NewInvoice</name>
-    <message>
-        <source>New Invoice</source>
-        <translation type="vanished">Neue Rechnung</translation>
-    </message>
-    <message>
-        <source>Shop</source>
-        <translation type="vanished">Geschäft</translation>
-    </message>
-    <message>
-        <source>Add new shop ...</source>
-        <translation type="vanished">Neues Geschäft hinzufügen ...</translation>
-    </message>
-    <message>
-        <source>Total:</source>
-        <translation type="vanished">Gesamt:</translation>
-    </message>
-    <message>
-        <source>Item</source>
-        <translation type="vanished">Kaufobjekt</translation>
-    </message>
-    <message>
-        <source>Price</source>
-        <translation type="vanished">Preis</translation>
-    </message>
-</context>
-<context>
-    <name>NewShop</name>
-    <message>
-        <source>New Shop</source>
-        <translation type="vanished">Neues Geschäft</translation>
-    </message>
-    <message>
-        <source>Shop name</source>
-        <translation type="vanished">Geschäftname</translation>
-    </message>
-    <message>
-        <source>Shop type</source>
-        <translation type="vanished">Geschäfttyp</translation>
-    </message>
-    <message>
-        <source>Default category</source>
-        <translation type="vanished">Standardkategorie</translation>
-    </message>
-</context>
-<context>
-    <name>SecondPage</name>
-    <message>
-        <source>Nested Page</source>
-        <translation type="vanished">Unterseite</translation>
-    </message>
-    <message>
-        <source>Item</source>
-        <translation type="vanished">Element</translation>
+        <source>Previous month statistics</source>
+        <translation>Statistik für vorheriges Monat</translation>
     </message>
 </context>
 <context>
@@ -345,10 +215,6 @@
     <message>
         <source>Shop</source>
         <translation>Geschäft</translation>
-    </message>
-    <message>
-        <source>Add new shop ...</source>
-        <translation type="vanished">Neues Geschäft hinzufügen ...</translation>
     </message>
     <message>
         <source>Add Shop</source>
@@ -370,10 +236,6 @@
 <context>
     <name>ShopTypeSelector</name>
     <message>
-        <source>Shop type</source>
-        <translation type="vanished">Geschäfttyp</translation>
-    </message>
-    <message>
         <source>Shop Type</source>
         <translation>Geschäftstyp</translation>
     </message>
@@ -392,29 +254,6 @@
     <message>
         <source>Shop Type name</source>
         <translation>Geschäftstyp</translation>
-    </message>
-</context>
-<context>
-    <name>Statistics</name>
-    <message>
-        <source>Statistics</source>
-        <translation>Statistiken</translation>
-    </message>
-    <message>
-        <source>Browse Bills</source>
-        <translation>Rechnungen durchsehen</translation>
-    </message>
-    <message>
-        <source>January statistics</source>
-        <translation type="vanished">Jänner-Statistiken</translation>
-    </message>
-    <message>
-        <source>Overall statistics</source>
-        <translation>Gesamtstatistik</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Statistik für vorheriges Monat</translation>
     </message>
 </context>
 <context>

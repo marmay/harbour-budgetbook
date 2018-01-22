@@ -38,7 +38,6 @@ OTHER_FILES += \
     qml/Utility.js \
     qml/pages/AddBill.qml \
     qml/elements/Selector.qml \
-    qml/pages/Statistics.qml \
     qml/pages/BillBrowser.qml \
     qml/elements/TagSelector.qml \
     qml/pages/AddTag.qml \
@@ -51,5 +50,6 @@ OTHER_FILES += \
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 TRANSLATIONS += \
-    translations/harbour-budgetbook-de.ts \
-    translations/harbour-budgetbook-zh_CN.ts
+    translations/fi_FI.ts \
+    translations/de_AT.ts \
+    translations/zh_CN.ts

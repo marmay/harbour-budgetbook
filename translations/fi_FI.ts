@@ -1,266 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="fi_FI">
 <context>
     <name>AddBill</name>
     <message>
         <source>New Bill</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi kuitti</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteensä:</translation>
     </message>
     <message>
         <source>Price</source>
-        <translation type="unfinished"></translation>
+        <translation>Hinta</translation>
     </message>
 </context>
 <context>
     <name>AddTag</name>
     <message>
         <source>New Tag</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi avainsana</translation>
     </message>
     <message>
         <source>Tag name</source>
-        <translation type="unfinished"></translation>
+        <translation>Avainsanan nimi</translation>
     </message>
 </context>
 <context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
-        <translation type="unfinished"></translation>
+        <translation>Selaa kuitteja</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Deleting</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistetaan</translation>
     </message>
 </context>
 <context>
     <name>ByCategory</name>
     <message>
         <source>Statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Statistiikka</translation>
     </message>
     <message>
         <source>Please add more bills!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ole hyvä ja lisää kuitteja!</translation>
     </message>
 </context>
 <context>
     <name>CategorySelector</name>
     <message>
         <source>Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategoria</translation>
     </message>
     <message>
         <source>Select Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kategoria</translation>
     </message>
     <message>
         <source>Add Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää kategoria</translation>
     </message>
     <message>
         <source>New Category</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi kategoria</translation>
     </message>
     <message>
         <source>Category name</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorian nimi</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>BudgetBook</source>
-        <translation type="unfinished"></translation>
+        <translation>BudgetBook</translation>
     </message>
 </context>
 <context>
     <name>CurrencySelector</name>
     <message>
         <source>Currency</source>
-        <translation type="unfinished"></translation>
+        <translation>Valuutta</translation>
     </message>
     <message>
         <source>Add Currency</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää valuutta</translation>
     </message>
     <message>
         <source>New Currency</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi valuutta</translation>
     </message>
     <message>
         <source>Currency symbol</source>
-        <translation type="unfinished"></translation>
+        <translation>Valuutan symboli</translation>
     </message>
     <message>
         <source>Select Currency</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse valuutta</translation>
     </message>
 </context>
 <context>
     <name>CurrencySettings</name>
     <message>
         <source>Currency Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Valuutta-asetukset</translation>
     </message>
     <message>
         <source>Exchange rates</source>
-        <translation type="unfinished"></translation>
+        <translation>Valuuttakurssit</translation>
     </message>
     <message>
         <source>to</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>This does not &quot;bend&quot; into Finnish grammar, but this notation works...</translatorcomment>
+        <translation>-</translation>
     </message>
     <message>
         <source>Exchange rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurssi</translation>
     </message>
 </context>
 <context>
     <name>Database</name>
     <message>
         <source>Other</source>
-        <translation type="unfinished"></translation>
+        <translation>Muu</translation>
     </message>
     <message>
         <source>Shop with the given name does not exist or name is not unique!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kauppaa ei löydy tai kaupan nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>An item with the given name already exists!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohteen nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>Super Market</source>
-        <translation type="unfinished"></translation>
+        <translation>Supermarket</translation>
     </message>
     <message>
         <source>Category with the given name does not exist or category name is not unique!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kategorian nimeä ei löydy tai annettu nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>Shop type with the given name does not exist or shop type name is not unique!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kauppaa ei löydy tai kaupan nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>A tag with the given name already exists!</source>
-        <translation type="unfinished"></translation>
+        <translation>Avainsana on jo olemassa!</translation>
     </message>
     <message>
         <source>Tag with the given name does not exist or tag name is not unique!</source>
-        <translation type="unfinished"></translation>
+        <translation>Avainsanaa ei ole tai sen nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>Currency with the given symbol does not exist!</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbolia vastaavaa valuuttaa ei löydy!</translation>
     </message>
     <message>
         <source>Currency with the given id does not exist!</source>
-        <translation type="unfinished"></translation>
+        <translation>ID:tä vastaavaa valuuttaa ei löydy!</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>BudgetBook</source>
-        <translation type="unfinished"></translation>
+        <translation>BudgetBook</translation>
     </message>
     <message>
         <source>Add Bill</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää kuitti</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <source>Current month statistics</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Shortened to &quot;this month&quot;</translatorcomment>
+        <translation>Tämä kuukausi</translation>
     </message>
     <message>
         <source>Overall statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Yleistilastot</translation>
     </message>
     <message>
         <source>Browse Bills</source>
-        <translation type="unfinished"></translation>
+        <translation>Selaa kuitteja</translation>
     </message>
     <message>
         <source>Previous month statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Edellinen kuukausi</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <source>Primary currency</source>
-        <translation type="unfinished"></translation>
+        <translation>Ensisijainen valuutta</translation>
     </message>
 </context>
 <context>
     <name>ShopSelector</name>
     <message>
         <source>Add Shop</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää kauppa</translation>
     </message>
     <message>
         <source>Shop</source>
-        <translation type="unfinished"></translation>
+        <translation>Kauppa</translation>
     </message>
     <message>
         <source>Select Shop</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kauppa</translation>
     </message>
     <message>
         <source>New Shop</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi kauppa</translation>
     </message>
     <message>
         <source>Shop name</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaupan nimi</translation>
     </message>
 </context>
 <context>
     <name>ShopTypeSelector</name>
     <message>
         <source>Shop Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaupan tyyppi</translation>
     </message>
     <message>
         <source>Select Shop Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kaupan tyyppi</translation>
     </message>
     <message>
         <source>Add Shop Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää kaupan tyyppi</translation>
     </message>
     <message>
         <source>New Shop Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Uusi kaupan tyyppi</translation>
     </message>
     <message>
         <source>Shop Type name</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaupan tyypin nimi</translation>
     </message>
 </context>
 <context>
     <name>TagSelector</name>
     <message>
         <source>Add tag ...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää avainsana...</translation>
     </message>
 </context>
 </TS>

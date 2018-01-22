@@ -29,12 +29,12 @@ Page {
     SilicaFlickable {
         anchors.fill: parent
 
-        contentHeight: column.height
+        contentHeight: column.height + Theme.paddingLarge*2
 
         Column {
             id: column
-
-            width: page.width
+            x: Theme.paddingLarge
+            width: page.width - Theme.paddingLarge*2
             spacing: Theme.paddingLarge
             PageHeader {
                 title: qsTr("Statistics")
