@@ -103,7 +103,7 @@
     </message>
     <message>
         <source>Select Currency</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj valuta</translation>
     </message>
 </context>
 <context>
@@ -184,11 +184,11 @@
     </message>
     <message>
         <source>Current month statistics</source>
-        <translation>Aktuell månadsstatistik</translation>
+        <translation>Aktuell månads statistik</translation>
     </message>
     <message>
         <source>Overall statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Övergripande statistik</translation>
     </message>
     <message>
         <source>Browse Bills</source>
@@ -196,7 +196,7 @@
     </message>
     <message>
         <source>Previous month statistics</source>
-        <translation type="unfinished"></translation>
+        <translation>Föregående månads statistik</translation>
     </message>
 </context>
 <context>
