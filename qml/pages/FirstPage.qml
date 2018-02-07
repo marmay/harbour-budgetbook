@@ -33,7 +33,6 @@ Page {
     }
 
     onVisibleChanged: {
-        console.debug("Visible:",visible)
         if(visible == true)
             stat.update()
     }
