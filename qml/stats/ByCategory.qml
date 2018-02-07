@@ -87,8 +87,11 @@ Column {
         Label {
             id: totalLabel
             property double total : 0.
+            width: 0.8 * parent.width
             anchors.centerIn: parent
             text: Utility.floatToCurrencyString(total)
+            wrapMode: Label.WordWrap
+            horizontalAlignment: Label.AlignHCenter
             font.pixelSize: Theme.fontSizeLarge
         }
     }
