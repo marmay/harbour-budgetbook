@@ -32,6 +32,11 @@ Page {
         }
     }
 
+    onVisibleChanged: {
+        if(visible == true)
+            stat.update()
+    }
+
     SilicaFlickable {
         anchors.fill: parent
 
