@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<TS version="2.1" language="sv_SE">
 <context>
     <name>AddBill</name>
     <message>
         <source>New Bill</source>
-        <translation>新账单</translation>
+        <translation>Ny utgift</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>总共：</translation>
+        <translation>Totalt:</translation>
     </message>
     <message>
         <source>Price</source>
-        <translation>价格</translation>
+        <translation>Pris</translation>
     </message>
 </context>
 <context>
     <name>AddTag</name>
     <message>
         <source>New Tag</source>
-        <translation>新标签</translation>
+        <translation>Ny tagg</translation>
     </message>
     <message>
         <source>Tag name</source>
-        <translation>标签名</translation>
+        <translation>Taggnamn</translation>
     </message>
 </context>
 <context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
-        <translation>浏览账单</translation>
+        <translation>Bläddra bland utgifter</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>删除</translation>
+        <translation>Ta bort</translation>
     </message>
     <message>
         <source>Deleting</source>
-        <translation>正在删除</translation>
+        <translation>Tar bort</translation>
     </message>
 </context>
 <context>
     <name>ByCategory</name>
     <message>
         <source>Statistics</source>
-        <translation>统计</translation>
+        <translation>Statistik</translation>
     </message>
     <message>
         <source>Please add more bills!</source>
-        <translation>请添加更多的账单！</translation>
+        <translation>Lägg till utgifter!</translation>
     </message>
 </context>
 <context>
     <name>CategorySelector</name>
     <message>
         <source>Category</source>
-        <translation>类别</translation>
+        <translation>Kategori</translation>
     </message>
     <message>
         <source>Select Category</source>
-        <translation>选择类别</translation>
+        <translation>Välj kategori</translation>
     </message>
     <message>
         <source>Add Category</source>
-        <translation>添加类别</translation>
+        <translation>Lägg till kategori</translation>
     </message>
     <message>
         <source>New Category</source>
-        <translation>新类别</translation>
+        <translation>Ny kategori</translation>
     </message>
     <message>
         <source>Category name</source>
-        <translation>类别名称</translation>
+        <translation>Kategorinamn</translation>
     </message>
 </context>
 <context>
@@ -87,85 +87,85 @@
     <name>CurrencySelector</name>
     <message>
         <source>Currency</source>
-        <translation>货币</translation>
+        <translation>Valuta</translation>
     </message>
     <message>
         <source>Add Currency</source>
-        <translation>添加货币</translation>
+        <translation>Lägg till valuta</translation>
     </message>
     <message>
         <source>New Currency</source>
-        <translation>新货币</translation>
+        <translation>Ny valuta</translation>
     </message>
     <message>
         <source>Currency symbol</source>
-        <translation>货币符号</translation>
+        <translation>Valutasymbol</translation>
     </message>
     <message>
         <source>Select Currency</source>
-        <translation>选择货币</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>CurrencySettings</name>
     <message>
         <source>Currency Settings</source>
-        <translation>货币设置</translation>
+        <translation>Valutainställningar</translation>
     </message>
     <message>
         <source>Exchange rates</source>
-        <translation>汇率</translation>
+        <translation>Växlingskurser</translation>
     </message>
     <message>
         <source>to</source>
-        <translation>到</translation>
+        <translation>till</translation>
     </message>
     <message>
         <source>Exchange rate</source>
-        <translation>汇率</translation>
+        <translation>Valutakurs</translation>
     </message>
 </context>
 <context>
     <name>Database</name>
     <message>
         <source>Other</source>
-        <translation>其它</translation>
+        <translation>Annat</translation>
     </message>
     <message>
         <source>Shop with the given name does not exist or name is not unique!</source>
-        <translation>商店名不存在或重复</translation>
+        <translation>Butik med angivet namn finns inte, eller namnet är inte unikt!</translation>
     </message>
     <message>
         <source>An item with the given name already exists!</source>
-        <translation>物品名已存在</translation>
+        <translation>Ett objekt med angivet namn, finns redan!</translation>
     </message>
     <message>
         <source>Super Market</source>
-        <translation>超市</translation>
+        <translation>Storköp</translation>
     </message>
     <message>
         <source>Category with the given name does not exist or category name is not unique!</source>
-        <translation>类别名不存在或重复</translation>
+        <translation>Kategori med angivet namn finns inte, eller namnet är inte unikt!</translation>
     </message>
     <message>
         <source>Shop type with the given name does not exist or shop type name is not unique!</source>
-        <translation>商店类型不存在或重复</translation>
+        <translation>Butikstyp med angivet namn finns inte, eller butikstypen är inte unik!</translation>
     </message>
     <message>
         <source>A tag with the given name already exists!</source>
-        <translation>标签名已存在</translation>
+        <translation>En tagg med angivet namn, finns redan!</translation>
     </message>
     <message>
         <source>Tag with the given name does not exist or tag name is not unique!</source>
-        <translation>标签名不存在或重复</translation>
+        <translation>Tagg med angivet namn finns inte, eller taggnamnet är inte unikt!</translation>
     </message>
     <message>
         <source>Currency with the given symbol does not exist!</source>
-        <translation>符号对应的货币不存在</translation>
+        <translation>Valuta med angiven symbol, finns inte!</translation>
     </message>
     <message>
         <source>Currency with the given id does not exist!</source>
-        <translation>id对应的货币不存在</translation>
+        <translation>Valuta med angivet ID, finns inte!</translation>
     </message>
 </context>
 <context>
@@ -176,91 +176,91 @@
     </message>
     <message>
         <source>Add Bill</source>
-        <translation>添加账单</translation>
+        <translation>Lägg till utgift</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>设置</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <source>Current month statistics</source>
-        <translation>本月统计数据</translation>
+        <translation>Aktuell månadsstatistik</translation>
     </message>
     <message>
         <source>Overall statistics</source>
-        <translation>所有统计数据</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Browse Bills</source>
-        <translation>浏览账单</translation>
+        <translation>Bläddra bland utgifter</translation>
     </message>
     <message>
         <source>Previous month statistics</source>
-        <translation>上月统计数据</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Settings</source>
-        <translation>设置</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <source>Primary currency</source>
-        <translation>主要货币</translation>
+        <translation>Primär valuta</translation>
     </message>
 </context>
 <context>
     <name>ShopSelector</name>
     <message>
         <source>Add Shop</source>
-        <translation>添加商店</translation>
+        <translation>Lägg till butik</translation>
     </message>
     <message>
         <source>Shop</source>
-        <translation>商店</translation>
+        <translation>Butik</translation>
     </message>
     <message>
         <source>Select Shop</source>
-        <translation>选择商店</translation>
+        <translation>Välj butik</translation>
     </message>
     <message>
         <source>New Shop</source>
-        <translation>新商店</translation>
+        <translation>Ny butik</translation>
     </message>
     <message>
         <source>Shop name</source>
-        <translation>商店名</translation>
+        <translation>Butiksnamn</translation>
     </message>
 </context>
 <context>
     <name>ShopTypeSelector</name>
     <message>
         <source>Shop Type</source>
-        <translation>商店类型</translation>
+        <translation>Butikstyp</translation>
     </message>
     <message>
         <source>Select Shop Type</source>
-        <translation>选择商店类型</translation>
+        <translation>Välj butikstyp</translation>
     </message>
     <message>
         <source>Add Shop Type</source>
-        <translation>添加商店类型</translation>
+        <translation>Lägg till butikstyp</translation>
     </message>
     <message>
         <source>New Shop Type</source>
-        <translation>新商店类型</translation>
+        <translation>Ny butikstyp</translation>
     </message>
     <message>
         <source>Shop Type name</source>
-        <translation>商店类型名称</translation>
+        <translation>Butiktypsnamn</translation>
     </message>
 </context>
 <context>
     <name>TagSelector</name>
     <message>
         <source>Add tag ...</source>
-        <translation>添加标签…</translation>
+        <translation>Lägg till tagg...</translation>
     </message>
 </context>
 </TS>

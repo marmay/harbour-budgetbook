@@ -1,273 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sv">
+<TS version="2.1" language="de">
 <context>
     <name>AddBill</name>
     <message>
         <source>New Bill</source>
-        <translation>Ny utgift</translation>
+        <translation>Neue Rechnung</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>Totalt:</translation>
+        <translation>Gesamt:</translation>
     </message>
     <message>
         <source>Price</source>
-        <translation>Pris</translation>
+        <translation>Preis</translation>
     </message>
 </context>
 <context>
     <name>AddTag</name>
     <message>
         <source>New Tag</source>
-        <translation>Ny tagg</translation>
+        <translation>Neuer Tag</translation>
     </message>
     <message>
         <source>Tag name</source>
-        <translation>Taggnamn</translation>
+        <translation>Tagname</translation>
     </message>
 </context>
 <context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
-        <translation>Bläddra bland utgifter</translation>
+        <translation>Rechungen durchsehen</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Ta bort</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Deleting</source>
-        <translation>Tar bort</translation>
+        <translation>Lösche</translation>
     </message>
 </context>
 <context>
     <name>ByCategory</name>
     <message>
         <source>Statistics</source>
-        <translation>Statistik</translation>
+        <translation>Statistiken</translation>
     </message>
     <message>
         <source>Please add more bills!</source>
-        <translation>Lägg till utgifter!</translation>
+        <translation>Bitte mehr Rechnungen hinzufügen!</translation>
     </message>
 </context>
 <context>
     <name>CategorySelector</name>
     <message>
         <source>Category</source>
-        <translation>Kategori</translation>
+        <translation>Kategorie</translation>
     </message>
     <message>
         <source>Select Category</source>
-        <translation>Välj kategori</translation>
+        <translation>Kategorie auswählen</translation>
     </message>
     <message>
         <source>Add Category</source>
-        <translation>Lägg till kategori</translation>
+        <translation>Kategorie hinzufügen</translation>
     </message>
     <message>
         <source>New Category</source>
-        <translation>Ny kategori</translation>
+        <translation>Neue Kategorie</translation>
     </message>
     <message>
         <source>Category name</source>
-        <translation>Kategorinamn</translation>
+        <translation>Kategoriename</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>BudgetBook</source>
-        <translation>BudgetBook</translation>
+        <translation>Haushaltsbuch</translation>
     </message>
 </context>
 <context>
     <name>CurrencySelector</name>
     <message>
         <source>Currency</source>
-        <translation>Valuta</translation>
-    </message>
-    <message>
-        <source>Select Currencyy</source>
-        <translation>Välj valuta</translation>
+        <translation>Währung</translation>
     </message>
     <message>
         <source>Add Currency</source>
-        <translation>Lägg till valuta</translation>
+        <translation>Währung hinzufügen</translation>
     </message>
     <message>
         <source>New Currency</source>
-        <translation>Ny valuta</translation>
+        <translation>Neue Währung</translation>
     </message>
     <message>
         <source>Currency symbol</source>
-        <translation>Valutasymbol</translation>
+        <translation>Währungssymbol</translation>
+    </message>
+    <message>
+        <source>Select Currency</source>
+        <translation>Wähle Währung</translation>
     </message>
 </context>
 <context>
     <name>CurrencySettings</name>
     <message>
         <source>Currency Settings</source>
-        <translation>Valutainställningar</translation>
+        <translation>Währungseinstellungen</translation>
     </message>
     <message>
         <source>Exchange rates</source>
-        <translation>Växlingskurser</translation>
+        <translation>Wechselkurse</translation>
     </message>
     <message>
         <source>to</source>
-        <translation>till</translation>
+        <translation>auf</translation>
     </message>
     <message>
         <source>Exchange rate</source>
-        <translation>Valutakurs</translation>
+        <translation>Wechselkurs</translation>
     </message>
 </context>
 <context>
     <name>Database</name>
     <message>
         <source>Other</source>
-        <translation>Annat</translation>
+        <translation>Sonstige</translation>
     </message>
     <message>
         <source>Shop with the given name does not exist or name is not unique!</source>
-        <translation>Butik med angivet namn finns inte, eller namnet är inte unikt!</translation>
+        <translation>Ein Geschäft mit dem angegebenen Namen existiert nicht oder der Name ist nicht eindeutig!</translation>
     </message>
     <message>
         <source>An item with the given name already exists!</source>
-        <translation>Ett objekt med angivet namn, finns redan!</translation>
+        <translation>Ein Kaufgegenstand mit dem angegebenen Namen existiert bereits!</translation>
     </message>
     <message>
         <source>Super Market</source>
-        <translation>Storköp</translation>
+        <translation>Supermarkt</translation>
     </message>
     <message>
         <source>Category with the given name does not exist or category name is not unique!</source>
-        <translation>Kategori med angivet namn finns inte, eller namnet är inte unikt!</translation>
+        <translation>Eine Kategorie mit dem angegebenen Namen existiert nicht oder der Kategoriename ist nicht eindeutig!</translation>
     </message>
     <message>
         <source>Shop type with the given name does not exist or shop type name is not unique!</source>
-        <translation>Butikstyp med angivet namn finns inte, eller butikstypen är inte unik!</translation>
+        <translation>Ein Geschäftstyp mit dem angegebenen Namen existiert nicht oder der Name ist nicht eindeutig!</translation>
     </message>
     <message>
         <source>A tag with the given name already exists!</source>
-        <translation>En tagg med angivet namn, finns redan!</translation>
+        <translation>Ein Tag mit dem angegebenen Namen existiert bereits!</translation>
     </message>
     <message>
         <source>Tag with the given name does not exist or tag name is not unique!</source>
-        <translation>Tagg med angivet namn finns inte, eller taggnamnet är inte unikt!</translation>
+        <translation>Tag mit dem gegebenen Namen existiert nicht oder Tagname ist nicht eindeutig!</translation>
     </message>
     <message>
         <source>Currency with the given symbol does not exist!</source>
-        <translation>Valuta med angiven symbol, finns inte!</translation>
+        <translation>Währung mit dem gegebenen Symbol existiert nicht!</translation>
     </message>
     <message>
         <source>Currency with the given id does not exist!</source>
-        <translation>Valuta med angivet ID, finns inte!</translation>
+        <translation>Währung mit der gegebenen Id existiert nicht!</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>BudgetBook</source>
-        <translation>BudgetBook</translation>
+        <translation>Haushaltsbuch</translation>
     </message>
     <message>
         <source>Add Bill</source>
-        <translation>Lägg till utgift</translation>
+        <translation>Rechnung hinzufügen</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Inställningar</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>Current month statistics</source>
-        <translation>Aktuell månadsstatistik</translation>
+        <translation>Statistik des aktuellen Monats</translation>
+    </message>
+    <message>
+        <source>Overall statistics</source>
+        <translation>Gesamtstatistik</translation>
+    </message>
+    <message>
+        <source>Browse Bills</source>
+        <translation>Rechungen durchsehen</translation>
+    </message>
+    <message>
+        <source>Previous month statistics</source>
+        <translation>Statistik des vorherigen Monats</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Settings</source>
-        <translation>Inställningar</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>Primary currency</source>
-        <translation>Primär valuta</translation>
+        <translation>Hauptwährung</translation>
     </message>
 </context>
 <context>
     <name>ShopSelector</name>
     <message>
         <source>Add Shop</source>
-        <translation>Lägg till butik</translation>
+        <translation>Geschäft hinzufügen</translation>
     </message>
     <message>
         <source>Shop</source>
-        <translation>Butik</translation>
+        <translation>Geschäft</translation>
     </message>
     <message>
         <source>Select Shop</source>
-        <translation>Välj butik</translation>
+        <translation>Geschäft auswählen</translation>
     </message>
     <message>
         <source>New Shop</source>
-        <translation>Ny butik</translation>
+        <translation>Neues Geschäft</translation>
     </message>
     <message>
         <source>Shop name</source>
-        <translation>Butiksnamn</translation>
+        <translation>Geschäftname</translation>
     </message>
 </context>
 <context>
     <name>ShopTypeSelector</name>
     <message>
         <source>Shop Type</source>
-        <translation>Butikstyp</translation>
+        <translation>Geschäftstyp</translation>
     </message>
     <message>
         <source>Select Shop Type</source>
-        <translation>Välj butikstyp</translation>
+        <translation>Wähle Geschäfttyp</translation>
     </message>
     <message>
         <source>Add Shop Type</source>
-        <translation>Lägg till butikstyp</translation>
+        <translation>Geschäftstyp hinzufügen</translation>
     </message>
     <message>
         <source>New Shop Type</source>
-        <translation>Ny butikstyp</translation>
+        <translation>Neuer Geschäftstyp</translation>
     </message>
     <message>
         <source>Shop Type name</source>
-        <translation>Butiktypsnamn</translation>
-    </message>
-</context>
-<context>
-    <name>Statistics</name>
-    <message>
-        <source>Statistics</source>
-        <translation>Statistik</translation>
-    </message>
-    <message>
-        <source>Browse Bills</source>
-        <translation>Bläddra bland utgifter</translation>
-    </message>
-    <message>
-        <source>Overall statistics</source>
-        <translation>Sammantagen statistik</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Föregående månadsstatistik</translation>
+        <translation>Geschäftstyp</translation>
     </message>
 </context>
 <context>
     <name>TagSelector</name>
     <message>
         <source>Add tag ...</source>
-        <translation>Lägg till tagg...</translation>
+        <translation>Tag hinzufügen ...</translation>
     </message>
 </context>
 </TS>

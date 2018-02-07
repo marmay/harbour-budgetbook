@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<TS version="2.1" language="fi_FI">
 <context>
     <name>AddBill</name>
     <message>
         <source>New Bill</source>
-        <translation>新账单</translation>
+        <translation>Uusi kuitti</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>总共：</translation>
+        <translation>Yhteensä:</translation>
     </message>
     <message>
         <source>Price</source>
-        <translation>价格</translation>
+        <translation>Hinta</translation>
     </message>
 </context>
 <context>
     <name>AddTag</name>
     <message>
         <source>New Tag</source>
-        <translation>新标签</translation>
+        <translation>Uusi avainsana</translation>
     </message>
     <message>
         <source>Tag name</source>
-        <translation>标签名</translation>
+        <translation>Avainsanan nimi</translation>
     </message>
 </context>
 <context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
-        <translation>浏览账单</translation>
+        <translation>Selaa kuitteja</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>删除</translation>
+        <translation>Poista</translation>
     </message>
     <message>
         <source>Deleting</source>
-        <translation>正在删除</translation>
+        <translation>Poistetaan</translation>
     </message>
 </context>
 <context>
     <name>ByCategory</name>
     <message>
         <source>Statistics</source>
-        <translation>统计</translation>
+        <translation>Statistiikka</translation>
     </message>
     <message>
         <source>Please add more bills!</source>
-        <translation>请添加更多的账单！</translation>
+        <translation>Ole hyvä ja lisää kuitteja!</translation>
     </message>
 </context>
 <context>
     <name>CategorySelector</name>
     <message>
         <source>Category</source>
-        <translation>类别</translation>
+        <translation>Kategoria</translation>
     </message>
     <message>
         <source>Select Category</source>
-        <translation>选择类别</translation>
+        <translation>Valitse kategoria</translation>
     </message>
     <message>
         <source>Add Category</source>
-        <translation>添加类别</translation>
+        <translation>Lisää kategoria</translation>
     </message>
     <message>
         <source>New Category</source>
-        <translation>新类别</translation>
+        <translation>Uusi kategoria</translation>
     </message>
     <message>
         <source>Category name</source>
-        <translation>类别名称</translation>
+        <translation>Kategorian nimi</translation>
     </message>
 </context>
 <context>
@@ -87,85 +87,85 @@
     <name>CurrencySelector</name>
     <message>
         <source>Currency</source>
-        <translation>货币</translation>
+        <translation>Valuutta</translation>
     </message>
     <message>
         <source>Add Currency</source>
-        <translation>添加货币</translation>
+        <translation>Lisää valuutta</translation>
     </message>
     <message>
         <source>New Currency</source>
-        <translation>新货币</translation>
+        <translation>Uusi valuutta</translation>
     </message>
     <message>
         <source>Currency symbol</source>
-        <translation>货币符号</translation>
+        <translation>Valuutan symboli</translation>
     </message>
     <message>
         <source>Select Currency</source>
-        <translation>选择货币</translation>
+        <translation>Valitse valuutta</translation>
     </message>
 </context>
 <context>
     <name>CurrencySettings</name>
     <message>
         <source>Currency Settings</source>
-        <translation>货币设置</translation>
+        <translation>Valuutta-asetukset</translation>
     </message>
     <message>
         <source>Exchange rates</source>
-        <translation>汇率</translation>
+        <translation>Valuuttakurssit</translation>
     </message>
     <message>
         <source>to</source>
-        <translation>到</translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>Exchange rate</source>
-        <translation>汇率</translation>
+        <translation>Kurssi</translation>
     </message>
 </context>
 <context>
     <name>Database</name>
     <message>
         <source>Other</source>
-        <translation>其它</translation>
+        <translation>Muu</translation>
     </message>
     <message>
         <source>Shop with the given name does not exist or name is not unique!</source>
-        <translation>商店名不存在或重复</translation>
+        <translation>Kauppaa ei löydy tai kaupan nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>An item with the given name already exists!</source>
-        <translation>物品名已存在</translation>
+        <translation>Kohteen nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>Super Market</source>
-        <translation>超市</translation>
+        <translation>Supermarket</translation>
     </message>
     <message>
         <source>Category with the given name does not exist or category name is not unique!</source>
-        <translation>类别名不存在或重复</translation>
+        <translation>Kategorian nimeä ei löydy tai annettu nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>Shop type with the given name does not exist or shop type name is not unique!</source>
-        <translation>商店类型不存在或重复</translation>
+        <translation>Kauppaa ei löydy tai kaupan nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>A tag with the given name already exists!</source>
-        <translation>标签名已存在</translation>
+        <translation>Avainsana on jo olemassa!</translation>
     </message>
     <message>
         <source>Tag with the given name does not exist or tag name is not unique!</source>
-        <translation>标签名不存在或重复</translation>
+        <translation>Avainsanaa ei ole tai sen nimi on jo käytössä!</translation>
     </message>
     <message>
         <source>Currency with the given symbol does not exist!</source>
-        <translation>符号对应的货币不存在</translation>
+        <translation>Symbolia vastaavaa valuuttaa ei löydy!</translation>
     </message>
     <message>
         <source>Currency with the given id does not exist!</source>
-        <translation>id对应的货币不存在</translation>
+        <translation>ID:tä vastaavaa valuuttaa ei löydy!</translation>
     </message>
 </context>
 <context>
@@ -176,91 +176,91 @@
     </message>
     <message>
         <source>Add Bill</source>
-        <translation>添加账单</translation>
+        <translation>Lisää kuitti</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>设置</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <source>Current month statistics</source>
-        <translation>本月统计数据</translation>
+        <translation>Tämä kuukausi</translation>
     </message>
     <message>
         <source>Overall statistics</source>
-        <translation>所有统计数据</translation>
+        <translation>Yleistilastot</translation>
     </message>
     <message>
         <source>Browse Bills</source>
-        <translation>浏览账单</translation>
+        <translation>Selaa kuitteja</translation>
     </message>
     <message>
         <source>Previous month statistics</source>
-        <translation>上月统计数据</translation>
+        <translation>Edellinen kuukausi</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Settings</source>
-        <translation>设置</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <source>Primary currency</source>
-        <translation>主要货币</translation>
+        <translation>Ensisijainen valuutta</translation>
     </message>
 </context>
 <context>
     <name>ShopSelector</name>
     <message>
         <source>Add Shop</source>
-        <translation>添加商店</translation>
+        <translation>Lisää kauppa</translation>
     </message>
     <message>
         <source>Shop</source>
-        <translation>商店</translation>
+        <translation>Kauppa</translation>
     </message>
     <message>
         <source>Select Shop</source>
-        <translation>选择商店</translation>
+        <translation>Valitse kauppa</translation>
     </message>
     <message>
         <source>New Shop</source>
-        <translation>新商店</translation>
+        <translation>Uusi kauppa</translation>
     </message>
     <message>
         <source>Shop name</source>
-        <translation>商店名</translation>
+        <translation>Kaupan nimi</translation>
     </message>
 </context>
 <context>
     <name>ShopTypeSelector</name>
     <message>
         <source>Shop Type</source>
-        <translation>商店类型</translation>
+        <translation>Kaupan tyyppi</translation>
     </message>
     <message>
         <source>Select Shop Type</source>
-        <translation>选择商店类型</translation>
+        <translation>Valitse kaupan tyyppi</translation>
     </message>
     <message>
         <source>Add Shop Type</source>
-        <translation>添加商店类型</translation>
+        <translation>Lisää kaupan tyyppi</translation>
     </message>
     <message>
         <source>New Shop Type</source>
-        <translation>新商店类型</translation>
+        <translation>Uusi kaupan tyyppi</translation>
     </message>
     <message>
         <source>Shop Type name</source>
-        <translation>商店类型名称</translation>
+        <translation>Kaupan tyypin nimi</translation>
     </message>
 </context>
 <context>
     <name>TagSelector</name>
     <message>
         <source>Add tag ...</source>
-        <translation>添加标签…</translation>
+        <translation>Lisää avainsana...</translation>
     </message>
 </context>
 </TS>
