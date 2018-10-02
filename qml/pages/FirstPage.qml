@@ -33,7 +33,7 @@ Page {
     }
 
     onVisibleChanged: {
-        if(visible == true)
+        if(visible === true)
             stat.update()
     }
 
