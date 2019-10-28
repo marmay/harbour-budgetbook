@@ -1,266 +1,266 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<TS version="2.1" language="de">
 <context>
     <name>AddBill</name>
     <message>
         <source>New Bill</source>
-        <translation>新账单</translation>
+        <translation>Neue Rechnung</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>总共：</translation>
+        <translation>Gesamt:</translation>
     </message>
     <message>
         <source>Price</source>
-        <translation>价格</translation>
+        <translation>Preis</translation>
     </message>
 </context>
 <context>
     <name>AddTag</name>
     <message>
         <source>New Tag</source>
-        <translation>新标签</translation>
+        <translation>Neuer Tag</translation>
     </message>
     <message>
         <source>Tag name</source>
-        <translation>标签名</translation>
+        <translation>Tagname</translation>
     </message>
 </context>
 <context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
-        <translation>浏览账单</translation>
+        <translation>Rechungen durchsehen</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>删除</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Deleting</source>
-        <translation>正在删除</translation>
+        <translation>Lösche</translation>
     </message>
 </context>
 <context>
     <name>ByCategory</name>
     <message>
         <source>Statistics</source>
-        <translation>统计</translation>
+        <translation>Statistiken</translation>
     </message>
     <message>
         <source>Please add more bills!</source>
-        <translation>请添加更多的账单！</translation>
+        <translation>Bitte mehr Rechnungen hinzufügen!</translation>
     </message>
 </context>
 <context>
     <name>CategorySelector</name>
     <message>
         <source>Category</source>
-        <translation>类别</translation>
+        <translation>Kategorie</translation>
     </message>
     <message>
         <source>Select Category</source>
-        <translation>选择类别</translation>
+        <translation>Kategorie auswählen</translation>
     </message>
     <message>
         <source>Add Category</source>
-        <translation>添加类别</translation>
+        <translation>Kategorie hinzufügen</translation>
     </message>
     <message>
         <source>New Category</source>
-        <translation>新类别</translation>
+        <translation>Neue Kategorie</translation>
     </message>
     <message>
         <source>Category name</source>
-        <translation>类别名称</translation>
+        <translation>Kategoriename</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>BudgetBook</source>
-        <translation>BudgetBook</translation>
+        <translation>Haushaltsbuch</translation>
     </message>
 </context>
 <context>
     <name>CurrencySelector</name>
     <message>
         <source>Currency</source>
-        <translation>货币</translation>
+        <translation>Währung</translation>
     </message>
     <message>
         <source>Add Currency</source>
-        <translation>添加货币</translation>
+        <translation>Währung hinzufügen</translation>
     </message>
     <message>
         <source>New Currency</source>
-        <translation>新货币</translation>
+        <translation>Neue Währung</translation>
     </message>
     <message>
         <source>Currency symbol</source>
-        <translation>货币符号</translation>
+        <translation>Währungssymbol</translation>
     </message>
     <message>
         <source>Select Currency</source>
-        <translation>选择货币</translation>
+        <translation>Wähle Währung</translation>
     </message>
 </context>
 <context>
     <name>CurrencySettings</name>
     <message>
         <source>Currency Settings</source>
-        <translation>货币设置</translation>
+        <translation>Währungseinstellungen</translation>
     </message>
     <message>
         <source>Exchange rates</source>
-        <translation>汇率</translation>
+        <translation>Wechselkurse</translation>
     </message>
     <message>
         <source>to</source>
-        <translation>到</translation>
+        <translation>auf</translation>
     </message>
     <message>
         <source>Exchange rate</source>
-        <translation>汇率</translation>
+        <translation>Wechselkurs</translation>
     </message>
 </context>
 <context>
     <name>Database</name>
     <message>
         <source>Other</source>
-        <translation>其它</translation>
+        <translation>Sonstige</translation>
     </message>
     <message>
         <source>Shop with the given name does not exist or name is not unique!</source>
-        <translation>商店名不存在或重复</translation>
+        <translation>Ein Geschäft mit dem angegebenen Namen existiert nicht oder der Name ist nicht eindeutig!</translation>
     </message>
     <message>
         <source>An item with the given name already exists!</source>
-        <translation>物品名已存在</translation>
+        <translation>Ein Kaufgegenstand mit dem angegebenen Namen existiert bereits!</translation>
     </message>
     <message>
         <source>Super Market</source>
-        <translation>超市</translation>
+        <translation>Supermarkt</translation>
     </message>
     <message>
         <source>Category with the given name does not exist or category name is not unique!</source>
-        <translation>类别名不存在或重复</translation>
+        <translation>Eine Kategorie mit dem angegebenen Namen existiert nicht oder der Kategoriename ist nicht eindeutig!</translation>
     </message>
     <message>
         <source>Shop type with the given name does not exist or shop type name is not unique!</source>
-        <translation>商店类型不存在或重复</translation>
+        <translation>Ein Geschäftstyp mit dem angegebenen Namen existiert nicht oder der Name ist nicht eindeutig!</translation>
     </message>
     <message>
         <source>A tag with the given name already exists!</source>
-        <translation>标签名已存在</translation>
+        <translation>Ein Tag mit dem angegebenen Namen existiert bereits!</translation>
     </message>
     <message>
         <source>Tag with the given name does not exist or tag name is not unique!</source>
-        <translation>标签名不存在或重复</translation>
+        <translation>Tag mit dem gegebenen Namen existiert nicht oder Tagname ist nicht eindeutig!</translation>
     </message>
     <message>
         <source>Currency with the given symbol does not exist!</source>
-        <translation>符号对应的货币不存在</translation>
+        <translation>Währung mit dem gegebenen Symbol existiert nicht!</translation>
     </message>
     <message>
         <source>Currency with the given id does not exist!</source>
-        <translation>id对应的货币不存在</translation>
+        <translation>Währung mit der gegebenen Id existiert nicht!</translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
         <source>BudgetBook</source>
-        <translation>BudgetBook</translation>
+        <translation>Haushaltsbuch</translation>
     </message>
     <message>
         <source>Add Bill</source>
-        <translation>添加账单</translation>
+        <translation>Rechnung hinzufügen</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>设置</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>Current month statistics</source>
-        <translation>本月统计数据</translation>
+        <translation>Statistik des aktuellen Monats</translation>
     </message>
     <message>
         <source>Overall statistics</source>
-        <translation>所有统计数据</translation>
+        <translation>Gesamtstatistik</translation>
     </message>
     <message>
         <source>Browse Bills</source>
-        <translation>浏览账单</translation>
+        <translation>Rechungen durchsehen</translation>
     </message>
     <message>
         <source>Previous month statistics</source>
-        <translation>上月统计数据</translation>
+        <translation>Statistik des vorherigen Monats</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Settings</source>
-        <translation>设置</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>Primary currency</source>
-        <translation>主要货币</translation>
+        <translation>Hauptwährung</translation>
     </message>
 </context>
 <context>
     <name>ShopSelector</name>
     <message>
         <source>Add Shop</source>
-        <translation>添加商店</translation>
+        <translation>Geschäft hinzufügen</translation>
     </message>
     <message>
         <source>Shop</source>
-        <translation>商店</translation>
+        <translation>Geschäft</translation>
     </message>
     <message>
         <source>Select Shop</source>
-        <translation>选择商店</translation>
+        <translation>Geschäft auswählen</translation>
     </message>
     <message>
         <source>New Shop</source>
-        <translation>新商店</translation>
+        <translation>Neues Geschäft</translation>
     </message>
     <message>
         <source>Shop name</source>
-        <translation>商店名</translation>
+        <translation>Geschäftname</translation>
     </message>
 </context>
 <context>
     <name>ShopTypeSelector</name>
     <message>
         <source>Shop Type</source>
-        <translation>商店类型</translation>
+        <translation>Geschäftstyp</translation>
     </message>
     <message>
         <source>Select Shop Type</source>
-        <translation>选择商店类型</translation>
+        <translation>Wähle Geschäfttyp</translation>
     </message>
     <message>
         <source>Add Shop Type</source>
-        <translation>添加商店类型</translation>
+        <translation>Geschäftstyp hinzufügen</translation>
     </message>
     <message>
         <source>New Shop Type</source>
-        <translation>新商店类型</translation>
+        <translation>Neuer Geschäftstyp</translation>
     </message>
     <message>
         <source>Shop Type name</source>
-        <translation>商店类型名称</translation>
+        <translation>Geschäftstyp</translation>
     </message>
 </context>
 <context>
     <name>TagSelector</name>
     <message>
         <source>Add tag ...</source>
-        <translation>添加标签…</translation>
+        <translation>Tag hinzufügen ...</translation>
     </message>
 </context>
 </TS>

@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fi_FI">
+<TS version="2.1" language="sv_SE">
 <context>
     <name>AddBill</name>
     <message>
         <source>New Bill</source>
-        <translation>Uusi kuitti</translation>
+        <translation>Ny utgift</translation>
     </message>
     <message>
         <source>Total:</source>
-        <translation>Yhteensä:</translation>
+        <translation>Totalt:</translation>
     </message>
     <message>
         <source>Price</source>
-        <translation>Hinta</translation>
+        <translation>Pris</translation>
     </message>
 </context>
 <context>
     <name>AddTag</name>
     <message>
         <source>New Tag</source>
-        <translation>Uusi avainsana</translation>
+        <translation>Ny tagg</translation>
     </message>
     <message>
         <source>Tag name</source>
-        <translation>Avainsanan nimi</translation>
+        <translation>Taggnamn</translation>
     </message>
 </context>
 <context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
-        <translation>Selaa kuitteja</translation>
+        <translation>Bläddra bland utgifter</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Poista</translation>
+        <translation>Ta bort</translation>
     </message>
     <message>
         <source>Deleting</source>
-        <translation>Poistetaan</translation>
+        <translation>Tar bort</translation>
     </message>
 </context>
 <context>
     <name>ByCategory</name>
     <message>
         <source>Statistics</source>
-        <translation>Statistiikka</translation>
+        <translation>Statistik</translation>
     </message>
     <message>
         <source>Please add more bills!</source>
-        <translation>Ole hyvä ja lisää kuitteja!</translation>
+        <translation>Lägg till utgifter!</translation>
     </message>
 </context>
 <context>
     <name>CategorySelector</name>
     <message>
         <source>Category</source>
-        <translation>Kategoria</translation>
+        <translation>Kategori</translation>
     </message>
     <message>
         <source>Select Category</source>
-        <translation>Valitse kategoria</translation>
+        <translation>Välj kategori</translation>
     </message>
     <message>
         <source>Add Category</source>
-        <translation>Lisää kategoria</translation>
+        <translation>Lägg till kategori</translation>
     </message>
     <message>
         <source>New Category</source>
-        <translation>Uusi kategoria</translation>
+        <translation>Ny kategori</translation>
     </message>
     <message>
         <source>Category name</source>
-        <translation>Kategorian nimi</translation>
+        <translation>Kategorinamn</translation>
     </message>
 </context>
 <context>
@@ -87,86 +87,85 @@
     <name>CurrencySelector</name>
     <message>
         <source>Currency</source>
-        <translation>Valuutta</translation>
+        <translation>Valuta</translation>
     </message>
     <message>
         <source>Add Currency</source>
-        <translation>Lisää valuutta</translation>
+        <translation>Lägg till valuta</translation>
     </message>
     <message>
         <source>New Currency</source>
-        <translation>Uusi valuutta</translation>
+        <translation>Ny valuta</translation>
     </message>
     <message>
         <source>Currency symbol</source>
-        <translation>Valuutan symboli</translation>
+        <translation>Valutasymbol</translation>
     </message>
     <message>
         <source>Select Currency</source>
-        <translation>Valitse valuutta</translation>
+        <translation>Välj valuta</translation>
     </message>
 </context>
 <context>
     <name>CurrencySettings</name>
     <message>
         <source>Currency Settings</source>
-        <translation>Valuutta-asetukset</translation>
+        <translation>Valutainställningar</translation>
     </message>
     <message>
         <source>Exchange rates</source>
-        <translation>Valuuttakurssit</translation>
+        <translation>Växlingskurser</translation>
     </message>
     <message>
         <source>to</source>
-        <translatorcomment>This does not &quot;bend&quot; into Finnish grammar, but this notation works...</translatorcomment>
-        <translation>-</translation>
+        <translation>till</translation>
     </message>
     <message>
         <source>Exchange rate</source>
-        <translation>Kurssi</translation>
+        <translation>Valutakurs</translation>
     </message>
 </context>
 <context>
     <name>Database</name>
     <message>
         <source>Other</source>
-        <translation>Muu</translation>
+        <translation>Annat</translation>
     </message>
     <message>
         <source>Shop with the given name does not exist or name is not unique!</source>
-        <translation>Kauppaa ei löydy tai kaupan nimi on jo käytössä!</translation>
+        <translation>Butik med angivet namn finns inte, eller namnet är inte unikt!</translation>
     </message>
     <message>
         <source>An item with the given name already exists!</source>
-        <translation>Kohteen nimi on jo käytössä!</translation>
+        <translation>Ett objekt med angivet namn, finns redan!</translation>
     </message>
     <message>
         <source>Super Market</source>
-        <translation>Supermarket</translation>
+        <translation>Storköp</translation>
     </message>
     <message>
         <source>Category with the given name does not exist or category name is not unique!</source>
-        <translation>Kategorian nimeä ei löydy tai annettu nimi on jo käytössä!</translation>
+        <translation>Kategori med angivet namn finns inte, eller namnet är inte unikt!</translation>
     </message>
     <message>
         <source>Shop type with the given name does not exist or shop type name is not unique!</source>
-        <translation>Kauppaa ei löydy tai kaupan nimi on jo käytössä!</translation>
+        <translation>Butikstyp med angivet namn finns inte, eller butikstypen är inte unik!</translation>
     </message>
     <message>
         <source>A tag with the given name already exists!</source>
-        <translation>Avainsana on jo olemassa!</translation>
+        <translation>En tagg med angivet namn, finns redan!</translation>
     </message>
     <message>
         <source>Tag with the given name does not exist or tag name is not unique!</source>
-        <translation>Avainsanaa ei ole tai sen nimi on jo käytössä!</translation>
+        <translation>Tagg med angivet namn finns inte, eller taggnamnet är inte unikt!</translation>
     </message>
     <message>
         <source>Currency with the given symbol does not exist!</source>
-        <translation>Symbolia vastaavaa valuuttaa ei löydy!</translation>
+        <translation>Valuta med angiven symbol, finns inte!</translation>
     </message>
     <message>
         <source>Currency with the given id does not exist!</source>
-        <translation>ID:tä vastaavaa valuuttaa ei löydy!</translation>
+        <translation>Valuta med angivet ID, finns inte!</translation>
     </message>
 </context>
 <context>
@@ -177,92 +176,91 @@
     </message>
     <message>
         <source>Add Bill</source>
-        <translation>Lisää kuitti</translation>
+        <translation>Lägg till utgift</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation>Asetukset</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <source>Current month statistics</source>
-        <translatorcomment>Shortened to &quot;this month&quot;</translatorcomment>
-        <translation>Tämä kuukausi</translation>
+        <translation>Aktuell månads statistik</translation>
     </message>
     <message>
         <source>Overall statistics</source>
-        <translation>Yleistilastot</translation>
+        <translation>Övergripande statistik</translation>
     </message>
     <message>
         <source>Browse Bills</source>
-        <translation>Selaa kuitteja</translation>
+        <translation>Bläddra bland utgifter</translation>
     </message>
     <message>
         <source>Previous month statistics</source>
-        <translation>Edellinen kuukausi</translation>
+        <translation>Föregående månads statistik</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Settings</source>
-        <translation>Asetukset</translation>
+        <translation>Inställningar</translation>
     </message>
     <message>
         <source>Primary currency</source>
-        <translation>Ensisijainen valuutta</translation>
+        <translation>Primär valuta</translation>
     </message>
 </context>
 <context>
     <name>ShopSelector</name>
     <message>
         <source>Add Shop</source>
-        <translation>Lisää kauppa</translation>
+        <translation>Lägg till butik</translation>
     </message>
     <message>
         <source>Shop</source>
-        <translation>Kauppa</translation>
+        <translation>Butik</translation>
     </message>
     <message>
         <source>Select Shop</source>
-        <translation>Valitse kauppa</translation>
+        <translation>Välj butik</translation>
     </message>
     <message>
         <source>New Shop</source>
-        <translation>Uusi kauppa</translation>
+        <translation>Ny butik</translation>
     </message>
     <message>
         <source>Shop name</source>
-        <translation>Kaupan nimi</translation>
+        <translation>Butiksnamn</translation>
     </message>
 </context>
 <context>
     <name>ShopTypeSelector</name>
     <message>
         <source>Shop Type</source>
-        <translation>Kaupan tyyppi</translation>
+        <translation>Butikstyp</translation>
     </message>
     <message>
         <source>Select Shop Type</source>
-        <translation>Valitse kaupan tyyppi</translation>
+        <translation>Välj butikstyp</translation>
     </message>
     <message>
         <source>Add Shop Type</source>
-        <translation>Lisää kaupan tyyppi</translation>
+        <translation>Lägg till butikstyp</translation>
     </message>
     <message>
         <source>New Shop Type</source>
-        <translation>Uusi kaupan tyyppi</translation>
+        <translation>Ny butikstyp</translation>
     </message>
     <message>
         <source>Shop Type name</source>
-        <translation>Kaupan tyypin nimi</translation>
+        <translation>Butiktypsnamn</translation>
     </message>
 </context>
 <context>
     <name>TagSelector</name>
     <message>
         <source>Add tag ...</source>
-        <translation>Lisää avainsana...</translation>
+        <translation>Lägg till tagg...</translation>
     </message>
 </context>
 </TS>

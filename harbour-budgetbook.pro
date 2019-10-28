@@ -50,6 +50,11 @@ OTHER_FILES += \
 # following CONFIG line
 CONFIG += sailfishapp_i18n
 TRANSLATIONS += \
-    translations/fi_FI.ts \
-    translations/de_AT.ts \
-    translations/zh_CN.ts
+    translations/cs.ts \
+    translations/de.ts \
+    translations/en.ts \
+    translations/fi.ts \
+    translations/nl.ts \
+    translations/sv.ts \
+    translations/zh_CN.ts \
+    translations/zh_TW.ts

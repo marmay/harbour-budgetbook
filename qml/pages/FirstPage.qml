@@ -33,8 +33,10 @@ Page {
     }
 
     onVisibleChanged: {
-        if(visible === true)
-            stat.update()
+        if (visible === true)
+        {
+            stat.update();
+        }
     }
 
     SilicaFlickable {
