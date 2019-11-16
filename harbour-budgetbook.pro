@@ -28,10 +28,10 @@ OTHER_FILES += \
     rpm/harbour-budgetbook.spec \
     harbour-budgetbook.desktop \
     qml/stats/ByCategory.qml \
-    qml/QChart/QChart.js \
-    qml/QChart/QChart.qml \
-    qml/QChart/LICENSE \
-    qml/QChart/qmldir \
+    qmlModules/jbQuick/Charts/qmldir \
+    qmlModules/jbQuick/Charts/*.qml \
+    qmlModules/jbQuick/Charts/*.js \
+    qmlModules/jbQuick/Charts/*.md \
     qml/elements/ShopSelector.qml \
     qml/elements/CategorySelector.qml \
     qml/elements/ShopTypeSelector.qml \
@@ -60,3 +60,13 @@ TRANSLATIONS += \
     translations/sv.ts \
     translations/zh_CN.ts \
     translations/zh_TW.ts
+
+QML2_IMPORT_PATH += ./qmlModules
+
+jbcharts.files = \
+    $$files(qmlModules/jbQuick/Charts/qmldir) \
+    $$files(qmlModules/jbQuick/Charts/*.qml) \
+    $$files(qmlModules/jbQuick/Charts/*.js) \
+    $$files(qmlModules/jbQuick/Charts/*.md)
+jbcharts.path = /usr/share/$${TARGET}/qmlModules/jbQuick/Charts
+INSTALLS += jbcharts
