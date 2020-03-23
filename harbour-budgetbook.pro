@@ -70,3 +70,6 @@ jbcharts.files = \
     $$files(qmlModules/jbQuick/Charts/*.md)
 jbcharts.path = /usr/share/$${TARGET}/qmlModules/jbQuick/Charts
 INSTALLS += jbcharts
+
+DISTFILES += \
+    qml/elements/DoughnutChart.qml
