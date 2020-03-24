@@ -43,8 +43,7 @@ OTHER_FILES += \
     qml/pages/AddTag.qml \
     qml/pages/Settings.qml \
     qml/pages/CurrencySettings.qml \
-    qml/elements/CurrencySelector.qml \
-    qml/pages/ByCategory.qml
+    qml/elements/CurrencySelector.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
@@ -72,4 +71,5 @@ jbcharts.path = /usr/share/$${TARGET}/qmlModules/jbQuick/Charts
 INSTALLS += jbcharts
 
 DISTFILES += \
-    qml/elements/DoughnutChart.qml
+    qml/elements/DoughnutChart.qml \
+    qml/pages/ByCategoryPage.qml
