@@ -22,6 +22,13 @@ import "../stats"
 Page {
     id: page
 
+    onStatusChanged: {
+        if(status === PageStatus.Active)
+        {
+            stat.update()
+        }
+    }
+
     property alias from : stat.from
     property alias to: stat.to
     property alias title: label.text

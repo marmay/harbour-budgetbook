@@ -25,16 +25,15 @@ Column {
     property date from : Utility.firstOfMonth(-1)
     property date to : Utility.firstOfMonth(0)
     property bool _updating: false
-
-//    onFromChanged: update()
-//    onToChanged: update()
-//    Component.onCompleted: update()
+    property bool dirtyData: true
 
     property ListModel newModel: ListModel {}
 
     function update() {
-        if(!_updating) {
+        console.log("update()")
+        if(!_updating && dirtyData) {
             _updating = true
+            dirtyData = false
 
             var db = Database.openDatabase();
             var colors = ["#2F9235", "#246D70", "#BA763B", "#BA3F3B", "#025608", "#024042", "#6E3403", "#6E0603",

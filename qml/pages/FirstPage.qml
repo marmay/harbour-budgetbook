@@ -25,18 +25,19 @@ import "../elements"
 Page {
     id: page
 
+    property bool dirtyStat: true
+    property int monthDelta: 0
+
     onStatusChanged: {
-        if (status === PageStatus.Activating)
+        if(status === PageStatus.Active)
         {
-            stat.update();
+            stat.dirtyData = true
+            stat.update()
         }
     }
 
-    onVisibleChanged: {
-        if (visible === true)
-        {
-            stat.update();
-        }
+    Component.onCompleted: {
+        monthLabel.text = stat.from.toLocaleString(Qt.locale(), "MMMM yyyy")
     }
 
     SilicaFlickable {
@@ -59,15 +60,8 @@ Page {
 
         PushUpMenu {
             MenuItem {
-                text:qsTr("Previous month statistics")
-                onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
-                                          { title: qsTr("Previous month statistics"),
-                                              from: Utility.firstOfMonth( -1 ),
-                                              to: Utility.firstOfMonth( 0 ) })
-            }
-            MenuItem {
                 text: qsTr("Overall statistics")
-                onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
+                onClicked: pageStack.push(Qt.resolvedUrl("ByCategoryPage.qml"),
                                           { title: qsTr("Overall statistics"),
                                               from: new Date("2015-01-01"),
                                               to: new Date("2099-01-01") });
@@ -86,15 +80,54 @@ Page {
             }
 
             Label {
-                text: qsTr("Current month statistics")
-                font.pixelSize: Theme.fontSizeSmall
+                id: monthLabel
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: Utility.firstOfMonth(0)["monthName"]
+            }
+
+            Item {
+                width: parent.width
+                height: buttonItem.height
+
+                Item {
+                    id: buttonItem
+                    width: prevMonthButton.width + Theme.paddingLarge + nextMonthButton.width
+                    height: prevMonthButton.height
+
+                    Button {
+                        id: prevMonthButton
+                        anchors.left: parent.left
+                        text: "<<"
+                        onClicked: {
+                            monthDelta = monthDelta + 1
+                            stat.from = Utility.firstOfMonth(monthDelta)
+                            stat.to = Utility.firstOfMonth(monthDelta+1)
+                            stat.dirtyData = true
+                            stat.update()
+                        }
+                    }
+                    Button {
+                        id: nextMonthButton
+                        anchors.right: parent.right
+                        text: ">>"
+                        onClicked: {
+                            monthDelta = monthDelta - 1
+                            stat.from = Utility.firstOfMonth(monthDelta)
+                            stat.to = Utility.firstOfMonth(monthDelta+1)
+                            stat.dirtyData = true
+                            stat.update()
+                        }
+                    }
+                }
             }
 
             ByCategory {
                 id: stat
-                width: column.width
-                from: Utility.firstOfMonth(0)
-                to: Utility.firstOfMonth(1)
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width * 0.8
+                height: width
+                from: Utility.firstOfMonth(monthDelta)
+                to: Utility.firstOfMonth(monthDelta+1)
             }
         }
     }

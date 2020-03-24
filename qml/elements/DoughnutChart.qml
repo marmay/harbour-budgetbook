@@ -38,6 +38,8 @@ Item {
                 width: parent.width
                 height: width
                 scale: 0.0
+                renderTarget: Canvas.FramebufferObject
+                renderStrategy: Canvas.Threaded
                 Behavior on scale {
                     NumberAnimation { duration: 1000; easing.type: Easing.OutQuint; }
                 }
@@ -69,16 +71,16 @@ Item {
                     console.log(startAngle, endAngle)
 
                     ctx.strokeStyle = cColor
-                    ctx.lineWidth = width*0.225
-                    ctx.arc(0,0,width*0.333, startAngle, endAngle)
+                    ctx.lineWidth = width*0.25
+                    ctx.arc(0,0,width*0.370, startAngle, endAngle)
                     ctx.stroke()
 
                     ctx.strokeStyle = Theme.primaryColor
 
                     ctx.lineWidth = width*0.005
                     ctx.beginPath()
-                    ctx.arc(0,0,width*0.4455, startAngle, endAngle, false)
-                    ctx.arc(0,0,width*0.2205, endAngle, startAngle, true)
+                    ctx.arc(0,0,width*0.495, startAngle, endAngle, false)
+                    ctx.arc(0,0,width*0.245, endAngle, startAngle, true)
                     ctx.closePath()
                     ctx.stroke()
                 }
