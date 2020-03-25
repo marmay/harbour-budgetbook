@@ -17,12 +17,49 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import "../elements"
 
 CoverBackground {
-    Label {
-        id: label
-        anchors.centerIn: parent
-        text: qsTr("BudgetBook")
+
+    Item {
+        anchors {
+            top: parent.top
+            topMargin: parent.width * 0.25
+            horizontalCenter: parent.horizontalCenter
+        }
+        width: parent.width * 0.75
+        height: miniChart.height + Theme.paddingSmall + nameTag.height
+
+        DoughnutChart {
+            id: miniChart
+            width: parent.width
+            height: width
+            animated: false
+
+            ListModel {
+                id: newModel
+            }
+
+            Component.onCompleted: {
+                newModel.append({ "cLabel": "", "cValue": 19, "cColor": "#025608" })
+                newModel.append({ "cLabel": "", "cValue": 16, "cColor": "#BA3F3B" })
+                newModel.append({ "cLabel": "", "cValue": 13, "cColor": "#BA763B" })
+                newModel.append({ "cLabel": "", "cValue":  6, "cColor": "#246D70" })
+                newModel.append({ "cLabel": "", "cValue":  4, "cColor": "#2F9235" })
+                chartData = newModel
+            }
+        }
+
+        Label {
+            id: nameTag
+            anchors {
+                top: miniChart.bottom
+                topMargin: Theme.paddingSmall
+                horizontalCenter: parent.horizontalCenter
+            }
+
+            text: qsTr("BudgetBook")
+        }
     }
 
     CoverActionList {
