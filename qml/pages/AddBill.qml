@@ -75,20 +75,36 @@ Dialog {
                 }
             }
 
-            Button {
-                id: datePicker
-                text: d.date.toLocaleDateString();
+            Row {
+                width: parent.width
+                height: dateLabel.height
+                spacing: Theme.paddingLarge
 
-                onClicked: {
-                    var dialog = pageStack.push(pickerComponent, {});
-                    dialog.accepted.connect(function() {
-                        d.date = dialog.date;
-                    });
+                Label {
+                    id: dateLabel
+                    text: "Date"
                 }
+                Label {
+                    id: datePicker
+                    text: d.date.toLocaleDateString();
+                    width: parent.width - dateLabel.width - Theme.paddingSmall
+                    color: Theme.highlightColor
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            var dialog = pageStack.push(pickerComponent);
+                            dialog.accepted.connect(function() {
+                                d.date = dialog.date;
+                            });
+                        }
 
-                Component {
-                    id: pickerComponent
-                    DatePickerDialog {}
+                        Component {
+                            id: pickerComponent
+                            DatePickerDialog {
+                                date: new Date()
+                            }
+                        }
+                    }
                 }
             }
 
