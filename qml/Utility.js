@@ -24,12 +24,12 @@ function stringToFloat(s) {
 
 function floatToCurrencyString(f) {
     var locale = Qt.locale();
-    return Number(f).toLocaleCurrencyString(locale, " " + Database.getPrimaryCurrency().symbol);
+    return Number(f).toLocaleCurrencyString(locale, Database.getPrimaryCurrency().symbol);
 }
 
 function floatToCurrencyStringWithCurrency(f, cur) {
     var locale = Qt.locale();
-    return Number(f).toLocaleCurrencyString(locale, " " + Database.getCurrencyById(cur).symbol);
+    return Number(f).toLocaleCurrencyString(locale, Database.getCurrencyById(cur).symbol);
 }
 
 /*
