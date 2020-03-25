@@ -37,7 +37,7 @@ Dialog {
         var numberItems = objects.count;
         for (var i = 0; i < numberItems; ++i) {
             items.push({ category: objects.get(i).category,
-                         price: objects.get(i).price, tags: []});
+                           price: objects.get(i).price, tags: []});
             for (var j = 0; j < objects.get(i).tags.count; ++j) {
                 items[i].tags.push(objects.get(i).tags.get(j));
             }
@@ -154,24 +154,35 @@ Dialog {
 
                 CategorySelector {
                     id: categorySelector
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 0.55 * parent.width
+
+                    // For proper vertical alignment
+                    anchors {
+                        verticalCenter: price.top
+                        verticalCenterOffset: price.textVerticalCenterOffset
+                    }
+                    width: parent.width - Theme.paddingSmall - price.width
                 }
 
                 TextField {
                     id: price
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 0.25 * parent.width
+
+                    // Approximate 9-number-length
+                    Label {
+                        id: widthHelper
+                        visible: false
+                        text: "123456789"
+                        font.pixelSize: price.font.pixelSize
+                    }
+                    width: textLeftMargin + widthHelper.width + textRightMargin
+
                     placeholderText: qsTr("Price")
                     inputMethodHints: Qt.ImhFormattedNumbersOnly | Qt.ImhNoPredictiveText
-                }
-
-                IconButton {
-                    anchors.verticalCenter: parent.verticalCenter
-                    icon.source: "image://theme/icon-m-add"
-                    onClicked: {
+                    validator: IntValidator { }
+                    EnterKey.enabled: text.length > 0 && acceptableInput == true
+                    EnterKey.iconSource: "image://theme/icon-m-add"
+                    EnterKey.onClicked: {
                         objects.append({ category: categorySelector.value, price: Utility.stringToFloat(price.text),
-                                            tags: tagSelector.selectedTags });
+                                           tags: tagSelector.selectedTags });
                         tagSelector.clear();
                         price.text = "";
                         d.total = 0.;
