@@ -25,16 +25,7 @@ import "../elements"
 Page {
     id: page
 
-    property bool dirtyStat: true
     property int monthDelta: 0
-
-    onStatusChanged: {
-        if(status === PageStatus.Active)
-        {
-            stat.dirtyData = true
-            stat.update()
-        }
-    }
 
     Component.onCompleted: {
         monthLabel.text = stat.from.toLocaleString(Qt.locale(), "MMMM yyyy")
@@ -54,7 +45,13 @@ Page {
             }
             MenuItem {
                 text: qsTr("Add Bill")
-                onClicked: pageStack.push(Qt.resolvedUrl("AddBill.qml"))
+                onClicked: {
+                    var dialog = pageStack.push(Qt.resolvedUrl("AddBill.qml"))
+                    dialog.accepted.connect(function() {
+                        stat.dirtyData = true
+                        stat.update()
+                    })
+                }
             }
         }
 
@@ -125,9 +122,6 @@ Page {
                 id: stat
                 anchors.horizontalCenter: parent.horizontalCenter
                 width: parent.width * 0.8
-                height: width
-                from: Utility.firstOfMonth(monthDelta)
-                to: Utility.firstOfMonth(monthDelta+1)
             }
         }
     }

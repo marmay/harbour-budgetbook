@@ -22,10 +22,12 @@ import "../Database.js" as Database
 import "../Utility.js" as Utility
 
 Column {
-    property date from : Utility.firstOfMonth(-1)
-    property date to : Utility.firstOfMonth(0)
+    property date from : Utility.firstOfMonth(0)
+    property date to : Utility.firstOfMonth(1)
     property bool _updating: false
     property bool dirtyData: true
+
+    Component.onCompleted: update()
 
     property ListModel newModel: ListModel {}
 
