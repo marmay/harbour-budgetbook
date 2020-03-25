@@ -28,13 +28,13 @@ CoverBackground {
             horizontalCenter: parent.horizontalCenter
         }
         width: parent.width * 0.75
-        height: miniChart.height + Theme.paddingSmall + nameTag.height
+        height: miniChart.height + nameTag.anchors.topMargin + nameTag.height
 
         DoughnutChart {
             id: miniChart
             width: parent.width
             height: width
-            animated: false
+            smallChart: false
 
             ListModel {
                 id: newModel
@@ -44,8 +44,8 @@ CoverBackground {
                 newModel.append({ "cLabel": "", "cValue": 19, "cColor": "#025608" })
                 newModel.append({ "cLabel": "", "cValue": 16, "cColor": "#BA3F3B" })
                 newModel.append({ "cLabel": "", "cValue": 13, "cColor": "#BA763B" })
-                newModel.append({ "cLabel": "", "cValue":  6, "cColor": "#246D70" })
-                newModel.append({ "cLabel": "", "cValue":  4, "cColor": "#2F9235" })
+                newModel.append({ "cLabel": "", "cValue":  8, "cColor": "#246D70" })
+                newModel.append({ "cLabel": "", "cValue":  5, "cColor": "#2F9235" })
                 chartData = newModel
             }
         }
@@ -54,7 +54,7 @@ CoverBackground {
             id: nameTag
             anchors {
                 top: miniChart.bottom
-                topMargin: Theme.paddingSmall
+                topMargin: Theme.paddingMedium
                 horizontalCenter: parent.horizontalCenter
             }
 

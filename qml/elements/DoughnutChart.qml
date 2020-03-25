@@ -4,6 +4,7 @@ import Sailfish.Silica 1.0
 Item {
     id: root
     property ListModel chartData
+    property bool smallChart: true
 
     onChartDataChanged: {
         var sum = 0.0
@@ -25,27 +26,39 @@ Item {
         property variant runningTotal: []
 
         delegate: Item {
+            id: pieDelegate
             anchors {
                 top: parent.top
                 left: parent.left
             }
             width: parent.width
             height: parent.width
-            opacity: pieSector.scale
+            opacity: smallChart ? 0.0 : 1.0
+            Behavior on opacity {
+                NumberAnimation {
+                    duration: 500
+                    easing.type: Easing.Linear
+                }
+            }
 
             Canvas {
                 id: pieSector
                 anchors.centerIn: parent
                 width: parent.width
                 height: width
-                scale: 0.0
-                renderTarget: Canvas.FramebufferObject
-                renderStrategy: Canvas.Threaded
+                scale: smallChart ? 0.5 : 1.0
+                renderTarget: smallChart ? Canvas.FramebufferObject : Canvas.Image
+                renderStrategy: smallChart ? Canvas.Threaded : Canvas.Immediate
                 Behavior on scale {
-                    NumberAnimation { duration: 1000; easing.type: Easing.OutQuint; }
+                    NumberAnimation {
+                        duration: 1000
+                        easing.type: Easing.OutQuint
+                    }
                 }
                 Component.onCompleted: {
-                    startDelay.running = true
+                    if(smallChart) {
+                        startDelay.running = true
+                    }
                 }
 
                 Timer {
@@ -53,13 +66,19 @@ Item {
                     repeat: false
                     triggeredOnStart: false
                     running: false
-                    onTriggered: { parent.scale = 1.0
-                        console.log("fire" + index)
+                    onTriggered: {
+                        pieSector.scale = 1.0
+                        pieDelegate.opacity = 1.0
                     }
                     interval: index * 250
                 }
 
                 // Context2D
+                property real penWidth:     Theme.paddingSmall / 2.0
+                property real innerRadius:  width * 0.25
+                property real outerRadius:  width * 0.50 - penWidth
+                property real middleRadius: (innerRadius + outerRadius) / 2.0
+
                 onPaint: {
                     var ctx = getContext("2d")
                     ctx.translate(width/2, height/2)
@@ -69,19 +88,17 @@ Item {
                     var startAngle = 2*Math.PI * ((listView.runningTotal[index] - cValue) / listView.valueTotal)
                     var endAngle = startAngle + 2*Math.PI * (cValue / listView.valueTotal)
 
-                    console.log(startAngle, endAngle)
-
                     ctx.strokeStyle = cColor
-                    ctx.lineWidth = width*0.25
-                    ctx.arc(0,0,width*0.370, startAngle, endAngle)
+                    ctx.lineWidth = outerRadius - innerRadius
+                    ctx.arc(0,0,middleRadius, startAngle, endAngle)
                     ctx.stroke()
 
                     ctx.strokeStyle = Theme.primaryColor
+                    ctx.lineWidth = penWidth
 
-                    ctx.lineWidth = width*0.005
                     ctx.beginPath()
-                    ctx.arc(0,0,width*0.495, startAngle, endAngle, false)
-                    ctx.arc(0,0,width*0.245, endAngle, startAngle, true)
+                    ctx.arc(0,0,outerRadius, startAngle, endAngle, false)
+                    ctx.arc(0,0,innerRadius, endAngle, startAngle, true)
                     ctx.closePath()
                     ctx.stroke()
                 }
