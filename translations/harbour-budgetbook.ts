@@ -45,11 +45,14 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
+        <source>Please add more bills!</source>
         <translation type="unfinished"></translation>
     </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
     <message>
-        <source>Please add more bills!</source>
+        <source>Statistics</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -183,19 +186,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Browse Bills</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

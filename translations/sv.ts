@@ -45,12 +45,15 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
-        <translation>Statistik</translation>
-    </message>
-    <message>
         <source>Please add more bills!</source>
         <translation>Lägg till utgifter!</translation>
+    </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistik</translation>
     </message>
 </context>
 <context>
@@ -183,20 +186,12 @@
         <translation>Inställningar</translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation>Aktuell månads statistik</translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation>Övergripande statistik</translation>
     </message>
     <message>
         <source>Browse Bills</source>
         <translation>Bläddra bland utgifter</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Föregående månads statistik</translation>
     </message>
 </context>
 <context>

@@ -45,12 +45,15 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
-        <translation>Statistiky</translation>
-    </message>
-    <message>
         <source>Please add more bills!</source>
         <translation>Prosím, přidejte více účtenek!</translation>
+    </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistiky</translation>
     </message>
 </context>
 <context>
@@ -183,20 +186,12 @@
         <translation>Nastavení</translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation>Statistiky za tento měsíc</translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation>Celkové statistiky</translation>
     </message>
     <message>
         <source>Browse Bills</source>
         <translation>Procházet účtenky</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Statistiky za předchozí měsíc</translation>
     </message>
 </context>
 <context>

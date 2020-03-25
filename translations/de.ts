@@ -45,12 +45,15 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
-        <translation>Statistiken</translation>
-    </message>
-    <message>
         <source>Please add more bills!</source>
         <translation>Bitte mehr Rechnungen hinzufügen!</translation>
+    </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistiken</translation>
     </message>
 </context>
 <context>
@@ -183,20 +186,12 @@
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation>Statistik des aktuellen Monats</translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation>Gesamtstatistik</translation>
     </message>
     <message>
         <source>Browse Bills</source>
         <translation>Rechungen durchsehen</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Statistik des vorherigen Monats</translation>
     </message>
 </context>
 <context>

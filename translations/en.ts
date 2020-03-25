@@ -45,12 +45,15 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
-        <translation>Statistics</translation>
-    </message>
-    <message>
         <source>Please add more bills!</source>
         <translation>Please add more bills!</translation>
+    </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistics</translation>
     </message>
 </context>
 <context>
@@ -183,20 +186,12 @@
         <translation>Settings</translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation>Current month statistics</translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation>Overall statistics</translation>
     </message>
     <message>
         <source>Browse Bills</source>
         <translation>Browse Bills</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Previous month statistics</translation>
     </message>
 </context>
 <context>

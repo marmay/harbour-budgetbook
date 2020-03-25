@@ -45,12 +45,15 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
-        <translation>统计</translation>
-    </message>
-    <message>
         <source>Please add more bills!</source>
         <translation>请添加更多的账单！</translation>
+    </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
+    <message>
+        <source>Statistics</source>
+        <translation>统计</translation>
     </message>
 </context>
 <context>
@@ -183,20 +186,12 @@
         <translation>设置</translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation>本月统计数据</translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation>所有统计数据</translation>
     </message>
     <message>
         <source>Browse Bills</source>
         <translation>浏览账单</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>上月统计数据</translation>
     </message>
 </context>
 <context>

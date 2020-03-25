@@ -45,12 +45,15 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
-        <translation>Statistiikka</translation>
-    </message>
-    <message>
         <source>Please add more bills!</source>
         <translation>Ole hyvä ja lisää kuitteja!</translation>
+    </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistiikka</translation>
     </message>
 </context>
 <context>
@@ -183,20 +186,12 @@
         <translation>Asetukset</translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation>Tämä kuukausi</translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation>Yleistilastot</translation>
     </message>
     <message>
         <source>Browse Bills</source>
         <translation>Selaa kuitteja</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Edellinen kuukausi</translation>
     </message>
 </context>
 <context>

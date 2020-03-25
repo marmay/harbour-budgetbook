@@ -45,12 +45,15 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
-        <translation>Statistieken</translation>
-    </message>
-    <message>
         <source>Please add more bills!</source>
         <translation>Voeg meer rekeningen toe!</translation>
+    </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistieken</translation>
     </message>
 </context>
 <context>
@@ -183,20 +186,12 @@
         <translation>Instellingen</translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation>Huidige maandstatistieken</translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation>Totale statistieken</translation>
     </message>
     <message>
         <source>Browse Bills</source>
         <translation>Door rekeningen bladeren</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Statistieken van de vorige maand</translation>
     </message>
 </context>
 <context>
