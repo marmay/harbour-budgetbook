@@ -12,13 +12,14 @@ Item {
             listView.runningTotal[i] = sum
         }
         listView.valueTotal = sum
+        listView.model = chartData
     }
 
     ListView {
         id: listView
         width: parent.width
         height: parent.height
-        model: chartData
+        model: []
 
         property int valueTotal
         property variant runningTotal: []
