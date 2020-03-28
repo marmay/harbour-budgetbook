@@ -111,7 +111,7 @@ Page {
                     if (!listView.contextMenu)
                         listView.contextMenu = contextMenuComponent.createObject(listView);
                     listView.contextMenu.deleteItem = bItem;
-                    listView.contextMenu.show(listItem);
+                    listView.contextMenu.open(listItem);
                 }
 
                 Row {
