@@ -62,14 +62,6 @@ TRANSLATIONS += \
 
 QML2_IMPORT_PATH += ./qmlModules
 
-jbcharts.files = \
-    $$files(qmlModules/jbQuick/Charts/qmldir) \
-    $$files(qmlModules/jbQuick/Charts/*.qml) \
-    $$files(qmlModules/jbQuick/Charts/*.js) \
-    $$files(qmlModules/jbQuick/Charts/*.md)
-jbcharts.path = /usr/share/$${TARGET}/qmlModules/jbQuick/Charts
-INSTALLS += jbcharts
-
 DISTFILES += \
     qml/elements/DoughnutChart.qml \
     qml/pages/ByCategoryPage.qml
