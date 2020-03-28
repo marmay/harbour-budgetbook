@@ -89,9 +89,6 @@ CoverBackground {
                         var startAngle = 2*Math.PI * ((miniChart.runningTotal[i] - curr["cValue"]) / miniChart.valueTotal)
                         var endAngle = startAngle + 2*Math.PI * (curr["cValue"] / miniChart.valueTotal)
 
-                        console.log(curr["cValue"] + " " + curr["cColor"])
-                        console.log(borderColor)
-
                         ctx.fillStyle = curr["cColor"]
                         ctx.strokeStyle = curr["cColor"]
                         ctx.lineWidth = outerRadius - innerRadius
