@@ -23,6 +23,8 @@ import "../Utility.js" as Utility
 Page {
     id: page
 
+    signal billRemoved
+
     function removeBill(idx, id)
     {
         var db = Database.openDatabase();
@@ -146,7 +148,10 @@ Page {
 
                 function remove()
                 {
-                    remorse.execute(bItem, qsTr("Deleting"), function() { removeBill(index, id); });
+                    remorse.execute(bItem, qsTr("Deleting"), function() {
+                        removeBill(index, id)
+                        billRemoved()
+                    });
                 }
 
                 RemorseItem {

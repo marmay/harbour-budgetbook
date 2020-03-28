@@ -37,11 +37,21 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"));
+                onClicked: {
+                    var settings = pageStack.push(Qt.resolvedUrl("Settings.qml"))
+                    settings.primaryCurrencyChanged.connect(function() {
+                        stat.update()
+                    })
+                }
             }
             MenuItem {
                 text: qsTr("Browse Bills")
-                onClicked: pageStack.push(Qt.resolvedUrl("BillBrowser.qml"))
+                onClicked: {
+                    var browser = pageStack.push(Qt.resolvedUrl("BillBrowser.qml"))
+                    browser.billRemoved.connect(function() {
+                        stat.update()
+                    })
+                }
             }
             MenuItem {
                 text: qsTr("Add Bill")

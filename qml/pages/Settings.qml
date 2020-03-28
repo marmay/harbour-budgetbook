@@ -21,6 +21,8 @@ import "../Database.js" as Database
 
 Page {
 
+    signal primaryCurrencyChanged
+
     onStatusChanged: {
         if (status === PageStatus.Activating)
         {
@@ -58,6 +60,7 @@ Page {
                         id: primaryCurrency
                         color: Theme.highlightColor
                         text: Database.getPrimaryCurrency().symbol
+                        onTextChanged: primaryCurrencyChanged()
                     }
                 }
 
