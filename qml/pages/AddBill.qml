@@ -46,8 +46,13 @@ Dialog {
     }
 
     SilicaFlickable {
+        id: addBillFlickable
         anchors.fill: parent
         contentHeight: column.height
+
+        VerticalScrollDecorator {
+           flickable: addBillFlickable
+        }
 
         Column {
             id: column
@@ -92,11 +97,21 @@ Dialog {
                 id: rep
                 model: objects
 
-                Row {
+                Item {
                     width: column.width
-                    height: l.height
+                    height: rowCategory.height
 
                     Label {
+                        id: rowCategory
+                        anchors {
+                            verticalCenter: parent.verticalCenter
+                            left: parent.left
+                            right: rowPrice.left
+                        }
+                        text: category.name + tagsToString(tags)
+                        font.pixelSize: Theme.fontSizeSmall
+                        truncationMode: TruncationMode.Fade
+
                         function tagsToString(list) {
                             if (list.count === 0) return "";
                             var str = " (" + list.get(0).name;
@@ -106,24 +121,28 @@ Dialog {
                             str += ")";
                             return str;
                         }
-
-                        id: l
-                        width: 0.55 * parent.width
-                        text: category.name + tagsToString(tags)
-                        font.pixelSize: Theme.fontSizeSmall
                     }
 
                     Label {
-                        width: 0.25 * parent.width
+                        id: rowPrice
+                        anchors {
+                            verticalCenter: parent.verticalCenter
+                            right: rowRemove.left
+                        }
                         text: Utility.floatToCurrencyString(price)
                         font.pixelSize: Theme.fontSizeSmall
+
                     }
 
                     IconButton {
+                        id: rowRemove
                         icon.source: "image://theme/icon-m-remove"
                         icon.width: parent.height
                         icon.height: parent.height
-                        anchors.verticalCenter: parent.verticalCenter
+                        anchors {
+                            verticalCenter: parent.verticalCenter
+                            right: parent.right
+                        }
                         onClicked: {
                             d.total -= objects.get(index).price;
                             objects.remove(index);
