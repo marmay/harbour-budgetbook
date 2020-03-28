@@ -118,7 +118,7 @@ Column {
                     width: Theme.fontSizeSmall
                     height: width
                     color: itemColor
-                    border.width: 1
+                    border.width: Theme.paddingSmall / 3.0
                     border.color: "#ffffff"
                     anchors.verticalCenter: parent.verticalCenter
                 }

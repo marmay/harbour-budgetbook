@@ -70,7 +70,7 @@ Item {
                 renderStrategy: smallChart ? Canvas.Threaded : Canvas.Immediate
                 Behavior on scale {
                     NumberAnimation {
-                        duration: 1000
+                        duration: 500
                         easing.type: Easing.OutQuint
                     }
                 }
@@ -89,7 +89,7 @@ Item {
                         pieSector.scale = 1.0
                         pieDelegate.opacity = 1.0
                     }
-                    interval: index * 250
+                    interval: index * 50
                 }
 
                 // Context2D
