@@ -28,10 +28,6 @@ OTHER_FILES += \
     rpm/harbour-budgetbook.spec \
     harbour-budgetbook.desktop \
     qml/stats/ByCategory.qml \
-    qmlModules/jbQuick/Charts/qmldir \
-    qmlModules/jbQuick/Charts/*.qml \
-    qmlModules/jbQuick/Charts/*.js \
-    qmlModules/jbQuick/Charts/*.md \
     qml/elements/ShopSelector.qml \
     qml/elements/CategorySelector.qml \
     qml/elements/ShopTypeSelector.qml \
@@ -60,9 +56,3 @@ TRANSLATIONS += \
     translations/zh_CN.ts \
     translations/zh_TW.ts
 
-QML2_IMPORT_PATH += ./qmlModules
-
-DISTFILES += \
-    qml/elements/DateSelector.qml \
-    qml/elements/DoughnutChart.qml \
-    qml/pages/ByCategoryPage.qml

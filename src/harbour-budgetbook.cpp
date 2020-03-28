@@ -59,9 +59,8 @@ int main(int argc, char *argv[])
     {
         QGuiApplication::installTranslator(&translator);
     }
-    view->engine()->addImportPath("/usr/share/harbour-budgetbook/qmlModules");
     view->setSource(SailfishApp::pathTo("qml/harbour-budgetbook.qml"));
     view->showFullScreen();
-    return app->exec();;
+    return app->exec();
 }
 
