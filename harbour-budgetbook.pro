@@ -17,7 +17,7 @@ CONFIG += sailfishapp
 SOURCES += \
     src/harbour-budgetbook.cpp
 
-OTHER_FILES += \
+DISTFILES += \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
     translations/*.ts \
@@ -39,7 +39,10 @@ OTHER_FILES += \
     qml/pages/AddTag.qml \
     qml/pages/Settings.qml \
     qml/pages/CurrencySettings.qml \
-    qml/elements/CurrencySelector.qml
+    qml/elements/CurrencySelector.qml \
+    qml/elements/DateSelector.qml \
+    qml/elements/DoughnutChart.qml \
+    qml/pages/ByCategoryPage.qml
 
 SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
