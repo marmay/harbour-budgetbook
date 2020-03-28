@@ -32,6 +32,8 @@ Dialog {
         property var date: dateSelector.value
     }
 
+    canAccept: objects.count > 0
+
     onAccepted: {
         var items = [];
         var numberItems = objects.count;
