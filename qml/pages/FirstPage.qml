@@ -90,6 +90,7 @@ Page {
                     id: buttonItem
                     width: prevMonthButton.width + Theme.paddingLarge + nextMonthButton.width
                     height: prevMonthButton.height
+                    anchors.horizontalCenter: parent.horizontalCenter
 
                     Button {
                         id: prevMonthButton
