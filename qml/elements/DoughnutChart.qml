@@ -93,13 +93,17 @@ Item {
                 }
 
                 // Context2D
-                property real penWidth:     Theme.paddingSmall / 2.0
+                property real penWidth:     Theme.paddingSmall / 3.0
                 property real innerRadius:  width * 0.25
                 property real outerRadius:  width * 0.50 - penWidth
                 property real middleRadius: (innerRadius + outerRadius) / 2.0
+                property string borderColor: Theme.primaryColor
+
+                onBorderColorChanged:  requestPaint()
 
                 onPaint: {
                     var ctx = getContext("2d")
+                    ctx.reset()
                     ctx.translate(width/2, height/2)
                     ctx.rotate(-Math.PI/2.0)
                     ctx.fillStyle = cColor
@@ -112,7 +116,7 @@ Item {
                     ctx.arc(0,0,middleRadius, startAngle, endAngle)
                     ctx.stroke()
 
-                    ctx.strokeStyle = Theme.primaryColor
+                    ctx.strokeStyle = borderColor
                     ctx.lineWidth = penWidth
 
                     ctx.beginPath()
