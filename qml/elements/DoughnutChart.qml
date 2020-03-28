@@ -66,8 +66,8 @@ Item {
                 width: parent.width
                 height: width
                 scale: smallChart ? 0.5 : 1.0
-                renderTarget: smallChart ? Canvas.FramebufferObject : Canvas.Image
-                renderStrategy: smallChart ? Canvas.Threaded : Canvas.Immediate
+                renderTarget: smallChart ? Canvas.Image : Canvas.FramebufferObject
+                renderStrategy: smallChart ? Canvas.Immediate : Canvas.Threaded
                 Behavior on scale {
                     NumberAnimation {
                         duration: 500
@@ -89,7 +89,7 @@ Item {
                         pieSector.scale = 1.0
                         pieDelegate.opacity = 1.0
                     }
-                    interval: index * 50
+                    interval: index * 100
                 }
 
                 // Context2D
@@ -100,6 +100,13 @@ Item {
                 property string borderColor: Theme.primaryColor
 
                 onBorderColorChanged:  requestPaint()
+
+                property bool appActive: Qt.application.active
+                onAppActiveChanged: {
+                    if(appActive) {
+                        requestPaint()
+                    }
+                }
 
                 onPaint: {
                     var ctx = getContext("2d")
