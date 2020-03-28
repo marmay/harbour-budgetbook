@@ -30,11 +30,10 @@ CoverBackground {
         width: parent.width * 0.75
         height: miniChart.height + nameTag.anchors.topMargin + nameTag.height
 
-        DoughnutChart {
+        Item {
             id: miniChart
             width: parent.width
             height: width
-            smallChart: false
 
             ListModel {
                 id: newModel
@@ -48,7 +47,72 @@ CoverBackground {
                 newModel.append({ "cLabel": "", "cValue":  5, "cColor": "#2F9235" })
                 chartData = newModel
             }
+
+            property ListModel chartData
+            property variant runningTotal: []
+            property real valueTotal: 0.0
+
+            onChartDataChanged: {
+                var sum = 0.0
+                for (var i = 0; i < chartData.count; i++) {
+                    sum = sum + chartData.get(i).cValue
+                    runningTotal[i] = sum
+                }
+                valueTotal = sum
+            }
+
+            Canvas {
+                id: pieSector
+                anchors.centerIn: parent
+                width: parent.width
+                height: width
+                renderTarget: Canvas.Image
+                renderStrategy: Canvas.Immediate
+
+                // Context2D
+                property real penWidth:      Theme.paddingSmall / 2.0
+                property real innerRadius:   width * 0.25
+                property real outerRadius:   width * 0.50 - penWidth
+                property real middleRadius:  (innerRadius + outerRadius) / 2.0
+                property string borderColor: Theme.primaryColor
+
+                onBorderColorChanged:  requestPaint()
+
+                onPaint: {
+                    var ctx = getContext("2d")
+                    ctx.reset()
+                    ctx.translate(width/2, height/2)
+                    ctx.rotate(-Math.PI/2.0)
+
+                    for(var i = 0; i < miniChart.chartData.count; i++) {
+                        var curr = miniChart.chartData.get(i)
+                        var startAngle = 2*Math.PI * ((miniChart.runningTotal[i] - curr["cValue"]) / miniChart.valueTotal)
+                        var endAngle = startAngle + 2*Math.PI * (curr["cValue"] / miniChart.valueTotal)
+
+                        console.log(curr["cValue"] + " " + curr["cColor"])
+                        console.log(borderColor)
+
+                        ctx.fillStyle = curr["cColor"]
+                        ctx.strokeStyle = curr["cColor"]
+                        ctx.lineWidth = outerRadius - innerRadius
+                        ctx.beginPath()
+                        ctx.arc(0,0,middleRadius, startAngle, endAngle)
+                        ctx.stroke()
+
+                        ctx.strokeStyle = borderColor
+                        ctx.lineWidth = penWidth
+                        ctx.beginPath()
+                        ctx.arc(0,0,outerRadius, startAngle, endAngle, false)
+                        ctx.arc(0,0,innerRadius, endAngle, startAngle, true)
+                        ctx.closePath()
+                        ctx.stroke()
+                    }
+
+
+                }
+            }
         }
+
 
         Label {
             id: nameTag
@@ -75,5 +139,3 @@ CoverBackground {
         }
     }
 }
-
-
