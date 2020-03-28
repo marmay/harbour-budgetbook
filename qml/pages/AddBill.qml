@@ -27,9 +27,9 @@ Dialog {
     QtObject {
         id: d
 
-        property double total : 0;
-        property var shop : shopSelector.value;
-        property var date : new Date();
+        property double total: 0.0
+        property var shop: shopSelector.value
+        property var date: dateSelector.value
     }
 
     onAccepted: {
@@ -75,37 +75,8 @@ Dialog {
                 }
             }
 
-            Row {
-                width: parent.width
-                height: dateLabel.height
-                spacing: Theme.paddingLarge
-
-                Label {
-                    id: dateLabel
-                    text: "Date"
-                }
-                Label {
-                    id: datePicker
-                    text: d.date.toLocaleDateString();
-                    width: parent.width - dateLabel.width - Theme.paddingSmall
-                    color: Theme.highlightColor
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            var dialog = pageStack.push(pickerComponent);
-                            dialog.accepted.connect(function() {
-                                d.date = dialog.date;
-                            });
-                        }
-
-                        Component {
-                            id: pickerComponent
-                            DatePickerDialog {
-                                date: new Date()
-                            }
-                        }
-                    }
-                }
+            DateSelector {
+                id: dateSelector
             }
 
             Separator {

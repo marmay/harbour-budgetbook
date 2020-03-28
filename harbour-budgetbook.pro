@@ -63,5 +63,6 @@ TRANSLATIONS += \
 QML2_IMPORT_PATH += ./qmlModules
 
 DISTFILES += \
+    qml/elements/DateSelector.qml \
     qml/elements/DoughnutChart.qml \
     qml/pages/ByCategoryPage.qml
