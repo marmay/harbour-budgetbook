@@ -121,7 +121,7 @@ Page {
             ByCategory {
                 id: stat
                 anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width * 0.8
+                width: parent.width
             }
         }
     }

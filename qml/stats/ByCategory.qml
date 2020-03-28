@@ -80,7 +80,7 @@ Column {
 
     Item {
         width: parent.width
-        height: width
+        height: parent.width * 0.8
 
         DoughnutChart {
             id: chart
