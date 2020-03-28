@@ -48,7 +48,6 @@ Page {
                 onClicked: {
                     var dialog = pageStack.push(Qt.resolvedUrl("AddBill.qml"))
                     dialog.accepted.connect(function() {
-                        stat.dirtyData = true
                         stat.update()
                     })
                 }
@@ -100,7 +99,6 @@ Page {
                             stat.from = Utility.firstOfMonth(monthDelta)
                             stat.to = Utility.firstOfMonth(monthDelta+1)
                             monthLabel.text = stat.from.toLocaleString(Qt.locale(), "MMMM yyyy")
-                            stat.dirtyData = true
                             stat.update()
                         }
                     }
@@ -113,7 +111,6 @@ Page {
                             stat.from = Utility.firstOfMonth(monthDelta)
                             stat.to = Utility.firstOfMonth(monthDelta+1)
                             monthLabel.text = stat.from.toLocaleString(Qt.locale(), "MMMM yyyy")
-                            stat.dirtyData = true
                             stat.update()
                         }
                     }

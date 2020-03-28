@@ -25,20 +25,20 @@ Column {
     property date from : Utility.firstOfMonth(0)
     property date to : Utility.firstOfMonth(1)
     property bool _updating: false
-    property bool dirtyData: true
 
     Component.onCompleted: update()
 
     property ListModel newModel: ListModel {}
 
     function update() {
-        if(!_updating && dirtyData) {
+        if(!_updating) {
             _updating = true
-            dirtyData = false
 
             var db = Database.openDatabase();
             var colors = ["#2F9235", "#246D70", "#BA763B", "#BA3F3B", "#025608", "#024042", "#6E3403", "#6E0603",
                           "#50AF56", "#3E8386", "#DE9D66", "#DE6966"];
+            var runningTotal = 0.0
+
             newModel.clear()
             legendModel.clear()
             db.readTransaction(function (tx) {
@@ -51,11 +51,13 @@ Column {
                             [from.getTime() / 1000, to.getTime() / 1000]);
 
                 for (var i = 0; i < rs.rows.length; ++i) {
-                    newModel.append({ "cLabel": rs.rows.item(i).name, "cValue": rs.rows.item(i).price, "cColor": colors[i] })
+                    runningTotal = runningTotal + rs.rows.item(i).price
+                    newModel.append({ "cLabel": rs.rows.item(i).name, "cValue": rs.rows.item(i).price, "cColor": colors[i], "runningTotal": runningTotal})
                     legendModel.append({"label": rs.rows.item(i).name, "value": rs.rows.item(i).price, "itemColor": colors[i] })
                 }
             });
-            chart.chartData = newModel
+            chart.totalValue = runningTotal
+            chart.model = newModel
 
             db.readTransaction(function (tx) {
                 var rs = tx.executeSql(

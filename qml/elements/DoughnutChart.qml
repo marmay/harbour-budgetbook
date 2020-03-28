@@ -20,118 +20,98 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-Item {
-    id: root
-    property ListModel chartData
-    property bool smallChart: true
+ListView {
+    id: listView
+    model: []
 
-    onChartDataChanged: {
-        var sum = 0.0
-        for (var i = 0; i < chartData.count; i++) {
-            sum = sum + chartData.get(i).cValue
-            listView.runningTotal[i] = sum
+    property real totalValue
+    //property variant runningTotal: []
+
+    delegate: Item {
+        id: pieDelegate
+        anchors {
+            top: parent.top
+            left: parent.left
         }
-        listView.valueTotal = sum
-        listView.model = chartData
-    }
-
-    ListView {
-        id: listView
         width: parent.width
-        height: parent.height
-        model: []
-
-        property int valueTotal
-        property variant runningTotal: []
-
-        delegate: Item {
-            id: pieDelegate
-            anchors {
-                top: parent.top
-                left: parent.left
+        height: parent.width
+        opacity: 0.0
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 500
+                easing.type: Easing.Linear
             }
+        }
+
+        Canvas {
+            id: pieSector
+            anchors.centerIn: parent
             width: parent.width
-            height: parent.width
-            opacity: smallChart ? 0.0 : 1.0
-            Behavior on opacity {
+            height: width
+            scale: 0.5
+            renderTarget: Canvas.FramebufferObject
+            renderStrategy: Canvas.Threaded
+            Behavior on scale {
                 NumberAnimation {
                     duration: 500
-                    easing.type: Easing.Linear
+                    easing.type: Easing.OutQuint
                 }
             }
 
-            Canvas {
-                id: pieSector
-                anchors.centerIn: parent
-                width: parent.width
-                height: width
-                scale: smallChart ? 0.5 : 1.0
-                renderTarget: smallChart ? Canvas.Image : Canvas.FramebufferObject
-                renderStrategy: smallChart ? Canvas.Immediate : Canvas.Threaded
-                Behavior on scale {
-                    NumberAnimation {
-                        duration: 500
-                        easing.type: Easing.OutQuint
-                    }
+            Component.onCompleted: startDelay.running = true
+
+            Timer {
+                id: startDelay
+                repeat: false
+                triggeredOnStart: false
+                running: false
+                onTriggered: {
+                    pieSector.scale = 1.0
+                    pieDelegate.opacity = 1.0
                 }
-                Component.onCompleted: {
-                    if(smallChart) {
-                        startDelay.running = true
-                    }
+                interval: index * 100
+            }
+
+            // Context2D
+            property real penWidth:     Theme.paddingSmall / 3.0
+            property real innerRadius:  width * 0.25
+            property real outerRadius:  width * 0.50 - penWidth
+            property real middleRadius: (innerRadius + outerRadius) / 2.0
+            property string borderColor: Theme.primaryColor
+
+            onBorderColorChanged: requestPaint()
+
+            property bool appActive: Qt.application.active
+            onAppActiveChanged: {
+                if(appActive) {
+                    requestPaint()
                 }
+            }
 
-                Timer {
-                    id: startDelay
-                    repeat: false
-                    triggeredOnStart: false
-                    running: false
-                    onTriggered: {
-                        pieSector.scale = 1.0
-                        pieDelegate.opacity = 1.0
-                    }
-                    interval: index * 100
-                }
+            onPaint: {
 
-                // Context2D
-                property real penWidth:     Theme.paddingSmall / 3.0
-                property real innerRadius:  width * 0.25
-                property real outerRadius:  width * 0.50 - penWidth
-                property real middleRadius: (innerRadius + outerRadius) / 2.0
-                property string borderColor: Theme.primaryColor
+                var ctx = getContext("2d")
+                ctx.reset()
+                ctx.translate(width/2, height/2)
+                ctx.rotate(-Math.PI/2.0)
+                ctx.fillStyle = cColor
 
-                onBorderColorChanged:  requestPaint()
+                var startAngle = 2*Math.PI * ((runningTotal - cValue) / listView.totalValue)
+                var endAngle = 2*Math.PI * (runningTotal / listView.totalValue)
 
-                property bool appActive: Qt.application.active
-                onAppActiveChanged: {
-                    if(appActive) {
-                        requestPaint()
-                    }
-                }
+                ctx.strokeStyle = cColor
+                ctx.lineWidth = outerRadius - innerRadius
+                ctx.arc(0,0,middleRadius, startAngle, endAngle)
+                ctx.stroke()
 
-                onPaint: {
-                    var ctx = getContext("2d")
-                    ctx.reset()
-                    ctx.translate(width/2, height/2)
-                    ctx.rotate(-Math.PI/2.0)
-                    ctx.fillStyle = cColor
+                ctx.strokeStyle = borderColor
+                ctx.lineWidth = penWidth
 
-                    var startAngle = 2*Math.PI * ((listView.runningTotal[index] - cValue) / listView.valueTotal)
-                    var endAngle = startAngle + 2*Math.PI * (cValue / listView.valueTotal)
-
-                    ctx.strokeStyle = cColor
-                    ctx.lineWidth = outerRadius - innerRadius
-                    ctx.arc(0,0,middleRadius, startAngle, endAngle)
-                    ctx.stroke()
-
-                    ctx.strokeStyle = borderColor
-                    ctx.lineWidth = penWidth
-
-                    ctx.beginPath()
-                    ctx.arc(0,0,outerRadius, startAngle, endAngle, false)
-                    ctx.arc(0,0,innerRadius, endAngle, startAngle, true)
-                    ctx.closePath()
-                    ctx.stroke()
-                }
+                ctx.beginPath()
+                ctx.arc(0,0,outerRadius, startAngle, endAngle, false)
+                ctx.arc(0,0,innerRadius, endAngle, startAngle, true)
+                ctx.closePath()
+                ctx.stroke()
             }
         }
     }
