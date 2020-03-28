@@ -80,6 +80,7 @@ Dialog {
             }
 
             Separator {
+                color: Theme.primaryColor
                 width: parent.width
             }
 
@@ -132,6 +133,7 @@ Dialog {
             }
 
             Separator {
+                color: Theme.primaryColor
                 width: parent.width
             }
 
@@ -166,7 +168,6 @@ Dialog {
                     inputMethodHints: Qt.ImhFormattedNumbersOnly | Qt.ImhNoPredictiveText
                     validator: IntValidator { }
                     EnterKey.enabled: text.length > 0 && acceptableInput == true
-                    EnterKey.iconSource: "image://theme/icon-m-add"
                     EnterKey.onClicked: {
                         objects.append({ category: categorySelector.value, price: Utility.stringToFloat(price.text),
                                            tags: tagSelector.selectedTags });
