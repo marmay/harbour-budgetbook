@@ -32,7 +32,6 @@ Column {
     property ListModel newModel: ListModel {}
 
     function update() {
-        console.log("update()")
         if(!_updating && dirtyData) {
             _updating = true
             dirtyData = false
