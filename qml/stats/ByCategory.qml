@@ -84,18 +84,22 @@ Column {
 
         DoughnutChart {
             id: chart
-            anchors.fill: parent
-        }
-
-        Label {
-            id: totalLabel
-            property double total : 0.
-            width: 0.8 * parent.width
-            anchors.centerIn: parent
-            text: Utility.floatToCurrencyString(total)
-            wrapMode: Label.WordWrap
-            horizontalAlignment: Label.AlignHCenter
-            font.pixelSize: Theme.fontSizeLarge
+            width: parent.width * 0.8
+            height: width
+            anchors {
+                top: parent.top
+                horizontalCenter: parent.horizontalCenter
+            }
+            Label {
+                id: totalLabel
+                property double total : 0.
+                width: 0.8 * parent.width
+                anchors.centerIn: parent
+                text: total > 0.0 ? Utility.floatToCurrencyString(total) : ""
+                wrapMode: Label.WordWrap
+                horizontalAlignment: Label.AlignHCenter
+                font.pixelSize: Theme.fontSizeLarge
+            }
         }
     }
 
