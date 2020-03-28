@@ -79,7 +79,6 @@ Page {
             Label {
                 id: monthLabel
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: Utility.firstOfMonth(0)["monthName"]
             }
 
             Item {
@@ -97,9 +96,10 @@ Page {
                         anchors.left: parent.left
                         text: "<<"
                         onClicked: {
-                            monthDelta = monthDelta + 1
+                            monthDelta = monthDelta - 1
                             stat.from = Utility.firstOfMonth(monthDelta)
                             stat.to = Utility.firstOfMonth(monthDelta+1)
+                            monthLabel.text = stat.from.toLocaleString(Qt.locale(), "MMMM yyyy")
                             stat.dirtyData = true
                             stat.update()
                         }
@@ -109,9 +109,10 @@ Page {
                         anchors.right: parent.right
                         text: ">>"
                         onClicked: {
-                            monthDelta = monthDelta - 1
+                            monthDelta = monthDelta + 1
                             stat.from = Utility.firstOfMonth(monthDelta)
                             stat.to = Utility.firstOfMonth(monthDelta+1)
+                            monthLabel.text = stat.from.toLocaleString(Qt.locale(), "MMMM yyyy")
                             stat.dirtyData = true
                             stat.update()
                         }
