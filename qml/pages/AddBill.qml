@@ -135,6 +135,7 @@ Dialog {
             Separator {
                 color: Theme.primaryColor
                 width: parent.width
+                visible: objects.count > 0
             }
 
             Row {
