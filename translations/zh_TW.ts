@@ -172,6 +172,13 @@
     </message>
 </context>
 <context>
+    <name>DateSelector</name>
+    <message>
+        <source>Date</source>
+        <translation>日期</translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>BudgetBook</source>
