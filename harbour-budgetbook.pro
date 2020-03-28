@@ -23,7 +23,7 @@ DISTFILES += \
     translations/*.ts \
     qml/Database.js \
     qml/harbour-budgetbook.qml \
-    rpm/harbour-budgetbook.changes.in \
+    rpm/harbour-budgetbook.changes \
     rpm/harbour-budgetbook.yaml \
     rpm/harbour-budgetbook.spec \
     harbour-budgetbook.desktop \

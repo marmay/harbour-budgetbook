@@ -8,6 +8,18 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+# * Sat Mar 28 2020 Matti Viljanen <matti.viljanen@kapsi.fi> x.x.x-x
+# - Re-implement more robust chart, better auto updates
+# - Remove qchart.js
+# - Adjust overall statistics page to look like main page
+# - Implement month selection
+# - Redesign cover page
+# - Support light ambiences
+# - Accept new tag with Enter key
+# - Fix and adjust Add Bill page alignment issues and elements
+# - Update translations
+# - Fix icons
+
 * Wed Feb 07 2018 Markus Mayr <markus.mayr@outlook.com> 0.4.0-1
 - Added translations for Chinese (China), Chinese (Taiwan), Czech, Dutch, Finnish, German and Swedish
 - Minor fixes and improvements.
