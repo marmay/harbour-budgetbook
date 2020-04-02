@@ -188,7 +188,7 @@ Dialog {
 
                     placeholderText: qsTr("Price")
                     inputMethodHints: Qt.ImhFormattedNumbersOnly | Qt.ImhNoPredictiveText
-                    validator: IntValidator { }
+                    validator: DoubleValidator { }
                     EnterKey.enabled: text.length > 0 && acceptableInput == true
                     EnterKey.onClicked: {
                         objects.append({ category: categorySelector.value, price: Utility.stringToFloat(price.text),
