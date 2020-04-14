@@ -39,7 +39,7 @@ Page {
                 text: qsTr("Settings")
                 onClicked: {
                     var settings = pageStack.push(Qt.resolvedUrl("Settings.qml"))
-                    settings.primaryCurrencyChanged.connect(function() {
+                    settings.dataChanged.connect(function() {
                         stat.update()
                     })
                 }
