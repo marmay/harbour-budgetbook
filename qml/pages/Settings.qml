@@ -17,9 +17,11 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.Notifications 1.0
 import "../Database.js" as Database
 
 Page {
+    id: page
 
     signal dataChanged
 
@@ -30,9 +32,56 @@ Page {
         }
     }
 
+    property Item remorse
+
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: column.height
+
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Backup database")
+                onClicked: {
+                    if(BackupManager.makeBackup())
+                         console.log("Success")
+                    else
+                        console.log("Failure")
+
+                }
+            }
+            MenuItem {
+                text: qsTr("Restore last backup")
+                onClicked: {
+                    var filename = BackupManager.checkRestoreBackup()
+                    console.log(filename)
+                    if(filename.length === 0) {
+                        backupNotification.previewSummary = qsTr("No backups found.")
+                        backupNotification.publish()
+                    }
+                    else {
+                        remorse = Remorse.popupAction(page, qsTr("Restoring backup"), function() { restoreBackup() })
+                    }
+                }
+
+                Notification {
+                    id: backupNotification
+                    isTransient: true
+                }
+
+                function restoreBackup() {
+                    var success = BackupManager.doRestoreBackup()
+                    if(success) {
+                        backupNotification.previewSummary = qsTr("Backup restored successfully.")
+                        backupNotification.publish()
+                    }
+                    else {
+                        backupNotification.previewSummary = qsTr("Restoring backup failed.")
+                        backupNotification.publish()
+                    }
+                    dataChanged()
+                }
+            }
+        }
 
         Column {
             id: column

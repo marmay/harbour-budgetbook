@@ -15,7 +15,11 @@ TARGET = harbour-budgetbook
 CONFIG += sailfishapp
 
 SOURCES += \
+    src/backupmanager.cpp \
     src/harbour-budgetbook.cpp
+
+HEADERS += \
+    src/backupmanager.h
 
 LIBS += -lz
 

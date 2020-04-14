@@ -211,6 +211,30 @@
         <source>Primary currency</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Backup database</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restore last backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup restored successfully.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring backup failed.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No backups found.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring backup</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ShopSelector</name>
