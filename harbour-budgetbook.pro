@@ -17,6 +17,10 @@ CONFIG += sailfishapp
 SOURCES += \
     src/harbour-budgetbook.cpp
 
+LIBS += -lz
+
+include(3rdparty/quazip/quazip/quazip.pri)
+
 DISTFILES += \
     qml/cover/CoverPage.qml \
     qml/pages/FirstPage.qml \
