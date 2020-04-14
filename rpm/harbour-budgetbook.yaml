@@ -29,7 +29,6 @@ PkgConfigBR:
   - Qt5Core
   - Qt5Qml
   - Qt5Quick
-  - zlib
 
 # Build dependencies without a pkgconfig setup can be listed here
 # PkgBR:
@@ -38,7 +37,6 @@ PkgConfigBR:
 # Runtime dependencies which are not automatically detected
 Requires:
   - sailfishsilica-qt5 >= 0.10.9 
-  - zlib
 
 # All installed files
 Files:
