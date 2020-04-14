@@ -31,14 +31,13 @@ Page {
     }
 
     SilicaFlickable {
-        x: Theme.paddingLarge
-        width: parent.width - 2 * Theme.paddingLarge
-        height: parent.height
+        anchors.fill: parent
         contentHeight: column.height
 
         Column {
             id: column
-            width: parent.width
+            width: parent.width - 2.0*Theme.horizontalPageMargin
+            anchors.horizontalCenter: parent.horizontalCenter
 
             PageHeader {
                 title: qsTr("Settings")
