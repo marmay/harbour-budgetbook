@@ -28,6 +28,45 @@
     </message>
 </context>
 <context>
+    <name>BackupList</name>
+    <message>
+        <source>Restore backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup restored successfully</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring backup failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting backup failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No backups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create backups in Settings page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
@@ -210,6 +249,22 @@
     <message>
         <source>Primary currency</source>
         <translation>Primär valuta</translation>
+    </message>
+    <message>
+        <source>List backups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup created succesfully</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not create backup</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

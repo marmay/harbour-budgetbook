@@ -28,6 +28,45 @@
     </message>
 </context>
 <context>
+    <name>BackupList</name>
+    <message>
+        <source>Restore backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup restored successfully</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring backup failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting backup failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No backups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create backups in Settings page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
@@ -212,27 +251,19 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Backup database</source>
+        <source>List backups</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Restore last backup</source>
+        <source>Create backup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Backup restored successfully.</source>
+        <source>Backup created succesfully</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Restoring backup failed.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>No backups found.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Restoring backup</source>
+        <source>Could not create backup</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
