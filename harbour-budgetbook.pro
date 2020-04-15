@@ -27,6 +27,7 @@ include(3rdparty/quazip/quazip/quazip.pri)
 
 DISTFILES += \
     qml/cover/CoverPage.qml \
+    qml/pages/BackupList.qml \
     qml/pages/FirstPage.qml \
     translations/*.ts \
     qml/Database.js \

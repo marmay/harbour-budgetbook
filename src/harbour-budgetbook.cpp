@@ -56,7 +56,8 @@ int main(int argc, char *argv[])
     QGuiApplication *app = SailfishApp::application(argc, argv);
     QQuickView *view = SailfishApp::createView();
 
-    BackupManager bm(QString(view->engine()->offlineStoragePath() + QDir::separator() + "Databases" + QDir::separator()));
+    BackupManager bm(app);
+    bm.setPaths(view->engine()->offlineStoragePath() + QDir::separator() + "Databases" + QDir::separator(), QDir::homePath());
     view->rootContext()->setContextProperty("BackupManager", &bm);
 
     QTranslator translator;

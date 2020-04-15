@@ -2,46 +2,65 @@
 
 BackupManager::BackupManager(QObject *parent) : QObject(parent)
 {
-
+    backupListModel = new QStringListModel(this);
 }
 
-BackupManager::BackupManager(QString newdb) : QObject()
+void BackupManager::setPaths(QString newDatabasePath, QString newHomePath)
 {
-    databaseDir = newdb;
+    databasePath = newDatabasePath;
+    homePath = newHomePath;
 }
 
 bool BackupManager::makeBackup()
 {
-    QString timestamp = QDateTime::currentDateTime().toString("_yyyyMMdd-HHmmss");
-    QString destination = QDir::homePath() + QDir::separator() + "harbour-budgetbook" + timestamp + ".bak";
+    QString timestamp = QDateTime::currentDateTime().toString("yyyyMMdd-HHmmss");
+    QString destination = QDir::homePath() + QDir::separator() + "harbour-budgetbook_" + timestamp + ".bak";
 
-    QDir sourceDir = QDir(databaseDir);
+    QDir sourceDir = QDir(databasePath);
 
-    return JlCompress::compressDir(destination, databaseDir, false, QDir::Files);
+    return JlCompress::compressDir(destination, databasePath, false, QDir::Files);
 }
 
-QString BackupManager::checkRestoreBackup()
+bool BackupManager::restoreBackup()
 {
-    backupFile = getLastBackup();
-    return backupFile;
+    return JlCompress::extractDir(QDir::homePath() + QDir::separator() + "harbour-budgetbook_" + dateString + ".bak", databasePath).count() > 0;
 }
 
-bool BackupManager::doRestoreBackup()
+bool BackupManager::deleteBackup()
 {
-    return JlCompress::extractDir(backupFile, databaseDir).count() > 0;
+    bool success = QFile::remove(QDir::homePath() + QDir::separator() + "harbour-budgetbook_" + dateString + ".bak");
+    if(success) {
+        int id = backupListModel->stringList().indexOf(dateString);
+        backupListModel->removeRows(id, 1);
+    }
+    return success;
 }
 
-QString BackupManager::getLastBackup()
+void BackupManager::setDateString(QString newString) {
+    dateString = newString;
+}
+
+QString BackupManager::getDateString() {
+    return dateString;
+}
+
+QStringListModel* BackupManager::getBackupList()
 {
     QDir homeDir(QDir::homePath());
-    QStringList backups = homeDir.entryList(QStringList("harbour-budgetbook_*.bak"), QDir::Files, QDir::Name);
 
-    if(backups.count() == 0)
-        return QString();
+    QStringList files = homeDir.entryList(QStringList("harbour-budgetbook_*.bak"), QDir::Files, QDir::Name);
 
-    QFile backup(homeDir.path() + QDir::separator() + backups.last());
-    if(backup.exists() && (JlCompress::getFileList(backup.fileName()).count() == 2))
-        return backup.fileName();
+    QStringList backupList;
+    QRegularExpression regex("([0-9]{8}-[0-9]{6})");
 
-    return QString();
+    foreach(QString f, files) {
+        QRegularExpressionMatch caps = regex.match(f);
+
+        if(caps.hasMatch())
+            backupList << caps.captured(1);
+    }
+
+    backupListModel->setStringList(QStringList(backupList));
+
+    return backupListModel;
 }

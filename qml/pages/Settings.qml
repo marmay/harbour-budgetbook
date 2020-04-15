@@ -32,55 +32,40 @@ Page {
         }
     }
 
-    property Item remorse
-
     SilicaFlickable {
         anchors.fill: parent
         contentHeight: column.height
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Backup database")
+                text: qsTr("List backups")
                 onClicked: {
-                    if(BackupManager.makeBackup())
-                         console.log("Success")
-                    else
-                        console.log("Failure")
-
+                    var settings = pageStack.push(Qt.resolvedUrl("BackupList.qml"))
+                    settings.backupRestored.connect(function() {
+                        dataChanged()
+                    })
                 }
-            }
-            MenuItem {
-                text: qsTr("Restore last backup")
-                onClicked: {
-                    var filename = BackupManager.checkRestoreBackup()
-                    console.log(filename)
-                    if(filename.length === 0) {
-                        backupNotification.previewSummary = qsTr("No backups found.")
-                        backupNotification.publish()
-                    }
-                    else {
-                        remorse = Remorse.popupAction(page, qsTr("Restoring backup"), function() { restoreBackup() })
-                    }
-                }
-
                 Notification {
                     id: backupNotification
                     isTransient: true
                 }
-
-                function restoreBackup() {
-                    var success = BackupManager.doRestoreBackup()
+            }
+            MenuItem {
+                text: qsTr("Create backup")
+                onClicked: {
+                    var success = (BackupManager.makeBackup())
                     if(success) {
-                        backupNotification.previewSummary = qsTr("Backup restored successfully.")
+                        backupNotification.previewSummary = qsTr("Backup created succesfully")
                         backupNotification.publish()
                     }
                     else {
-                        backupNotification.previewSummary = qsTr("Restoring backup failed.")
+                        backupNotification.previewSummary = qsTr("Could not create backup")
                         backupNotification.publish()
                     }
-                    dataChanged()
+
                 }
             }
+
         }
 
         Column {
