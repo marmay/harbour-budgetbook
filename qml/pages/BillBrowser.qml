@@ -102,6 +102,10 @@ Page {
             width: listView.width
             height: menuOpen ? listView.contextMenu.height + bItem.height : bItem.height
 
+            ListView.onRemove: RemoveAnimation {
+                target: listItem
+            }
+
             BackgroundItem {
                 id: bItem
 
