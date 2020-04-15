@@ -130,7 +130,12 @@ Page {
                     }
                 }
             }
-
         }
+    }
+
+    ViewPlaceholder {
+        enabled: backupList.count === 0
+        text: qsTr("No backups.")
+        hintText: qsTr("Create backups in Settings page.")
     }
 }
