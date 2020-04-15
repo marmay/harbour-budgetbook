@@ -60,13 +60,13 @@ Page {
                     BackupManager.dateString = display
                     var success = BackupManager.restoreBackup()
                     if(success) {
-                        backupNotification.previewSummary = qsTr("Backup restored successfully.")
+                        backupNotification.previewSummary = qsTr("Backup restored successfully")
                         backupNotification.publish()
                         backupRestored()
                         pageStack.navigateBack()
                     }
                     else {
-                        backupNotification.previewSummary = qsTr("Restoring backup failed.")
+                        backupNotification.previewSummary = qsTr("Restoring backup failed")
                         backupNotification.publish()
                     }
                 }
@@ -80,7 +80,7 @@ Page {
                     if(success) {
                     }
                     else {
-                        backupNotification.previewSummary = qsTr("Deleting backup failed.")
+                        backupNotification.previewSummary = qsTr("Deleting backup failed")
                         backupNotification.publish()
                     }
                 }
