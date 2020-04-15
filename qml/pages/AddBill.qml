@@ -87,21 +87,36 @@ Dialog {
             }
 
             Separator {
+                id: separator
                 color: Theme.primaryColor
                 width: parent.width
             }
 
-            ListModel {
-                id: objects
-            }
+            SilicaListView {
+                id: listView
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+                height: contentHeight
 
-            Repeater {
-                id: rep
+                ListModel {
+                    id: objects
+                }
                 model: objects
 
-                Item {
-                    width: column.width
-                    height: rowCategory.height
+                delegate: Item {
+                    id: listItem
+                    width: listView.width
+                    height: Theme.itemSizeExtraSmall
+
+                    ListView.onRemove: RemoveAnimation {
+                        target: listItem
+                    }
+
+                    ListView.onAdd: AddAnimation {
+                        target: listItem
+                    }
 
                     Label {
                         id: rowCategory
@@ -139,8 +154,8 @@ Dialog {
                     IconButton {
                         id: rowRemove
                         icon.source: "image://theme/icon-m-remove"
-                        icon.width: parent.height
-                        icon.height: parent.height
+                        icon.width: rowPrice.height
+                        icon.height: rowPrice.height
                         anchors {
                             verticalCenter: parent.verticalCenter
                             right: parent.right
