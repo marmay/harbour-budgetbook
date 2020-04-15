@@ -20,7 +20,7 @@ import Sailfish.Silica 1.0
 import "../Database.js" as Database
 
 Dialog {
-    id: page
+    id: dialog
 
     onAccepted: {
         if (name.text !== "") {
@@ -31,7 +31,7 @@ Dialog {
     Column {
         id: column
 
-        width: page.width
+        width: dialog.width
         spacing: Theme.paddingLarge
         PageHeader {
             title: qsTr("New Tag")
@@ -42,6 +42,11 @@ Dialog {
             anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width - 2 * Theme.paddingLarge
             placeholderText: qsTr("Tag name")
+            EnterKey.onClicked: {
+                if(name.length > 0) {
+                    dialog.accept()
+                }
+            }
         }
     }
 }

@@ -15,23 +15,28 @@ TARGET = harbour-budgetbook
 CONFIG += sailfishapp
 
 SOURCES += \
+    src/backupmanager.cpp \
     src/harbour-budgetbook.cpp
 
-OTHER_FILES += \
+HEADERS += \
+    src/backupmanager.h
+
+LIBS += -lz
+
+include(3rdparty/quazip/quazip/quazip.pri)
+
+DISTFILES += \
     qml/cover/CoverPage.qml \
+    qml/pages/BackupList.qml \
     qml/pages/FirstPage.qml \
     translations/*.ts \
     qml/Database.js \
     qml/harbour-budgetbook.qml \
-    rpm/harbour-budgetbook.changes.in \
+    rpm/harbour-budgetbook.changes \
     rpm/harbour-budgetbook.yaml \
     rpm/harbour-budgetbook.spec \
     harbour-budgetbook.desktop \
     qml/stats/ByCategory.qml \
-    qml/QChart/QChart.js \
-    qml/QChart/QChart.qml \
-    qml/QChart/LICENSE \
-    qml/QChart/qmldir \
     qml/elements/ShopSelector.qml \
     qml/elements/CategorySelector.qml \
     qml/elements/ShopTypeSelector.qml \
@@ -44,7 +49,11 @@ OTHER_FILES += \
     qml/pages/Settings.qml \
     qml/pages/CurrencySettings.qml \
     qml/elements/CurrencySelector.qml \
-    qml/pages/ByCategory.qml
+    qml/elements/DateSelector.qml \
+    qml/elements/DoughnutChart.qml \
+    qml/pages/ByCategoryPage.qml
+
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -58,3 +67,4 @@ TRANSLATIONS += \
     translations/sv.ts \
     translations/zh_CN.ts \
     translations/zh_TW.ts
+

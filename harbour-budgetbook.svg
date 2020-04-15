@@ -14,11 +14,11 @@
    height="64px"
    id="svg2985"
    version="1.1"
-   inkscape:version="0.48.5 r10040"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
    inkscape:export-filename="/home/markus/BudgetBook/BudgetBook.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90"
-   sodipodi:docname="BudgetBook.svg">
+   sodipodi:docname="harbour-budgetbook.svg">
   <defs
      id="defs2987">
     <linearGradient
@@ -100,9 +100,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.97227183"
-     inkscape:cx="-55.673083"
-     inkscape:cy="-13.974697"
+     inkscape:zoom="5.5"
+     inkscape:cx="29.790593"
+     inkscape:cy="49.090048"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -110,9 +110,9 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:window-width="1920"
-     inkscape:window-height="1014"
+     inkscape:window-height="1132"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata2990">
@@ -122,7 +122,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -157,121 +157,121 @@
        inkscape:export-ydpi="120.94" />
     <text
        xml:space="preserve"
-       style="font-size:30.24544907px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none"
        x="14.668805"
        y="44.007732"
        id="text3814"
-       sodipodi:linespacing="125%"
-       transform="matrix(0.96592583,-0.25881905,0.25881905,0.96592583,0,0)"
+       transform="rotate(-15)"
        inkscape:export-filename="/home/markus/BudgetBook/BudgetBook.png"
        inkscape:export-xdpi="120.94"
        inkscape:export-ydpi="120.94"><tspan
          sodipodi:role="line"
          id="tspan3816"
          x="14.668805"
-         y="44.007732">€</tspan></text>
+         y="44.007732"
+         style="font-size:30.24544907px;line-height:1.25">€</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Cantarell;-inkscape-font-specification:Cantarell"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:Cantarell;-inkscape-font-specification:Cantarell;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        x="-62.545456"
        y="28.727274"
        id="text3818"
-       sodipodi:linespacing="125%"
        inkscape:export-filename="/home/markus/BudgetBook/BudgetBook.png"
        inkscape:export-xdpi="120.94"
        inkscape:export-ydpi="120.94"><tspan
          sodipodi:role="line"
          id="tspan3820"
          x="-62.545456"
-         y="28.727274" /></text>
+         y="28.727274"
+         style="font-size:16px;line-height:1.25"> </tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:22.34331322px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none"
        x="40.776329"
        y="44.77227"
        id="text3822"
-       sodipodi:linespacing="125%"
-       transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)"
+       transform="rotate(15)"
        inkscape:export-filename="/home/markus/BudgetBook/BudgetBook.png"
        inkscape:export-xdpi="120.94"
        inkscape:export-ydpi="120.94"><tspan
          sodipodi:role="line"
          id="tspan3824"
          x="40.776329"
-         y="44.77227">$</tspan></text>
+         y="44.77227"
+         style="font-size:22.34331322px;line-height:1.25">$</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
        x="-44.545456"
        y="40.545456"
        id="text3826"
-       sodipodi:linespacing="125%"
        inkscape:export-filename="/home/markus/BudgetBook/BudgetBook.png"
        inkscape:export-xdpi="120.94"
        inkscape:export-ydpi="120.94"><tspan
          sodipodi:role="line"
          id="tspan3828"
          x="-44.545456"
-         y="40.545456" /></text>
+         y="40.545456"
+         style="font-size:16px;line-height:1.25"> </tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none"
        x="45.05806"
        y="11.013737"
        id="text3904"
-       sodipodi:linespacing="125%"
-       transform="matrix(0.96592583,0.25881905,-0.25881905,0.96592583,0,0)"
+       transform="rotate(15)"
        inkscape:export-filename="/home/markus/BudgetBook/BudgetBook.png"
        inkscape:export-xdpi="120.94"
        inkscape:export-ydpi="120.94"><tspan
          sodipodi:role="line"
          id="tspan3906"
          x="45.05806"
-         y="11.013737">¥</tspan></text>
+         y="11.013737"
+         style="font-size:16px;line-height:1.25">¥</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:18.30131149px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none"
        x="20.44412"
        y="8.7040119"
        id="text3814-8"
-       sodipodi:linespacing="125%"
-       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       transform="rotate(45)"
        inkscape:export-filename="/home/markus/BudgetBook/BudgetBook.png"
        inkscape:export-xdpi="120.94"
        inkscape:export-ydpi="120.94"><tspan
          sodipodi:role="line"
          id="tspan3816-0"
          x="20.44412"
-         y="8.7040119">£</tspan></text>
+         y="8.7040119"
+         style="font-size:18.30131149px;line-height:1.25">£</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:23.91964531px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none"
        x="22.19231"
        y="47.216492"
        id="text3814-7"
-       sodipodi:linespacing="125%"
-       transform="matrix(0.96592583,0.25881904,-0.25881904,0.96592583,0,0)"
+       transform="rotate(15)"
        inkscape:export-filename="/home/markus/BudgetBook/BudgetBook.png"
        inkscape:export-xdpi="120.94"
        inkscape:export-ydpi="120.94"><tspan
          sodipodi:role="line"
          id="tspan3816-07"
          x="22.19231"
-         y="47.216492">₹</tspan></text>
+         y="47.216492"
+         style="font-size:23.91964531px;line-height:1.25">₹</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:16.12845993px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';letter-spacing:0px;word-spacing:0px;fill:#bb8e00;fill-opacity:1;stroke:none"
        x="49.114223"
        y="26.414385"
        id="text3814-7-2"
-       sodipodi:linespacing="125%"
-       transform="matrix(0.96592583,0.25881904,-0.25881904,0.96592583,0,0)"
+       transform="rotate(15)"
        inkscape:export-filename="/home/markus/BudgetBook/BudgetBook.png"
        inkscape:export-xdpi="120.94"
        inkscape:export-ydpi="120.94"><tspan
          sodipodi:role="line"
          id="tspan3816-07-1"
          x="49.114223"
-         y="26.414385">元</tspan></text>
+         y="26.414385"
+         style="font-size:16.12845993px;line-height:1.25">元</tspan></text>
   </g>
 </svg>

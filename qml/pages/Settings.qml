@@ -17,9 +17,13 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.Notifications 1.0
 import "../Database.js" as Database
 
 Page {
+    id: page
+
+    signal dataChanged
 
     onStatusChanged: {
         if (status === PageStatus.Activating)
@@ -29,14 +33,45 @@ Page {
     }
 
     SilicaFlickable {
-        x: Theme.paddingLarge
-        width: parent.width - 2 * Theme.paddingLarge
-        height: parent.height
+        anchors.fill: parent
         contentHeight: column.height
+
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("List backups")
+                onClicked: {
+                    var settings = pageStack.push(Qt.resolvedUrl("BackupList.qml"))
+                    settings.backupRestored.connect(function() {
+                        dataChanged()
+                    })
+                }
+                Notification {
+                    id: backupNotification
+                    isTransient: true
+                }
+            }
+            MenuItem {
+                text: qsTr("Create backup")
+                onClicked: {
+                    var success = (BackupManager.makeBackup())
+                    if(success) {
+                        backupNotification.previewSummary = qsTr("Backup created succesfully")
+                        backupNotification.publish()
+                    }
+                    else {
+                        backupNotification.previewSummary = qsTr("Could not create backup")
+                        backupNotification.publish()
+                    }
+
+                }
+            }
+
+        }
 
         Column {
             id: column
-            width: parent.width
+            width: parent.width - 2.0*Theme.horizontalPageMargin
+            anchors.horizontalCenter: parent.horizontalCenter
 
             PageHeader {
                 title: qsTr("Settings")
@@ -58,6 +93,7 @@ Page {
                         id: primaryCurrency
                         color: Theme.highlightColor
                         text: Database.getPrimaryCurrency().symbol
+                        onTextChanged: dataChanged()
                     }
                 }
 

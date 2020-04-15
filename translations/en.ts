@@ -28,6 +28,45 @@
     </message>
 </context>
 <context>
+    <name>BackupList</name>
+    <message>
+        <source>Restore backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup restored successfully</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Restoring backup failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting backup failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No backups.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create backups in Settings page.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
@@ -45,12 +84,15 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
-        <translation>Statistics</translation>
-    </message>
-    <message>
         <source>Please add more bills!</source>
         <translation>Please add more bills!</translation>
+    </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistics</translation>
     </message>
 </context>
 <context>
@@ -169,6 +211,13 @@
     </message>
 </context>
 <context>
+    <name>DateSelector</name>
+    <message>
+        <source>Date</source>
+        <translation>Date</translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>BudgetBook</source>
@@ -183,20 +232,12 @@
         <translation>Settings</translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation>Current month statistics</translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation>Overall statistics</translation>
     </message>
     <message>
         <source>Browse Bills</source>
         <translation>Browse Bills</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Previous month statistics</translation>
     </message>
 </context>
 <context>
@@ -208,6 +249,22 @@
     <message>
         <source>Primary currency</source>
         <translation>Primary currency</translation>
+    </message>
+    <message>
+        <source>List backups</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Create backup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backup created succesfully</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Could not create backup</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

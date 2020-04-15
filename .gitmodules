@@ -1,3 +1,6 @@
-[submodule "qml/QChart"]
-	path = qml/QChart
-	url = https://github.com/marmay/qchart.js.git
+[submodule "QChart.js"]
+	path = qmlModules/jbQuick/Charts
+	url = https://github.com/direc85/qchart.js
+[submodule "3rdparty/quazip"]
+	path = 3rdparty/quazip
+	url = https://github.com/stachenov/quazip

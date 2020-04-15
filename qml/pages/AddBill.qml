@@ -27,17 +27,19 @@ Dialog {
     QtObject {
         id: d
 
-        property double total : 0;
-        property var shop : shopSelector.value;
-        property var date : new Date();
+        property double total: 0.0
+        property var shop: shopSelector.value
+        property var date: dateSelector.value
     }
+
+    canAccept: objects.count > 0
 
     onAccepted: {
         var items = [];
         var numberItems = objects.count;
         for (var i = 0; i < numberItems; ++i) {
             items.push({ category: objects.get(i).category,
-                         price: objects.get(i).price, tags: []});
+                           price: objects.get(i).price, tags: []});
             for (var j = 0; j < objects.get(i).tags.count; ++j) {
                 items[i].tags.push(objects.get(i).tags.get(j));
             }
@@ -46,8 +48,13 @@ Dialog {
     }
 
     SilicaFlickable {
+        id: addBillFlickable
         anchors.fill: parent
         contentHeight: column.height
+
+        VerticalScrollDecorator {
+           flickable: addBillFlickable
+        }
 
         Column {
             id: column
@@ -75,40 +82,53 @@ Dialog {
                 }
             }
 
-            Button {
-                id: datePicker
-                text: d.date.toLocaleDateString();
-
-                onClicked: {
-                    var dialog = pageStack.push(pickerComponent, {});
-                    dialog.accepted.connect(function() {
-                        d.date = dialog.date;
-                    });
-                }
-
-                Component {
-                    id: pickerComponent
-                    DatePickerDialog {}
-                }
+            DateSelector {
+                id: dateSelector
             }
 
             Separator {
+                id: separator
+                color: Theme.primaryColor
                 width: parent.width
             }
 
-            ListModel {
-                id: objects
-            }
+            SilicaListView {
+                id: listView
+                anchors {
+                    left: parent.left
+                    right: parent.right
+                }
+                height: contentHeight
 
-            Repeater {
-                id: rep
+                ListModel {
+                    id: objects
+                }
                 model: objects
 
-                Row {
-                    width: column.width
-                    height: l.height
+                delegate: Item {
+                    id: listItem
+                    width: listView.width
+                    height: Theme.itemSizeExtraSmall
+
+                    ListView.onRemove: RemoveAnimation {
+                        target: listItem
+                    }
+
+                    ListView.onAdd: AddAnimation {
+                        target: listItem
+                    }
 
                     Label {
+                        id: rowCategory
+                        anchors {
+                            verticalCenter: parent.verticalCenter
+                            left: parent.left
+                            right: rowPrice.left
+                        }
+                        text: category.name + tagsToString(tags)
+                        font.pixelSize: Theme.fontSizeSmall
+                        truncationMode: TruncationMode.Fade
+
                         function tagsToString(list) {
                             if (list.count === 0) return "";
                             var str = " (" + list.get(0).name;
@@ -118,24 +138,28 @@ Dialog {
                             str += ")";
                             return str;
                         }
-
-                        id: l
-                        width: 0.55 * parent.width
-                        text: category.name + tagsToString(tags)
-                        font.pixelSize: Theme.fontSizeSmall
                     }
 
                     Label {
-                        width: 0.25 * parent.width
+                        id: rowPrice
+                        anchors {
+                            verticalCenter: parent.verticalCenter
+                            right: rowRemove.left
+                        }
                         text: Utility.floatToCurrencyString(price)
                         font.pixelSize: Theme.fontSizeSmall
+
                     }
 
                     IconButton {
+                        id: rowRemove
                         icon.source: "image://theme/icon-m-remove"
-                        icon.width: parent.height
-                        icon.height: parent.height
-                        anchors.verticalCenter: parent.verticalCenter
+                        icon.width: rowPrice.height
+                        icon.height: rowPrice.height
+                        anchors {
+                            verticalCenter: parent.verticalCenter
+                            right: parent.right
+                        }
                         onClicked: {
                             d.total -= objects.get(index).price;
                             objects.remove(index);
@@ -145,7 +169,9 @@ Dialog {
             }
 
             Separator {
+                color: Theme.primaryColor
                 width: parent.width
+                visible: objects.count > 0
             }
 
             Row {
@@ -154,24 +180,34 @@ Dialog {
 
                 CategorySelector {
                     id: categorySelector
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 0.55 * parent.width
+
+                    // For proper vertical alignment
+                    anchors {
+                        verticalCenter: price.top
+                        verticalCenterOffset: price.textVerticalCenterOffset
+                    }
+                    width: parent.width - Theme.paddingSmall - price.width
                 }
 
                 TextField {
                     id: price
-                    anchors.verticalCenter: parent.verticalCenter
-                    width: 0.25 * parent.width
+
+                    // Approximate 9-number-length
+                    Label {
+                        id: widthHelper
+                        visible: false
+                        text: "123456789"
+                        font.pixelSize: price.font.pixelSize
+                    }
+                    width: textLeftMargin + widthHelper.width + textRightMargin
+
                     placeholderText: qsTr("Price")
                     inputMethodHints: Qt.ImhFormattedNumbersOnly | Qt.ImhNoPredictiveText
-                }
-
-                IconButton {
-                    anchors.verticalCenter: parent.verticalCenter
-                    icon.source: "image://theme/icon-m-add"
-                    onClicked: {
+                    validator: DoubleValidator { }
+                    EnterKey.enabled: text.length > 0 && acceptableInput == true
+                    EnterKey.onClicked: {
                         objects.append({ category: categorySelector.value, price: Utility.stringToFloat(price.text),
-                                            tags: tagSelector.selectedTags });
+                                           tags: tagSelector.selectedTags });
                         tagSelector.clear();
                         price.text = "";
                         d.total = 0.;

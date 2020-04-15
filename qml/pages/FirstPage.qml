@@ -25,18 +25,10 @@ import "../elements"
 Page {
     id: page
 
-    onStatusChanged: {
-        if (status === PageStatus.Activating)
-        {
-            stat.update();
-        }
-    }
+    property int monthDelta: 0
 
-    onVisibleChanged: {
-        if (visible === true)
-        {
-            stat.update();
-        }
+    Component.onCompleted: {
+        monthLabel.text = stat.from.toLocaleString(Qt.locale(), "MMMM yyyy")
     }
 
     SilicaFlickable {
@@ -45,29 +37,37 @@ Page {
         PullDownMenu {
             MenuItem {
                 text: qsTr("Settings")
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"));
+                onClicked: {
+                    var settings = pageStack.push(Qt.resolvedUrl("Settings.qml"))
+                    settings.dataChanged.connect(function() {
+                        stat.update()
+                    })
+                }
             }
             MenuItem {
                 text: qsTr("Browse Bills")
-                onClicked: pageStack.push(Qt.resolvedUrl("BillBrowser.qml"))
+                onClicked: {
+                    var browser = pageStack.push(Qt.resolvedUrl("BillBrowser.qml"))
+                    browser.billRemoved.connect(function() {
+                        stat.update()
+                    })
+                }
             }
             MenuItem {
                 text: qsTr("Add Bill")
-                onClicked: pageStack.push(Qt.resolvedUrl("AddBill.qml"))
+                onClicked: {
+                    var dialog = pageStack.push(Qt.resolvedUrl("AddBill.qml"))
+                    dialog.accepted.connect(function() {
+                        stat.update()
+                    })
+                }
             }
         }
 
         PushUpMenu {
             MenuItem {
-                text:qsTr("Previous month statistics")
-                onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
-                                          { title: qsTr("Previous month statistics"),
-                                              from: Utility.firstOfMonth( -1 ),
-                                              to: Utility.firstOfMonth( 0 ) })
-            }
-            MenuItem {
                 text: qsTr("Overall statistics")
-                onClicked: pageStack.push(Qt.resolvedUrl("ByCategory.qml"),
+                onClicked: pageStack.push(Qt.resolvedUrl("ByCategoryPage.qml"),
                                           { title: qsTr("Overall statistics"),
                                               from: new Date("2015-01-01"),
                                               to: new Date("2099-01-01") });
@@ -86,15 +86,51 @@ Page {
             }
 
             Label {
-                text: qsTr("Current month statistics")
-                font.pixelSize: Theme.fontSizeSmall
+                id: monthLabel
+                anchors.horizontalCenter: parent.horizontalCenter
+            }
+
+            Item {
+                width: parent.width
+                height: buttonItem.height
+
+                Item {
+                    id: buttonItem
+                    width: prevMonthButton.width + Theme.paddingLarge + nextMonthButton.width
+                    height: prevMonthButton.height
+                    anchors.horizontalCenter: parent.horizontalCenter
+
+                    Button {
+                        id: prevMonthButton
+                        anchors.left: parent.left
+                        text: "<<"
+                        onClicked: {
+                            monthDelta = monthDelta - 1
+                            stat.from = Utility.firstOfMonth(monthDelta)
+                            stat.to = Utility.firstOfMonth(monthDelta+1)
+                            monthLabel.text = stat.from.toLocaleString(Qt.locale(), "MMMM yyyy")
+                            stat.update()
+                        }
+                    }
+                    Button {
+                        id: nextMonthButton
+                        anchors.right: parent.right
+                        text: ">>"
+                        onClicked: {
+                            monthDelta = monthDelta + 1
+                            stat.from = Utility.firstOfMonth(monthDelta)
+                            stat.to = Utility.firstOfMonth(monthDelta+1)
+                            monthLabel.text = stat.from.toLocaleString(Qt.locale(), "MMMM yyyy")
+                            stat.update()
+                        }
+                    }
+                }
             }
 
             ByCategory {
                 id: stat
-                width: column.width
-                from: Utility.firstOfMonth(0)
-                to: Utility.firstOfMonth(1)
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width
             }
         }
     }

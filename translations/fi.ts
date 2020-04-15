@@ -28,6 +28,45 @@
     </message>
 </context>
 <context>
+    <name>BackupList</name>
+    <message>
+        <source>Restore backup</source>
+        <translation>Palauta varmuuskopio</translation>
+    </message>
+    <message>
+        <source>Restoring backup</source>
+        <translation>Palautetaan varmuuskopio</translation>
+    </message>
+    <message>
+        <source>Delete backup</source>
+        <translation>Poista varmuuskopio</translation>
+    </message>
+    <message>
+        <source>Deleting backup</source>
+        <translation>Poistetaan varmuuskopio</translation>
+    </message>
+    <message>
+        <source>Backup restored successfully</source>
+        <translation>Varmuuskopio palautettu onnistuneesti</translation>
+    </message>
+    <message>
+        <source>Restoring backup failed</source>
+        <translation>Palautetaan varmuuskopio</translation>
+    </message>
+    <message>
+        <source>Deleting backup failed</source>
+        <translation>Varmuuskopion poistaminen epäonnistui</translation>
+    </message>
+    <message>
+        <source>No backups.</source>
+        <translation>Ei varmuuskopioita.</translation>
+    </message>
+    <message>
+        <source>Create backups in Settings page.</source>
+        <translation>Luo varmuuskopioita Asetukset-sivulla</translation>
+    </message>
+</context>
+<context>
     <name>BillBrowser</name>
     <message>
         <source>Browse Bills</source>
@@ -45,12 +84,15 @@
 <context>
     <name>ByCategory</name>
     <message>
-        <source>Statistics</source>
-        <translation>Statistiikka</translation>
-    </message>
-    <message>
         <source>Please add more bills!</source>
         <translation>Ole hyvä ja lisää kuitteja!</translation>
+    </message>
+</context>
+<context>
+    <name>ByCategoryPage</name>
+    <message>
+        <source>Statistics</source>
+        <translation>Statistiikka</translation>
     </message>
 </context>
 <context>
@@ -80,7 +122,7 @@
     <name>CoverPage</name>
     <message>
         <source>BudgetBook</source>
-        <translation>BudgetBook</translation>
+        <translation>Kulukirja</translation>
     </message>
 </context>
 <context>
@@ -169,10 +211,17 @@
     </message>
 </context>
 <context>
+    <name>DateSelector</name>
+    <message>
+        <source>Date</source>
+        <translation>Päivä</translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
         <source>BudgetBook</source>
-        <translation>BudgetBook</translation>
+        <translation>Kulukirja</translation>
     </message>
     <message>
         <source>Add Bill</source>
@@ -183,20 +232,12 @@
         <translation>Asetukset</translation>
     </message>
     <message>
-        <source>Current month statistics</source>
-        <translation>Tämä kuukausi</translation>
-    </message>
-    <message>
         <source>Overall statistics</source>
         <translation>Yleistilastot</translation>
     </message>
     <message>
         <source>Browse Bills</source>
         <translation>Selaa kuitteja</translation>
-    </message>
-    <message>
-        <source>Previous month statistics</source>
-        <translation>Edellinen kuukausi</translation>
     </message>
 </context>
 <context>
@@ -208,6 +249,22 @@
     <message>
         <source>Primary currency</source>
         <translation>Ensisijainen valuutta</translation>
+    </message>
+    <message>
+        <source>List backups</source>
+        <translation>Näytä varmuuskopiot</translation>
+    </message>
+    <message>
+        <source>Create backup</source>
+        <translation>Tee varmuuskopio</translation>
+    </message>
+    <message>
+        <source>Backup created succesfully</source>
+        <translation>Varmuuskopio luotu onnistuneesti</translation>
+    </message>
+    <message>
+        <source>Could not create backup</source>
+        <translation>Varmuuskopion luonti epäonnistui</translation>
     </message>
 </context>
 <context>

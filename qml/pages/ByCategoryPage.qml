@@ -26,6 +26,20 @@ Page {
     property alias to: stat.to
     property alias title: label.text
 
+    Component.onCompleted: statRenderTimer.start()
+
+    Timer {
+        id: statRenderTimer
+        triggeredOnStart: false
+        repeat: false
+        interval: 500
+        onTriggered: {
+            stat._updating = false
+            stat.update()
+            placeholder.enabled = false
+        }
+    }
+
     SilicaFlickable {
         anchors.fill: parent
 
@@ -42,12 +56,23 @@ Page {
 
             Label {
                 id: label
-                font.pixelSize: Theme.fontSizeSmall
+                anchors.horizontalCenter: parent.horizontalCenter
             }
 
             ByCategory {
                 id: stat
                 width: column.width
+                _updating: true // to postpone drawing
+
+                ViewPlaceholder {
+                    id: placeholder
+                    enabled: true
+                    BusyIndicator {
+                        anchors.centerIn: parent
+                        size: BusyIndicatorSize.Large
+                        running: parent.enabled
+                    }
+                }
             }
         }
     }

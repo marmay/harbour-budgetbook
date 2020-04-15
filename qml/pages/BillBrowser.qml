@@ -23,6 +23,8 @@ import "../Utility.js" as Utility
 Page {
     id: page
 
+    signal billRemoved
+
     function removeBill(idx, id)
     {
         var db = Database.openDatabase();
@@ -100,6 +102,10 @@ Page {
             width: listView.width
             height: menuOpen ? listView.contextMenu.height + bItem.height : bItem.height
 
+            ListView.onRemove: RemoveAnimation {
+                target: listItem
+            }
+
             BackgroundItem {
                 id: bItem
 
@@ -109,7 +115,7 @@ Page {
                     if (!listView.contextMenu)
                         listView.contextMenu = contextMenuComponent.createObject(listView);
                     listView.contextMenu.deleteItem = bItem;
-                    listView.contextMenu.show(listItem);
+                    listView.contextMenu.open(listItem);
                 }
 
                 Row {
@@ -146,7 +152,10 @@ Page {
 
                 function remove()
                 {
-                    remorse.execute(bItem, qsTr("Deleting"), function() { removeBill(index, id); });
+                    remorse.execute(bItem, qsTr("Deleting"), function() {
+                        removeBill(index, id)
+                        billRemoved()
+                    });
                 }
 
                 RemorseItem {
